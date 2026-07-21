@@ -54,3 +54,7 @@ parse-feed.js
 # Cursor / local tooling
 .cursor/
 agent-tools/
+
+# Blogger Takeout source (local only)
+Blogger/
+

@@ -3,11 +3,11 @@ import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/ro
 import { AsyncPipe } from '@angular/common';
 import { filter } from 'rxjs';
 import { SiteService } from '../../core/services/site.service';
-import { Icon } from '../../shared/icon/icon';
+import { AssetUrlPipe } from '../../shared/pipes/asset-url.pipe';
 
 @Component({
   selector: 'app-site-header',
-  imports: [RouterLink, RouterLinkActive, AsyncPipe, Icon],
+  imports: [RouterLink, RouterLinkActive, AsyncPipe, AssetUrlPipe],
   templateUrl: './site-header.html',
   styleUrl: './site-header.scss',
 })

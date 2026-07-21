@@ -1,12 +1,12 @@
 # Portfolio + Blog (Angular · GitHub Pages)
 
-Demo template for a personal **portfolio landing page** and a **markdown-driven blog**, ready to host on GitHub Pages.
+Personal **BlogWithCodes** portfolio landing page and **HTML-driven blog**, ready to host on GitHub Pages.
 
 ## Stack
 
 - Angular 22 (standalone components, lazy routes)
 - Tailwind CSS v4
-- Markdown posts via `marked`
+- HTML posts under `public/content/posts/`
 - Deploy with `angular-cli-ghpages` or GitHub Actions
 
 ## Quick start
@@ -20,7 +20,7 @@ Open `http://localhost:4200`.
 
 ## Add a new blog post
 
-1. Create `public/content/posts/my-new-post.md`
+1. Create `public/content/posts/my-new-post.html`
 2. Add metadata to `public/content/posts/index.json`:
 
 ```json
@@ -28,15 +28,19 @@ Open `http://localhost:4200`.
   "slug": "my-new-post",
   "title": "My new post",
   "excerpt": "One-line summary.",
-  "category": "engineering",
-  "tags": ["angular"],
+  "category": "csharp",
+  "tags": ["dotnet"],
   "date": "2026-07-21",
   "readingTime": "5 min",
-  "cover": ""
+  "cover": "assets/blog/my-new-post/01.png"
 }
 ```
 
-3. Commit and push to `main` (and deploy).
+Optional: set `"draft": true` to keep the post out of lists/home while still allowing `/blog/my-new-post` by direct URL.
+
+3. Put images under `public/assets/blog/<slug>/` and reference them as `assets/blog/<slug>/…` in HTML and cover.
+
+4. Commit and push to `main` (and deploy).
 
 ## Routes
 
@@ -57,20 +61,20 @@ Each place is one object in `public/content/places.json` with **one photo** unde
 
 ```json
 {
-  "slug": "triund-trek",
-  "name": "Triund Trek",
-  "region": "Himachal Pradesh",
+  "slug": "triund",
+  "name": "Triund",
+  "region": "Kangra, Himachal Pradesh",
   "country": "India",
-  "visitedOn": "2024-10-12",
+  "visitedOn": "2025-05-17",
   "type": "trek",
   "summary": "Short summary",
-  "notes": "Your trail notes",
-  "photo": "assets/places/triund-trek.jpg",
+  "notes": "Your trail notes — how you reached it and how the trek went",
+  "photo": "assets/places/triund.jpg",
   "photoCredit": "Your photo"
 }
 ```
 
-Blog covers live under `public/assets/blog/` and are referenced from `public/content/posts/index.json` via `"cover": "assets/blog/my-post.jpg"`.
+Blog covers and inline images live under `public/assets/blog/<slug>/` and are referenced as `assets/blog/<slug>/…`.
 
 Routes: `/places` and `/places/:slug`.
 
@@ -111,4 +115,4 @@ src/app/
 
 ## Notes for later personalization
 
-This is intentionally filled with **demo** copy (Alex Rivera). When you send your real details, we can swap content, branding, and colors without changing the architecture.
+Content is driven by JSON/HTML under `public/content/`. Draft posts use `"draft": true` in `posts/index.json`.

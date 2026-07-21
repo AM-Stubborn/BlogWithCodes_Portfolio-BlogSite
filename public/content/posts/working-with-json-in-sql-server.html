@@ -1,0 +1,206 @@
+<h2 style="text-align: left;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7lg5MSHNzrprKsKdshRCgnGQ1HDgVy8VRsQY5FEpjiM3YggWmoDUbXxcioDKuM0GP2bU827YL2ov2e9craYcxkSVI1CCIxosq_bMgZllgenafaoFDgRGIUAVHwQK107aWy1j4N9yx8jQzRbSneox9mPIGcYUaoCbkmccHDoQw9aZJvQ7aybiU2Z8_/s970/Untitled%20design.webp" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="250" data-original-width="970" height="170" src="assets/blog/working-with-json-in-sql-server/01.webp" width="650" /></a></div>
+</h2>
+<h2 style="text-align: left;"><b>Introduction</b></h2>
+<p>
+    Nowadays, JSON is the most popular language tool to communicate between different technologies, and I have seen many developers communicating with SQL serve with JSON. It is very essential to know how we handle JSON as an input and
+    out in SQL serve. 
+</p>
+<p>Note: This article is written with respect to MS SQL server and their might be some technical detail which can mismatch with other RDBMS.</p>
+<h2 style="text-align: left;"><span style="font-size: large;">Table of Content </span></h2>
+<div>
+    <ol style="text-align: left;">
+        <li>In-build function to handle JSON</li>
+        <li>Converting JSON array to table </li>
+        <li>Converting Table data to JSON</li>
+    </ol>
+</div>
+<h3 style="text-align: left;"><br /></h3>
+<h3 style="text-align: left;">1. In-build function to handle JSON</h3>
+<div>In SQL server we have some in-build functions or we can call it system functions using which we can handle JSON out JSON. In-build functions for JSON handling are: </div>
+<div>
+    <ul style="text-align: left;">
+        <li>ISJSON</li>
+        <li>JSON_VALUE</li>
+        <li>JSON_QUERY</li>
+        <li>JSON_MODIFY</li>
+    </ul>
+    <h4 style="text-align: left;"><br /></h4><h4 style="text-align: left;">ISJSON</h4>
+</div>
+<div>
+    Before start working on JSON, we should have to check wether the JSON on which we supposed to work is a valid JSON or not. ISJOSN is a In-build function which will take the JSON an argument and return value 1 if the JSON is valid and return value 0
+    if the JSON is not valid.
+</div>
+<div><br /></div>
+<div>Syntax </div>
+<pre><code>ISJSON( JSON_Expression ) </code></pre>
+<div><h4><br /></h4><h4>JSON_VALUE</h4></div><div style="text-align: justify;">If we want a scaler value from JSON_Expression then we can use JSON_VALUE in-build function. </div><div style="text-align: justify;">JSON_VALUE we return scaler value out of the passed JSON_Expression if found. If JSON_Value function didn't found the value in JSON_Expression than it will throw an error. </div><div><br /></div><div>Syntax </div>
+<pre><code>JSON_VALUE( JSON_Expression , path ) </code></pre>
+<div><br /></div><div>JSON_VALUE function will take two argument as following</div><div><ul style="text-align: left;"><li><span>JSON_Expression : A valid JSON </span></li><li>Path: Actual path of the scaler value in the JSON_Expression. </li></ul><div><b><i>Note: path should start from "$."</i></b></div></div><div><b><i><br /></i></b></div><div>Example: Let us take simple example of  a JSON_Expression as mentioned below which consist of car data. </div>
+<pre><code>{
+  "Type": "SUV",
+  "Manufacture": "Tata",
+  "Model": [
+    {
+      "Name": "Nexon",
+      "Engine": "4 cylinder"
+    },
+    {
+      "Name": "PUNCH",
+      "Engine": "3 cylinder"
+    }
+  ]
+}</code></pre>
+<div><br /></div><div>Consider we want to car name of model present at second index of Model array, or we want "PUNCH" car name. So the SQL expression for this would be: </div>
+<pre><code>Declare @JSON_Expression varchar(max)='{
+  "Type": "SUV",
+  "Manufacture": "Tata",
+  "Model": [
+    {
+      "Name": "Nexon",
+      "Engine": "4 cylinder"
+    },
+    {
+      "Name": "PUNCH",
+      "Engine": "3 cylinder"
+    }
+  ]
+}'
+
+Select JSON_VALUE( @JSON_Expression,'$.Model[1].Name' ) as Car_Name </code></pre><div style="text-align: left;"><br /></div><h4>JSON_QUERY</h4><div>Sometimes there is a situation where we only requires a portion of a JSON, and the required portion is not a scaler value but instead, it is an array or object. JSON_QUERY is in-build function that will return an expression of type varchar.</div><div><br /></div><div>Syntax:</div>
+<pre><code>JSON_QUERY( JSON_Expression , path )</code></pre>
+<div><div><br /></div><div>JSON_QUERY function will take two arguments as follows</div><div><ul><li><span>JSON_Expression: A valid JSON </span></li><li>Path: Actual path of the required value in the JSON_Expression. </li></ul></div></div><div> <b><i>Note: path should start from "$."</i></b></div><div><b><i><br /></i></b></div><div>Example: Let us take a simple example of a JSON_Expression as mentioned below which consists of car data. </div>
+<pre><code>{
+  "Type": "Hatchback",
+  "Manufacture": "Maruti Suzuki",
+  "Model": [
+    {
+      "Name": "Alto",
+      "Engine": "4 cylinder"
+    },
+    {
+      "Name": "Baleno",
+      "Engine": "4 cylinder"
+    }
+  ]
+}</code></pre><div style="font-family: &quot;Times New Roman&quot;; white-space: normal;"><br /></div><div style="font-family: &quot;Times New Roman&quot;; white-space: normal;">Consider we want a list of Models from JSON array, So the SQL expression for this would be: </div>
+
+<pre><code>Declare @JSON_Expression varchar(max)='{
+  "Type": "SUV",
+  "Manufacture": "Tata",
+  "Model": [
+    {
+      "Name": "Nexon",
+      "Engine": "4 cylinder"
+    },
+    {
+      "Name": "PUNCH",
+      "Engine": "3 cylinder"
+    }
+  ]
+}'
+
+Select JSON_QUERY( @JSON_Expression,'$.Model' ) as Modal_Array
+</code></pre>
+
+Output:<pre><code>[{"Name": "Nexon","Engine": "4 cylinder"},{"Name": "PUNCH","Engine": "3 cylinder"}]</code></pre>
+<h4><br /></h4><h4>JSON_MODIFY</h4><div>In the above function we saw how we can get extract the data from the JSON_Expression, but which function could help us in situations where we have the modify the actual JSON_Expression. </div><div><br /></div><div>JSON_MODIFY is an in-build function, which allows us to modify the passed JSON_Expression and return a new modified JSON_Expression. </div><div><br /></div><div>We can only modify JSON_Expression in below mentioned ways: </div><div><ul style="text-align: left;"><li>we can update JSON object property value(that value could be a string, a new object, or an array).</li><li>we can add a new property in the JSON object. </li><li>We can add a new value to the JSON object. </li></ul><div><div>Syntax </div>
+  <pre><code>JSON_MODIFY( JSON_Expression ,[append] path , newValue) </code></pre><div><br /></div>JSON_MODIFY function will take three argument as following<br /><ul style="text-align: left;"><li>JSON_Expression : A valid JSON </li><li>Path: Actual path of the propert in the JSON_Expression which need to be changed. And if you want to add newvalue to an array use append as prefix to path.</li><li>NewValue: New value which will be replcaed with the old value and if you want to add new value to an array newValue will be appended to the array.</li></ul>Example: Let us take a simple example of a JSON_Expression as mentioned below which consists of car data.<pre><code> { "Type": "Sadan",
+  "Manufacture": "Toyota",
+  "Model": [
+    {
+      "Name": "Civic",
+      "Engine": "4 cylinder"
+    },
+    {
+      "Name": "City",
+      "Engine": "4 cylinder"
+    }
+  ]
+}</code></pre></div></div><div style="text-align: left;"><span><b><br /></b></span></div><div style="text-align: left;"><span><b>case 1</b></span><span style="font-weight: 400;">: Considering we want to change the manufacture data from Toyota and change to Honda, So the SQL expression for this would be</span></div><div><pre><code>Declare @JSON_Expression varchar(max)='{
+  "Type": "Sadan",<pre><code>  "Manufacture": "Toyota",
+  "Model": [
+    {
+      "Name": "Civic",
+      "Engine": "4 cylinder"
+    },
+    {
+      "Name": "City",
+      "Engine": "4 cylinder"
+    }
+  ]
+  
+ 
+  </code></pre>}'
+<br /></code></pre><pre><code>Select JSON_MODIFY( @JSON_Expression,'$.Manufacture','Honada' ) as New_JSON
+</code></pre></div><h3 style="text-align: left;"><span style="font-size: large; font-weight: 400;"><br /></span></h3><h3 style="text-align: left;"><span style="font-size: large; font-weight: 400;">Output:</span></h3><div>
+  <pre><code>{"Type": "Sadan","Manufacture": "Honada","Model": [{"Name": "Civic","Engine": "4 cylinder"},{"Name": "City","Engine": "4 cylinder"}    ]}</code></pre></div>
+
+<div style="text-align: left;"><br /></div><div style="text-align: left;"><div><span><b>case 2</b></span><span>: Considering we want to add a new car model to the Model array, So the SQL expression for this would be</span></div><div><span><div><pre><code>declare @JSON_Expression varchar(max)='{
+  "Type": "Sadan",
+  "Manufacture": "Toyota",
+  "Model": [
+      "Civic",
+      "City"
+  ]
+}'
+
+Select JSON_MODIFY( @JSON_Expression, 'append $.Model','Amaze' ) as New_JSON</code></pre></div><h3><span style="font-size: medium; font-weight: 400;"><br /></span></h3><h3><span style="font-size: medium; font-weight: 400;">Output:</span></h3><div>
+  <pre><code>{
+  "Type": "Sadan",
+  "Manufacture": "Toyota",
+  "Model": [
+    "Civic",
+    "City",
+    "Amaze"
+  ]
+}</code></pre>
+  </div><div><br /></div></span></div><div><span><br /></span></div></div><h3 style="text-align: left;">
+  
+  
+  2. Converting JSON array to Table </h3>
+<div>In SQL, we can convert an array JSON into a table using OPENJSON in-build function. Converting array JSON to the table will help you in performing SQL operations on your array JSON.</div><div><br /></div><div>Syntax:
+  <pre><code>   Select * from OPENJSON(JSON_Expression)</code></pre>
+
+</div>
+<div><br /></div>
+<div><b><i>Note: Keep in mind that JSON you are passing to the OPENJSON function should contain valid array only. </i></b></div><div><br /></div>
+<h3 style="text-align: left;">3. Converting Table Result Set to JOSN </h3>
+<div>If we want to convert the table data into JSON then SQL serve provide us two way to do that as mentioned below.</div><div><br /></div><div><ul style="text-align: left;">
+        <li>
+            <span><b>
+                For JOSN AUTO</b>: JOSN AUTO will warp your table result set into JSON. The resulting JSON will be converted automatically based on the data present table result set. As the AUTO implies, most of the conversion is handled by the SQL itself so we have less control over
+                the resulting JOSN</span></li>
+  
+    </ul>
+  <span>    </span><span>    </span></div><div><div><span>Syntax:
+            <pre><code>Select * from Table For Json Auto</code></pre>
+        </span>
+    </div>
+</div>
+
+<div><br /></div><b><i>Note: Please use For JSON PATH for having more control over the resulting JSON.</i></b><div><b><i><br /></i></b>
+
+<ul style="text-align: left;">
+    <li><span><b>For JSON PATH</b>: JOSN PATH will warp your table result set into the JSON same as the JSON Auto does but in JOSN Path you have more control and you can mold the outcome JSON as per your requirement </span></li>
+</ul>
+<div>Syntax:
+    <pre><code>Select * from Table For Json Path  </code></pre>
+</div>
+
+<div><br /></div><div><h4><div>
+        </div>
+    </h4>
+    <h3 style="text-align: left;">Options Available for "FOR JSON"</h3>
+    <div>
+        <ol style="text-align: left;">
+            <li><b>ROOT OPTION</b>: Root option allows you to set the main root of the JSON output</li>
+        </ol>
+        <div>Syntax:
+            <pre><code>Select * from TableName For JSON Path , ROOT('JSON_ROOT') 
+</code></pre>
+        </div>
+        <div style="text-align: left;">
+            <ol start="2" style="text-align: left;">
+                <li><b>INCLUDE_NULL_VALUES:</b> Used to allow SQL to include a null value in resulted JSON output</li>
+                <li><b>WITHOUT_ARRAY_WRAPPER: </b>Used to remove "[]" in the resulted JSON output from the result set</li></ol><h2 style="text-align: left;">Conclusion</h2><div>At the end of this article, I hope you understand how we are working with JSON in our SQL server. We can easily retrieve data out of a JSON expression and make effective use of our queries, we can also convert our JSON array into the table so that we can easily perform our query operation on them, and last but not least we can convert our table data into JSON expression.</div><div><br /></div><div> I hope you learned something valuable after reading this article. Leave down a comment if you have any questions or any suggestion. Thank you for reading this article.  </div></div></div></div>
+</div>

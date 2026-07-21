@@ -11,6 +11,7 @@ export type IconName =
   | 'mail'
   | 'github'
   | 'linkedin'
+  | 'instagram'
   | 'arrow-right'
   | 'external'
   | 'calendar'

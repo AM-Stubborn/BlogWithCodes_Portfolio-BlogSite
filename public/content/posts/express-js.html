@@ -1,0 +1,17 @@
+<h1 style="text-align: left;"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDmmjo-ahTWQoSEHSJo_CP9scSzSWKJ-SokthP_bVHxucuGcE-kFaRuL7pTGppiZytFLpz3R1YddVh4m_E8ANYi2dktIPv_uvQ6broCfmeq8XBRy1fYIrvhUGZApZdm1Ke-PDk9c0QodXDPH9MPd5uinP4XbwzMQlDjQazthcCHzt1kBVhL_D2lB5ma4U/s3984/Express.JS.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="2409" data-original-width="3984" height="193" src="assets/blog/express-js/01.png" width="320" /></a></div></div></h1><h1 style="text-align: left;"><span style="font-size: large;"> What is Express JS</span></h1><p></p><ul style="text-align: left;"><li>Express js is Node.js framework </li><li>One of the most popular framework of Node.js available in the market.</li><li>Express.js is a web application framework that helps in creating web applications with the help of Node.js. </li></ul><h2 style="text-align: left;">Why we need Express.js over Node.js </h2><div>Express.js makes things easy for developers to create a web application. We can do all the things with Node.js that we can do with Express.js but In Node.js we have raw packages to create a server and all the things related to setup and running a server but in Express.js most of the things are handled by Express.js and developers have to only write the main logics to create his web application </div><div><br /></div><h2 style="text-align: left;">How to Install Express.js</h2><div><ul style="text-align: left;"><li>As Express.js is NPM package. You can directly install it from npm command i.e.</li><ul><li>npm install express</li></ul><li>Before installing the express it is recommended to install the package.json using command so that you can keep track of different packages.</li><ul><li>npm init </li></ul><li>No as per the package.js you must have set a file as main (generally it is Index.js or app.js).</li><li>this main file will be your entry point for the application. </li></ul><h2 style="text-align: left;">Run your first program in Express.js</h2></div><div>As discussed above while installing the npm init you must have set a main file (generally it is app.js or index.js). The main file is our entry point of the application. To use the express package first import the express to your file and invoke the express() function. </div><div><br /></div><p></p><pre><code>const express=require('express');
+const app=express();
+</code></pre>
+<p>Express.js is user to work as server, so for each incoming request coming to express server it will return the response. For example if we have incoming request from route "/Home" so corresponding to this request server must return a response. Lets see how we can handle this in Express.</p><pre><code>const express=require('express');
+const app=express();
+
+//Handling the route 
+app.get("/Home",(req,res)=&gt;{
+    res.send("Hello world from express about");
+});
+
+//Server listening/Runinng 
+app.listen(8000,()=&gt;{
+    console.log("Listing the port at 8000");
+})
+</code></pre><p>This is how this will work</p>
+

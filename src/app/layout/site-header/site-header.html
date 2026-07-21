@@ -8,10 +8,14 @@
     [class.shadow-sm]="scrolled()"
   >
     <div class="container-page flex h-16 items-center justify-between">
-      <a routerLink="/" class="inline-flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink">
-        <span class="icon-badge !rounded-lg">
-          <app-icon name="mountain" className="h-4 w-4" />
-        </span>
+      <a routerLink="/" class="inline-flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-ink">
+        <img
+          [src]="'assets/brand/logo.png' | assetUrl"
+          [alt]="site.brand + ' logo'"
+          class="h-9 w-9 object-contain"
+          width="36"
+          height="36"
+        />
         {{ site.brand }}
       </a>
 
@@ -35,7 +39,9 @@
             </a>
           }
         }
-        <a [href]="site.social.email" target="_blank" rel="noopener" class="btn-primary !px-4 !py-2 text-xs">Say hello</a>
+        <a [href]="site.social.linkedin" target="_blank" rel="noopener" class="btn-primary !px-4 !py-2 text-xs">
+          Say hello
+        </a>
       </nav>
 
       <button
@@ -73,7 +79,7 @@
               </a>
             }
           }
-          <a [href]="site.social.email" target="_blank" rel="noopener" class="btn-primary w-fit">Say hello</a>
+          <a [href]="site.social.linkedin" target="_blank" rel="noopener" class="btn-primary w-fit">Say hello</a>
         </nav>
       </div>
     }

@@ -2,10 +2,14 @@
   <footer class="border-t border-line/80 bg-white/40">
     <div class="container-page flex flex-col gap-8 py-12 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <p class="font-display inline-flex items-center gap-2 text-lg font-semibold text-ink">
-          <span class="icon-badge !h-8 !w-8 !rounded-lg">
-            <app-icon name="mountain" className="h-4 w-4" />
-          </span>
+        <p class="font-display inline-flex items-center gap-2.5 text-lg font-semibold text-ink">
+          <img
+            [src]="'assets/brand/logo.png' | assetUrl"
+            [alt]="site.brand + ' logo'"
+            class="h-8 w-8 object-contain"
+            width="32"
+            height="32"
+          />
           {{ site.brand }}
         </p>
         <p class="mt-2 text-sm font-medium text-accent">{{ site.name }}</p>
@@ -31,13 +35,23 @@
           <app-icon name="book" className="h-3.5 w-3.5" />
           Blog
         </a>
-        <a [href]="site.social.blogger || '#'" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 transition hover:text-ink">
-          <app-icon name="external" className="h-3.5 w-3.5" />
-          Blogger
+        <a [href]="site.social.linkedin" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+          <app-icon name="linkedin" className="h-3.5 w-3.5" />
+          LinkedIn
         </a>
         <a [href]="site.social.github" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 transition hover:text-ink">
           <app-icon name="github" className="h-3.5 w-3.5" />
           GitHub
+        </a>
+        @if (site.social.instagram) {
+          <a [href]="site.social.instagram" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+            <app-icon name="instagram" className="h-3.5 w-3.5" />
+            Instagram
+          </a>
+        }
+        <a [href]="site.social.email" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+          <app-icon name="mail" className="h-3.5 w-3.5" />
+          Email
         </a>
       </div>
     </div>

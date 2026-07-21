@@ -2,51 +2,586 @@
   {
     "slug": "ai-engineering-basic",
     "title": "AI Engineering Basic",
-    "excerpt": "LLMs, tokens, context windows, and how AI engineering differs from classic ML work.",
+    "excerpt": "What is LLM At its core, a Large Language Model (LLM) is a type of artificial intelligence trained to understand, generate, and manipulate human language. Think of it as a highl…",
     "category": "ai",
-    "tags": ["llm", "ai-engineering"],
+    "tags": [
+      "llm",
+      "ai-engineering"
+    ],
     "date": "2026-05-04",
-    "readingTime": "8 min",
-    "cover": "assets/blog/ai-engineering-basic.jpg"
+    "readingTime": "6 min",
+    "cover": "assets/blog/ai-engineering-basic/01.png"
   },
   {
-    "slug": "solid-principles-in-csharp",
-    "title": "SOLID Principles in C#",
-    "excerpt": "SRP, OCP, LSP, ISP, and DIP explained with practical C# examples you can apply immediately.",
-    "category": "dotnet",
-    "tags": ["csharp", "solid", "clean-code"],
-    "date": "2025-04-03",
-    "readingTime": "10 min",
-    "cover": "assets/blog/solid-principles-in-csharp.jpg"
+    "slug": "working-with-dacpac",
+    "title": "Working with dacpac",
+    "excerpt": "Dacpac Dacpac (Data-tier applications package) : is a compact package/ file or artifact that consist of entity that defines all of the SQL Server objects - such as tables, views…",
+    "category": "sql",
+    "tags": [
+      "dacpac",
+      "sql-server"
+    ],
+    "date": "2026-04-08",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
   },
   {
-    "slug": "understanding-application-insights",
-    "title": "Understanding Azure Application Insights",
-    "excerpt": "Monitor requests, exceptions, dependencies, and performance with Azure Application Insights and KQL.",
-    "category": "azure",
-    "tags": ["azure", "monitoring", "devops"],
-    "date": "2025-02-17",
-    "readingTime": "9 min",
-    "cover": "assets/blog/understanding-application-insights.jpg"
+    "slug": "sms",
+    "title": "SMS",
+    "excerpt": "UI app-record-editor-sidewise this is a shared that will help to add record and it will appear side ways and good for short forms How to call app-record-editor-sidewise [show] =…",
+    "category": "general",
+    "tags": [
+      "sms",
+      "integrations"
+    ],
+    "date": "2025-09-16",
+    "readingTime": "1 min",
+    "cover": ""
+  },
+  {
+    "slug": "dev-express-xaf",
+    "title": "Dev Express XAF",
+    "excerpt": "Roadmap for XAF learning 🔹 Phase 1: Foundation (Basics of XAF) What is XAF? Understand the idea of Model-Driven Development (you define business objects, UI and APIs get genera…",
+    "category": "csharp",
+    "tags": [
+      "xaf",
+      "devexpress"
+    ],
+    "date": "2025-08-20",
+    "readingTime": "2 min",
+    "cover": "",
+    "draft": true
   },
   {
     "slug": "software-architecture",
     "title": "Software Architecture",
-    "excerpt": "What system architecture means when you need to turn an idea into a well-structured application.",
-    "category": "generalblogs",
-    "tags": ["architecture", "design"],
+    "excerpt": "What does System Architecture means If you have an idea that needs to be properly implemented as software, you need to create a well-structured application for it. To keep it ma…",
+    "category": "architecture",
+    "tags": [
+      "design"
+    ],
     "date": "2025-06-24",
-    "readingTime": "6 min",
-    "cover": "assets/blog/software-architecture.jpg"
+    "readingTime": "4 min",
+    "cover": "assets/blog/software-architecture/01.png"
   },
   {
-    "slug": "ai-vs-ml-vs-deep-learning",
-    "title": "AI vs Machine Learning vs Deep Learning",
-    "excerpt": "A clear breakdown of how AI, ML, and deep learning relate — and when each term actually applies.",
-    "category": "ai",
-    "tags": ["ai", "ml", "fundamentals"],
-    "date": "2025-03-19",
+    "slug": "solid-principles-in-csharp",
+    "title": "SOLID Principles in C#",
+    "excerpt": "Understanding SOLID Principles in C# As a C# developer, writing clean, maintainable, and scalable code is essential. One of the best ways to achieve this is by following the SOL…",
+    "category": "csharp",
+    "tags": [
+      "solid",
+      "clean-code"
+    ],
+    "date": "2025-04-02",
     "readingTime": "5 min",
-    "cover": "assets/blog/ai-vs-ml-vs-deep-learning.jpg"
+    "cover": "assets/blog/solid-principles-in-csharp/01.png"
+  },
+  {
+    "slug": "ai-vs-machine-learning-vs-deep-learning",
+    "title": "AI vs. Machine Learning vs. Deep Learning",
+    "excerpt": "AI vs. Machine Learning vs. Deep Learning: Understanding the Differences Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL) are buzzwords often used int…",
+    "category": "ai",
+    "tags": [
+      "ml",
+      "fundamentals"
+    ],
+    "date": "2025-03-19",
+    "readingTime": "3 min",
+    "cover": "assets/blog/ai-vs-machine-learning-vs-deep-learning/01.png"
+  },
+  {
+    "slug": "understanding-of-application-insights",
+    "title": "Understanding of Application insights",
+    "excerpt": "Understanding Azure Application Insights Azure Application Insights is a powerful cloud-based tool designed to help developers and IT professionals monitor the performance and h…",
+    "category": "azure",
+    "tags": [
+      "monitoring",
+      "app-insights"
+    ],
+    "date": "2025-02-17",
+    "readingTime": "5 min",
+    "cover": "assets/blog/understanding-of-application-insights/01.png"
+  },
+  {
+    "slug": "integration-testing",
+    "title": "Integration testing",
+    "excerpt": "All about Integration testing What is unit testing Unit testing means testing the particular functionality or unit or single piece of code What is Integration testing Testing de…",
+    "category": "testing",
+    "tags": [
+      "qa"
+    ],
+    "date": "2024-08-07",
+    "readingTime": "1 min",
+    "cover": "assets/blog/integration-testing/01.jpg",
+    "draft": true
+  },
+  {
+    "slug": "interview-question",
+    "title": "Interview Question",
+    "excerpt": "C# question Ex plain the difference between a class and an object. Explain the difference between \"readonly\" and \"const\" keywords in C#. Describe the difference between \"abstrac…",
+    "category": "interview",
+    "tags": [
+      "csharp"
+    ],
+    "date": "2024-04-05",
+    "readingTime": "3 min",
+    "cover": "assets/blog/interview-question/01.png"
+  },
+  {
+    "slug": "css-animation",
+    "title": "CSS Animation",
+    "excerpt": "@keyframes identifier{ from { //CSS for initial state } to{ //CSS for final state b } } @keyframes identifier{ 0%{ //CSS for initial state } 100%{ //CSS for final state b } } An…",
+    "category": "frontend",
+    "tags": [
+      "css"
+    ],
+    "date": "2024-02-01",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "express-js",
+    "title": "Express JS",
+    "excerpt": "What is Express JS Express js is Node.js framework One of the most popular framework of Node.js available in the market. Express.js is a web application framework that helps in…",
+    "category": "nodejs",
+    "tags": [
+      "express"
+    ],
+    "date": "2024-01-26",
+    "readingTime": "2 min",
+    "cover": "assets/blog/express-js/01.png"
+  },
+  {
+    "slug": "important-commands",
+    "title": "Important Commands",
+    "excerpt": "General Commands CD: Change Diirectory dir : List down all the files present in current directory mkdir: To create new directory mkdir directory_name rmdir: remove directory mkd…",
+    "category": "devops",
+    "tags": [
+      "cli",
+      "tools"
+    ],
+    "date": "2023-12-29",
+    "readingTime": "1 min",
+    "cover": "assets/blog/important-commands/01.png"
+  },
+  {
+    "slug": "blazor-csharp",
+    "title": "Blazor C#",
+    "excerpt": "What is Blazor Blazor is a new technology used to build front end application by replacing you responsive code from JavaScript to C# With the help of Blazor, all the logics that…",
+    "category": "csharp",
+    "tags": [
+      "blazor"
+    ],
+    "date": "2023-10-24",
+    "readingTime": "3 min",
+    "cover": "assets/blog/blazor-csharp/01.png"
+  },
+  {
+    "slug": "react",
+    "title": "React",
+    "excerpt": "What is React React is a popular JavaScript library for building user interfaces, and it's widely used in web development. How to start with React Command Line npm install -g cr…",
+    "category": "react",
+    "tags": [
+      "frontend"
+    ],
+    "date": "2023-09-26",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "azure",
+    "title": "Azure",
+    "excerpt": "Azure provide virtual machine to host the website provides storage service to store all sort of data Software development and deployement AI MLNetwroking and Data analysis Datac…",
+    "category": "azure",
+    "tags": [
+      "cloud"
+    ],
+    "date": "2023-07-27",
+    "readingTime": "2 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "fhir",
+    "title": "FHIR",
+    "excerpt": "Introduction FHIR stands for Fast Healthcare Interoperability Recourse Two type of ingesting data Mode Batch : When you data is in bulk and you don't have time constraint Real t…",
+    "category": "general",
+    "tags": [
+      "fhir",
+      "healthcare"
+    ],
+    "date": "2023-07-27",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "smtp-implementation-in-asp-net-core",
+    "title": "SMTP implementation in Asp.net Core",
+    "excerpt": "SMTP setup the SMTP account Gmail: make sure you account has 2 step authentication after two step verification click on add password and add app and gmail will generate the pass…",
+    "category": "csharp",
+    "tags": [
+      "smtp",
+      "email"
+    ],
+    "date": "2023-07-18",
+    "readingTime": "1 min",
+    "cover": "assets/blog/smtp-implementation-in-asp-net-core/01.png",
+    "draft": true
+  },
+  {
+    "slug": "jwt-token",
+    "title": "JWT Token",
+    "excerpt": "JWT Token JWT token stand for JSON web token, and it is used to authenticate the incoming API request and allow trnsmition of json data. Configure JWT into project To implement…",
+    "category": "security",
+    "tags": [
+      "jwt",
+      "auth"
+    ],
+    "date": "2023-07-17",
+    "readingTime": "2 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "entity-framework-code-first-approach",
+    "title": "Entity Framework Code first approach",
+    "excerpt": "Create our own model model here known as entity database are created based own the model created ONCE THE MODEL AND dbCONTEXT IS CREATED THAN WE NEED TO MIGRATE THE DATA and thi…",
+    "category": "csharp",
+    "tags": [
+      "ef-core"
+    ],
+    "date": "2023-07-12",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "authorize-net",
+    "title": "Authorize.net",
+    "excerpt": "Table of Contents TOC \\o 1-3 \\h \\z \\u Authorize.Net Payment Gateway . PAGEREF _Toc138942380 \\h 2 08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F006300310033…",
+    "category": "csharp",
+    "tags": [
+      "payments",
+      "authorize-net"
+    ],
+    "date": "2023-07-03",
+    "readingTime": "5 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "learn-all-about-functions-in-javascript",
+    "title": "Learn all about Functions in Javascript",
+    "excerpt": "Introduction In Javascript, functions are one of the key building blocks on which our program relies. The block of the code that is required multiple times in the program can be…",
+    "category": "javascript",
+    "tags": [
+      "functions"
+    ],
+    "date": "2023-03-12",
+    "readingTime": "2 min",
+    "cover": "assets/blog/learn-all-about-functions-in-javascript/01.jpg"
+  },
+  {
+    "slug": "send-file-over-restfull-apis",
+    "title": "Send File Over RESTFULL APIS",
+    "excerpt": "Multipart/form-data application/json :(with base64 encoded file) multipart/related Directly posting file content in the request body with content type as the MIME type of the fi…",
+    "category": "csharp",
+    "tags": [
+      "api",
+      "rest"
+    ],
+    "date": "2023-02-16",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "git-important-commands",
+    "title": "GIT Important Commands",
+    "excerpt": "How to match you current branch with existing other branch completely clone with other branch If you want you current branch to be sync with other branch, than please follow bel…",
+    "category": "devops",
+    "tags": [
+      "git"
+    ],
+    "date": "2023-02-14",
+    "readingTime": "1 min",
+    "cover": "assets/blog/git-important-commands/01.png",
+    "draft": true
+  },
+  {
+    "slug": "angular-important-points",
+    "title": "Angular Important Points",
+    "excerpt": "How to Create BehaviorSubject (Observable in Service) First create object of BehaviourSubject private IsSideMenuCollapsed = new BehaviorSubject(false); Now add the observable to…",
+    "category": "angular",
+    "tags": [
+      "notes"
+    ],
+    "date": "2023-02-07",
+    "readingTime": "1 min",
+    "cover": "assets/blog/angular-important-points/01.png",
+    "draft": true
+  },
+  {
+    "slug": "angular-questions",
+    "title": "Angular Questions",
+    "excerpt": "Question-1: What is Observable? Answer: Observable is a function that will convert the ordinary stream of data into an observable stream of data. Observable will only emit the v…",
+    "category": "angular",
+    "tags": [
+      "interview"
+    ],
+    "date": "2023-02-07",
+    "readingTime": "1 min",
+    "cover": "assets/blog/angular-questions/01.jpg",
+    "draft": true
+  },
+  {
+    "slug": "how-to-upload-class-library-to-nuget-package",
+    "title": "How to upload class library to Nuget Package",
+    "excerpt": "Introduction to Nuget Package Nuget Package is the place where developer can upload there assembly (dll) and other users/organization can consume that assembly. Nuget Package al…",
+    "category": "csharp",
+    "tags": [
+      "nuget"
+    ],
+    "date": "2023-02-07",
+    "readingTime": "1 min",
+    "cover": "assets/blog/how-to-upload-class-library-to-nuget-package/01.jpg",
+    "draft": true
+  },
+  {
+    "slug": "javascript-different-display-ways",
+    "title": "JavaScript Different Display ways",
+    "excerpt": "Alert : alert is mostly used and common in build js method used. Syntex: alter(message); message is a string Confirm: confirm will almost same as the alert but confirm we presen…",
+    "category": "javascript",
+    "tags": [
+      "dom"
+    ],
+    "date": "2023-02-06",
+    "readingTime": "1 min",
+    "cover": "assets/blog/javascript-different-display-ways/01.png",
+    "draft": true
+  },
+  {
+    "slug": "javascript-datastructure",
+    "title": "JavaScript DataStructure",
+    "excerpt": "https://javascript.info/ function TowerOfHanoi(disCount) { let count=0 let firstTower=[]; let secondTower=[]; let thirdTower=[]; for(let i=disCount; i 0;i--){ firstTower.push(i)…",
+    "category": "javascript",
+    "tags": [
+      "data-structures"
+    ],
+    "date": "2023-02-06",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "linq",
+    "title": "LINQ",
+    "excerpt": "How to get Top n Element in collocation Using Take() method we can fetch n number of element from the collection. Syntax: var emp= employeeList.Take(2);",
+    "category": "csharp",
+    "tags": [
+      "linq"
+    ],
+    "date": "2023-02-06",
+    "readingTime": "1 min",
+    "cover": "assets/blog/linq/01.png",
+    "draft": true
+  },
+  {
+    "slug": "java-script-important-points",
+    "title": "Java script important Points",
+    "excerpt": "How to decode the URL to string var data =decodeURIComponent('https:%2F%2Fportal.orbistream.com%2Fassets%5CUserProfilePick%5Cuserprofile_638049297189919523.jpg') ; How to encode…",
+    "category": "javascript",
+    "tags": [
+      "notes"
+    ],
+    "date": "2023-02-06",
+    "readingTime": "3 min",
+    "cover": "assets/blog/java-script-important-points/01.png",
+    "draft": true
+  },
+  {
+    "slug": "design-pattern",
+    "title": "Design Pattern",
+    "excerpt": "Design Pattern Desgin Patterns are the testen and proven solution for the commonly occurred problem in the OOP programing. Types of Design Pattern Creational Structural Behaviou…",
+    "category": "architecture",
+    "tags": [
+      "design-patterns"
+    ],
+    "date": "2023-02-04",
+    "readingTime": "2 min",
+    "cover": "assets/blog/design-pattern/01.jpg",
+    "draft": true
+  },
+  {
+    "slug": "interview-preparation-questions",
+    "title": "Interview Preparation Questions",
+    "excerpt": "OOPS What are the four pillars of OOPS? Abstraction Encapsulation Inheritance Polymorphism What are Abstraction and encapsulation? Abstraction is a process in which we will hide…",
+    "category": "interview",
+    "tags": [
+      "prep"
+    ],
+    "date": "2023-02-03",
+    "readingTime": "8 min",
+    "cover": ""
+  },
+  {
+    "slug": "working-with-json-in-sql-server",
+    "title": "Working With JSON in SQL Server",
+    "excerpt": "Introduction Nowadays, JSON is the most popular language tool to communicate between different technologies, and I have seen many developers communicating with SQL serve with JS…",
+    "category": "sql",
+    "tags": [
+      "json",
+      "sql-server"
+    ],
+    "date": "2023-01-23",
+    "readingTime": "7 min",
+    "cover": "assets/blog/working-with-json-in-sql-server/01.webp"
+  },
+  {
+    "slug": "primevue",
+    "title": "PrimeVue",
+    "excerpt": "Data table Installation npm install primevue@ ^ 3 -- save npm install primeicons -- save Configuration In main.js import PrimeVue from 'primevue/config' ; import DataTable from…",
+    "category": "vue",
+    "tags": [
+      "primevue",
+      "ui"
+    ],
+    "date": "2023-01-02",
+    "readingTime": "2 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "shortcut-in-programing",
+    "title": "Shortcut in Programing",
+    "excerpt": "SQL Shortcuts: Past 10 copy item paste: ctrl+shift hold and press v each time to paste the past copy statements. You can only paste the latest 10 copies. Formatting Shortcuts: i…",
+    "category": "general",
+    "tags": [
+      "tips"
+    ],
+    "date": "2022-12-14",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "vue-js",
+    "title": "Vue Js",
+    "excerpt": "Important Command in VUE How to install NPM in Vue JS Open Node CMD = open the project location run the command = npm install How to check the version of Vue vue --version Insta…",
+    "category": "vue",
+    "tags": [
+      "frontend"
+    ],
+    "date": "2022-12-07",
+    "readingTime": "11 min",
+    "cover": "assets/blog/vue-js/01.png"
+  },
+  {
+    "slug": "csharp-important-questions",
+    "title": "C# Important Questions",
+    "excerpt": "Question-1: What is C#? Answer : C# is a computer programming language developed by Microsoft in 2000. Using C# language we can develop different types of applications such as w…",
+    "category": "interview",
+    "tags": [
+      "csharp",
+      "dotnet"
+    ],
+    "date": "2022-09-12",
+    "readingTime": "5 min",
+    "cover": "assets/blog/csharp-important-questions/01.jpg"
+  },
+  {
+    "slug": "object-oriented-programming-language",
+    "title": "Object Oriented Programming Language",
+    "excerpt": "What is Object oriented programing ? Object-oriented programming AKA OOP's is a programmatical concept which is used in most of modern programming languages as a building block…",
+    "category": "csharp",
+    "tags": [
+      "oop"
+    ],
+    "date": "2022-09-12",
+    "readingTime": "4 min",
+    "cover": "assets/blog/object-oriented-programming-language/01.png"
+  },
+  {
+    "slug": "all-about-arrays",
+    "title": "All About Arrays",
+    "excerpt": "What is Array An array is collection of element stored in continuous memory. Here element could be anything, it could be a collection of integer ,string and objects. There are s…",
+    "category": "algorithms",
+    "tags": [
+      "arrays"
+    ],
+    "date": "2022-08-17",
+    "readingTime": "3 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "data-structure-and-algorithms",
+    "title": "Data Structure And Algorithms",
+    "excerpt": "What is Data Structure Data structure are like a container which store the data in it within main memory, and we using data structure so that we can effectively store, retrieve…",
+    "category": "algorithms",
+    "tags": [
+      "dsa"
+    ],
+    "date": "2022-08-13",
+    "readingTime": "2 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "sql-server",
+    "title": "SQL server",
+    "excerpt": "1) Topic: Comma Separated String Problem: When you need comma seprated string as an output from a column of a select query. Solution 1: Assume You need comma separated countries…",
+    "category": "sql",
+    "tags": [
+      "sql-server"
+    ],
+    "date": "2022-07-26",
+    "readingTime": "2 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "starting-of-programming",
+    "title": "Starting of Programming.",
+    "excerpt": "Initially we need to understand from where we should start exploring in word of programming. Because there are lots of programming languages out in the market and there are lot…",
+    "category": "general",
+    "tags": [
+      "basics"
+    ],
+    "date": "2022-07-25",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "angular",
+    "title": "Angular",
+    "excerpt": "Introduction · Angular is based type script · Javascript is object based scripting programming language whereas typescript is object oriented scripting language General points ·…",
+    "category": "angular",
+    "tags": [
+      "notes"
+    ],
+    "date": "2022-07-03",
+    "readingTime": "20 min",
+    "cover": "",
+    "draft": true
+  },
+  {
+    "slug": "intro-with-csharp",
+    "title": "Intro With C#",
+    "excerpt": "C# Introduction C# is a simple, modern, general-purpose, object-oriented programming language Developed by Microsoft team led by Anders Hejlsberg. Note: C# was developed at time…",
+    "category": "csharp",
+    "tags": [
+      "basics"
+    ],
+    "date": "2019-09-21",
+    "readingTime": "1 min",
+    "cover": "",
+    "draft": true
   }
 ]

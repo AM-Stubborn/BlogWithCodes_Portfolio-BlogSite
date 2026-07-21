@@ -1,0 +1,100 @@
+<h2 style="text-align: left;"> What is Blazor </h2>
+<div>Blazor is a new technology used to build front end application by replacing you responsive code from JavaScript to C# </div>
+<div><br /></div>
+<div>With the help of Blazor, all the logics that need to written in JavaScript language can be replaced with the C# code. </div>
+<div><br /></div>
+<div>there are two type of APP we can create with Blazor </div>
+<div><br /></div>
+<div>
+   <ul style="text-align: left;">
+      <li><b>Blazor web assembly: </b>Application can be run at client side and events are handled over browser/Client side. </li><ul><li>while building the application we have choice to create application with ASP.NET Core Hosted </li><li>If we chose this option that means IDE will give you a project that enables API calling and if we not select that the application will provide an application that could not utilize API </li></ul>
+      <li><b>Blazor server App: </b>Application is handled throw signal-r and events are handled at server side </li>
+   </ul>
+</div>
+<div><br /></div>
+<h2 style="text-align: left;">Folder Structure </h2>
+<div style="text-align: left;"><b>Pages:</b> Contain all the view design,</div>
+<div style="text-align: left;"><b>Shared</b>: Contains the Layout design, or the design/View that are repeatedly used. </div>
+<div style="text-align: left;"><b>Program: </b>Entry point of the application. </div>
+<div style="text-align: left;"><b>App.razor: </b>Root component </div>
+<div style="text-align: left;"><br /></div>
+<h2 style="text-align: left;">Components </h2>
+<div>
+   <ul style="text-align: left;">
+      <li>A component is the portion of the UI that can be used in multiple page.</li>
+      <li>Component can be called inside other component by component name as shown below<a href="https://blogger.googleusercontent.com/img/a/AVvXsEhvOonRcph3gxTj4nTdUgFkLi4H0-P_-oXYvJC7djRavDq-OFL2X66BKfmccu_FMA0iLMhKAjM7KU1J6o0-gdj9tidKh6U3VSkjabIjwEEGQyDrzhc68fcYk5bdxFd-xzw6ExsZujnG0bzawiuIMk5uB9ybzvsOEhI_f-JG9t6ffDHaNElO7d-tLl4csZo" style="margin-left: 1em; margin-right: 1em; text-align: center;"><img alt="" data-original-height="780" data-original-width="1387" height="264" src="assets/blog/blazor-csharp/01.png" width="469" /></a> </li>
+      <li>
+         <div class="separator" style="clear: both; text-align: left;">The property can be used in HTML part just by using @ symbol with property </div>
+      </li>
+   </ul>
+</div>
+<div>
+   <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgKY4XF6h3mjiiaIa334RBVwUg-86FA1qoZvlTgRZiVh7O5vanJq73k76I7NlpUAXTm8bkv54in0IG-C4AzIBvJWQ0SXvm1DMOqYfH8Xh9JeoUjuKEmJVOAWwJBQqRrw-W-ERAFAj2EZWa6tHtyVBGLt1OHYejuMQrnZSXU-aMzJUceQ2Ei9qIzvzameWM" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="458" data-original-width="922" height="221" src="assets/blog/blazor-csharp/02.png" width="445" /></a></div>
+   <div class="separator" style="clear: both; text-align: center;">
+      <ul>
+         <li style="text-align: left;">@Page is used to allow the component routing, and will be visible on the screen when same path is passed in the URL</li>
+         <li style="text-align: left;">
+            We can have multiple @Page values which indicate that, the current component will be visible for both the route. 
+            <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgb-8Kv1dRCr7hrVlhjbRExmO0WHTW_U4cGviG-KggQlJJeezsDtzBOD08nanyGOmF7QoHUKeghUAOuChnHUzO6ggu1tLTucEKsO7XIgrLrLsQNIOHtPmbqApPtHDNF8W3-9ReEUiHAKnAFRdfm273uoJPa7ZoYV5D-BighMZ27Fa_EU-yyILGxVm-Hqmo" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="500" data-original-width="985" height="241" src="assets/blog/blazor-csharp/03.png" width="476" /></a></div>
+         </li>
+      </ul>
+   </div>
+</div>
+<h3 style="text-align: left;">Communication between child and parent component </h3>
+<div>Parent can pass the data to the child as a Parameter </div>
+<div>
+   <div class="separator" style="clear: both; text-align: center;">
+      <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEi7J5nTRpNnCppSvc8F-NMqJWdlZ6QJV9PbUpxyjBfhAcqXbgLzyEulGa05m4z8r_oR7iun72Wld42qOwvMbkp1zE1gW_QgnthjYQNrsjvKyogkcin4G6isasIV89gtZVUrLzXqFlOFKrCcwJg3hFsX8mz2K1z_Z5dU-Y873ZCqCZSu076pXRIwon4mNOA" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="205" data-original-width="768" height="137" src="assets/blog/blazor-csharp/04.png" width="516" /></a></div>
+      <br /><br />
+   </div>
+   When the child component is being called inside the parent component, at that time just pass the property <br />
+   <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhKLDUlJTzheRGoO-d_R8ExpOGuVW6liZPmtix5l-YlZPsz7iKHbK7wDMmmVeoRCJs2vu2wKNxFkyKrZeNY78hAi03ePjTtWaE4XhWuODOyinktjYTFg3aKYjoYK98AckvPF7V0LTiIbw1XoOg6wGLn6lhFw81s-9MPoGTF8CiHk5amfIJYGaJGq_yhllI" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="383" data-original-width="957" height="174" src="assets/blog/blazor-csharp/05.png" width="435" /></a></div>
+   <br />And in Child component, just decorate the property with [Parameter] attribute and this is how you communicate from parent to child. 
+</div>
+<h3 style="text-align: left;"> Routing </h3>
+<div>
+   <ul style="text-align: left;">
+      <li>Components routes using @page directive </li>
+      <li>we can have multiple route of the same component </li>
+      <li>
+         we can pass the route parameter as shown below 
+         <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjcoQf4ydBXNfTdE-lkrmXX_yESTvOVd9dhp5IxyiiZ-tP50biUbsSR6I4fTlIWdTTHoh6BFNjYhCyP01y_SOqSvlSxdZ1IF12PynQznmI0R-Ix6GBXFbvixisSCXxGenpnKA0Cv6Fs6APiGc8uy1ioeP5hE1RKeGu8movHZkp_ZhLzk1RZErfG3p0damc" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="452" data-original-width="977" height="201" src="assets/blog/blazor-csharp/06.png" width="434" /></a></div>
+         <br />
+      </li>
+      <li>
+         we can set route parameter constraints as shown below 
+         <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEioBEDielpTsLb9AwTygxYVAGdaO4DNkVJxMLeXXkjbtZHt261rfL4pGpHyOPTaW_1gbwr-0je2Z6gqDELzEOOydF22ykXUn_jbjNKQs3eiV5d61Mg8pWEme7cC5W_HEHucMNMYls5fa4hNIhstWQ-5DZ3oCGUYanjNGJTMtleOfW4Op7o78bGnzEG10u0" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="342" data-original-width="950" height="153" src="assets/blog/blazor-csharp/07.png" width="426" /></a></div>
+      </li><li><div class="separator" style="clear: both; text-align: left;">To set side menu to redirect from one component to other, blazor user NavLink to to that <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEiAf9kbzVu_OhImTd8QvpBqa0CjnC8ZljGPuSAx7cGueIZKVbeuGmN61b1Fun2sbaNAP6fjaW59z7Z0-wwwrYqqw8nDAr939unZRiQ2__9VU3ms2ZpOlmFur_k605h2tY9dIEcqha0OdAaq9TOhPrjRzsOmYHcF1ijsDe0zq0CqP6g3nDjO24RfbqrbmCY" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="561" data-original-width="1187" height="209" src="assets/blog/blazor-csharp/08.png" width="442" /></a></div><br /></div></li>
+   </ul>
+   <div style="text-align: center;"><br /></div>
+   <h3 style="text-align: left;">Layout </h3>
+   <div>we can specify<span>  </span> layout component to component by using <b>@layout layout_name</b>.</div>
+   <h2 style="text-align: left;">Binding</h2>
+   <div>
+      <ul style="text-align: left;">
+         <li>Binding is done using @bind keyword </li>
+         <li>@bind provide two way binding </li>
+         <li>By default binding happen on onChange event </li>
+         <li>we can change binding event as shown  using @bind:event="Event<a href="https://blogger.googleusercontent.com/img/a/AVvXsEiq6rqbWecV3dKhHzru2hzEwRunsMwcAQcIW7UXb04fEKPwKvVLunQ4OAbKlc-kTEHDMeZG1wptF1fGtD1zkY1MlKNr0Wl2AniIVHHKtwDLIy7rmf5m8WxvPULM6Kr4CuhlDd_q52a0KEUN_6pU7XymByPp8cjMxwZ2Ex_v8N8hgOF5JnM40xQtjZcIaJ0" style="margin-left: 1em; margin-right: 1em; text-align: center;"><img alt="" data-original-height="433" data-original-width="958" height="207" src="assets/blog/blazor-csharp/09.png" width="456" /></a></li>
+         <li>
+            We can also set the format of the bind as shown below 
+            <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhKjF05rRq-jmrBPKGbUaGvtOFAB1lTWaXJfVftlY_sYLf6RWLK2veNWZ_hWGgkyfGX4dj1zv3vzHmF74JL52SFKeP6QUuU6Bl22HJ5SdlAWkSKiqETZTdj20cPv2lh5jAx8Gwa0Lt67ivC175FM_mxSkI_lga5ZC1Nd1ddDUJaFRsnF7f4DS_FPCDdgkE" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="468" data-original-width="1022" height="268" src="assets/blog/blazor-csharp/10.png" width="584" /></a></div>
+            <br /><br />
+         </li>
+      </ul>
+      <h2>Service in Page </h2>
+      <ul style="text-align: left;">
+         <li>service can be used in the component </li>
+         <li>w<span style="font-family: inherit;">e need to configur</span>e servcie in program.cs File as show below</li>
+      </ul>
+     <pre><code>
+     
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+builder.Services.AddSingleton&lt;weatherforecastservice&amp;gt();
+</code></pre>
+<ul style="text-align: left;"><li><span>To make a rest call to get data from external API we need to a add HttpClient service in Program.cs file </span></li><li style="text-align: right;">after adding the Httpclient service depandancy in program.cs file, inject the service in which you want to make a API call <a href="https://blogger.googleusercontent.com/img/a/AVvXsEg6VfAeR-qJgp9UUrXk7iNAVntbBf8EF2PQZLGr7rixU8yS_DKyuGpxlY-Gtfdrt7TVEDkpmJLNPB9A-nc9yyLpucuyp6uL_B0OMIP7YlirrV8_qYzx9vMRF9Ig87cIHutUlN5UN_ERjkKwQQobihS-JHhuOznjpiSNi1sxJRdw5m_zAjaSHufU5JAp6HU" style="margin-left: 1em; margin-right: 1em; text-align: center;"><img alt="" data-original-height="206" data-original-width="771" height="120" src="assets/blog/blazor-csharp/11.png" width="452" /></a><a href="assets/blog/blazor-csharp/12.png" style="margin-left: 1em; margin-right: 1em; text-align: center;"><img alt="" data-original-height="197" data-original-width="530" height="145" src="assets/blog/blazor-csharp/12.png" width="390" /></a></li><li></li><li><br /><br /></li></ul><h3 style="text-align: left;">Event  callback </h3><ul style="text-align: left;"><li>Eventcall back is same as emitting the event from child to the parent</li></ul><h3 style="text-align: left;">Cascading Parameter </h3><h3 style="text-align: left;">State Management </h3><h2 style="text-align: left;">Forms </h2><div><ul style="text-align: left;"><li>EditForm is used to create form in blazor </li><li>Attribute of EditFrom are </li><ul><li>Model: that bind with the form </li><li>onValidSubmit: when form is a valid roperty that it will invoke the function associated with it. </li><li><br /></li></ul></ul></div><div><br /></div>
+</div></div>

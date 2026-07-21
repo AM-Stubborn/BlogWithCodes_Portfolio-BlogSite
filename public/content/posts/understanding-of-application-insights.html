@@ -1,0 +1,152 @@
+<p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSigtXh-OLwrnmvXrqEDExljR0Ep0EdeBDBRu7SbTOCM3hoRjD9YAhO1Y7GA-GO7GlD_mZixMQg9zZqt_DN2gKzgiKr8pe0K-gBlZHGXoCXdZXkmV3yOF9LCwcjHDac5CdIKfgOVE4Rn0h3iHQHSNnSF23QfbOlRyEnB88pCGcbTUm9HEGQsOeUJTJeNU/s1366/Introdion.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="265" src="assets/blog/understanding-of-application-insights/01.png" width="473" /></a></div><br /><strong><br /></strong><p></p><p><strong>Understanding Azure Application Insights</strong></p><p>Azure Application Insights is a powerful cloud-based tool designed to help developers and IT professionals monitor the performance and health of their applications. It provides real-time insights into how applications are behaving, helping teams detect, diagnose, and fix issues quickly. Application Insights is part of the broader Azure Monitor suite and is particularly useful for tracking requests, dependencies, exceptions, and performance metrics.</p><p><strong>Why Use Azure Application Insights?</strong></p><p>Modern applications consist of multiple components, such as web servers, databases, APIs, and third-party services. Monitoring these components is essential to ensure users have a seamless experience. Azure Application Insights enables developers to:</p><ul>
+<li>Track application performance and identify bottlenecks</li>
+<li>Detect errors and failures in real-time</li>
+<li>Understand user interactions and behavior</li>
+<li>Gain insights into application dependencies</li>
+<li>Set up alerts and notifications for potential issues</li>
+</ul><p>By leveraging Application Insights, teams can proactively maintain application reliability and enhance overall user satisfaction.</p><p><strong>How Azure Application Insights Works</strong></p><p>Application Insights collects and analyzes telemetry data from various sources within an application. The process involves:</p><ol>
+<li><strong>Instrumentation</strong>: The application is configured to send telemetry data to Application Insights using an SDK (for .NET, Java, Python, Node.js, etc.).</li>
+<li><strong>Data Collection</strong>: The tool gathers data on user interactions, errors, dependencies, and system performance.</li>
+<li><strong>Storage and Analysis</strong>: The collected data is stored in Azure Log Analytics, where it can be queried and analyzed.</li>
+<li><strong>Visualization</strong>: Developers can use dashboards, charts, and reports to understand application behavior and performance trends.</li>
+</ol><p><strong>Key Features of Azure Application Insights</strong></p><ol>
+<li><strong>Live Metrics</strong>: Provides real-time insights into an application’s activity, including request rates, response times, and failure rates.</li>
+<li><strong>Request and Response Tracking</strong>: Helps identify slow or failing requests to optimize performance.</li>
+<li><strong>Exception Tracking</strong>: Captures unhandled exceptions and errors to assist in debugging.</li>
+<li><strong>Dependency Tracking</strong>: Monitors calls to external services, databases, and APIs.</li>
+<li><strong>User Telemetry</strong>: Tracks user activity, including page views, session duration, and navigation flow.</li>
+<li><strong>Alerts and Notifications</strong>: Sends automated alerts when performance thresholds are breached.</li>
+<li><strong>Integration with Other Tools</strong>: Works with Azure DevOps, Power BI, and third-party analytics tools.</li>
+</ol><p><strong>Setting Up Azure Application Insights</strong></p><p>To use Application Insights, follow these steps:</p><ol>
+<li>
+<p><strong>Create an Application Insights Resource</strong></p>
+<ul>
+<li>Log in to the <strong>Azure Portal</strong>.</li>
+<li>Navigate to <strong>Create a resource</strong> &gt; <strong>Monitoring</strong> &gt; <strong>Application Insights</strong>.</li>
+<li>Choose a name, select a resource group, and specify the application type (e.g., ASP.NET, Java, Node.js).</li>
+<li>Click <strong>Create</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Integrate Application Insights with Your Application</strong></p>
+<ul>
+<li>For .NET applications, install the Application Insights SDK using NuGet:
+<pre><code class="language-powershell">Install-Package Microsoft.ApplicationInsights.AspNetCore
+</code></pre>
+</li>
+<li>For Java, use the Application Insights agent.</li>
+<li>For JavaScript applications, include the telemetry script in the frontend.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure Telemetry Collection</strong></p>
+<ul>
+<li>Set up the instrumentation key in your application’s configuration file.</li>
+<li>Enable automatic telemetry collection for requests, exceptions, dependencies, and logs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Deploy and Monitor</strong></p>
+<ul>
+<li>Deploy the application and start monitoring telemetry data in the Azure Portal.</li>
+<li>Use the Logs section to run queries and analyze data.</li>
+</ul>
+</li>
+</ol><p><strong>Querying Logs in Application Insights</strong></p><p>Application Insights stores telemetry data in <strong>Azure Log Analytics</strong>, where it can be queried using <strong>Kusto Query Language (KQL)</strong>. The <strong>Logs</strong> section in the Azure Portal provides a powerful way to explore and analyze collected data.</p><h3>Basic KQL Queries</h3><ol>
+<li>
+<p><strong>View All Requests</strong></p>
+<pre><code class="language-kusto">requests
+| take 10
+</code></pre>
+<p>This query retrieves the last 10 request logs.</p>
+</li>
+<li>
+<p><strong>Filter Failed Requests</strong></p>
+<pre><code class="language-kusto">requests
+| where success == false
+</code></pre>
+<p>This query returns all failed requests.</p>
+</li>
+<li>
+<p><strong>Find Errors in the Last 24 Hours</strong></p>
+<pre><code class="language-kusto">exceptions
+| where timestamp &gt; ago(24h)
+</code></pre>
+<p>This fetches exceptions that occurred in the past day.</p>
+</li>
+<li>
+<p><strong>Group by Response Code</strong></p>
+<pre><code class="language-kusto">requests
+| summarize count() by resultCode
+</code></pre>
+<p>This query groups requests by response codes (e.g., 200, 404, 500).</p>
+</li>
+<li>
+<p><strong>Monitor Performance Trends</strong></p>
+<pre><code class="language-kusto">requests
+| summarize avg(duration) by bin(timestamp, 1h)
+</code></pre>
+<p>This provides the average request duration per hour.</p>
+</li>
+</ol><h3>Advanced Queries</h3><ol>
+<li>
+<p><strong>Identify Slow API Calls</strong></p>
+<pre><code class="language-kusto">dependencies
+| where duration &gt; 500ms
+</code></pre>
+<p>This highlights API calls taking longer than 500ms.</p>
+</li>
+<li>
+<p><strong>Track User Sessions</strong></p>
+<pre><code class="language-kusto">pageViews
+| summarize count() by user_Id
+</code></pre>
+<p>This counts page views per user.</p>
+</li>
+<li>
+<p><strong>Detect Anomalies in Requests</strong></p>
+<pre><code class="language-kusto">requests
+| summarize avg(duration) by bin(timestamp, 10m)
+| where avg_duration &gt; 2000
+</code></pre>
+<p>This detects request durations exceeding 2 seconds in 10-minute intervals.</p>
+</li>
+</ol><p><strong>Visualizing Data in Application Insights</strong></p><p>Azure provides multiple visualization tools to interpret telemetry data:</p><ul>
+<li><strong>Dashboards</strong>: Customize dashboards with charts and tables to monitor key metrics.</li>
+<li><strong>Workbooks</strong>: Create interactive reports combining KQL queries and visual elements.</li>
+<li><strong>Alerts</strong>: Set up alerts based on specific conditions, such as high failure rates or slow response times.</li>
+<li><strong>Smart Detection</strong>: Uses AI to detect anomalies and suggest improvements.</li>
+</ul><p><strong>Best Practices for Using Application Insights</strong></p><ol>
+<li><strong>Enable Sampling</strong>: Reduce telemetry data volume without losing critical insights.</li>
+<li><strong>Use Custom Events</strong>: Track business-specific metrics for deeper insights.</li>
+<li><strong>Correlate Logs</strong>: Link logs across different services to diagnose issues efficiently.</li>
+<li><strong>Automate Alerts</strong>: Set up alerts to be notified of critical failures.</li>
+<li><strong>Optimize Queries</strong>: Use efficient KQL queries to retrieve relevant data quickly.</li>
+<li><strong>Integrate with DevOps</strong>: Automate monitoring as part of the CI/CD pipeline.</li>
+</ol><p><strong>Conclusion</strong></p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p>Azure Application Insights is a vital tool for modern application monitoring. By collecting, analyzing, and visualizing telemetry data, it helps developers and IT teams detect performance issues, diagnose failures, and optimize application performance. Whether monitoring a web app, API, or cloud service, Application Insights provides deep insights to maintain high reliability and enhance user experience. By leveraging KQL queries, dashboards, and alerts, teams can proactively manage applications and ensure seamless functionality. Start using Application Insights today to gain better control over your application’s health and performance!</p>
