@@ -1,7 +1,9 @@
 export interface SocialLinks {
   github: string;
   linkedin: string;
-  twitter: string;
+  twitter?: string;
+  instagram?: string;
+  /** Prefer mailto:… for in-app mail links. */
   email: string;
   blogger?: string;
 }
@@ -32,6 +34,8 @@ export interface Experience {
   role: string;
   period: string;
   location?: string;
+  /** Official company website when available. */
+  companyUrl?: string;
   summary: string;
   highlights: string[];
   tech: string[];
@@ -77,7 +81,10 @@ export interface BlogPostMeta {
   tags: string[];
   date: string;
   readingTime: string;
+  /** Local asset path; empty string when no cover. */
   cover: string;
+  /** When true, hidden from lists/previews but still reachable by slug URL. */
+  draft?: boolean;
 }
 
 export interface BlogPost extends BlogPostMeta {

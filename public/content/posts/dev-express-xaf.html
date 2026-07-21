@@ -1,0 +1,264 @@
+<p>Roadmap for XAF learning </p><p>🔹 Phase 1: Foundation (Basics of XAF)</p>
+<ul>
+<li>
+<p><strong>What is XAF?</strong></p>
+<ul>
+<li>
+<p>Understand the idea of <em>Model-Driven Development</em> (you define business objects, UI and APIs get generated).</p>
+</li>
+<li>
+<p>Learn the architecture: <strong>Application &gt; Modules &gt; BO (Business Objects) &gt; Controllers</strong>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>XPO &amp; EF Core ORM</strong></p>
+<ul>
+<li>
+<p>XAF can use <strong>XPO (DevExpress ORM)</strong> or <strong>Entity Framework Core</strong>.</p>
+</li>
+<li>
+<p>Learn how to choose one (XPO is older and more integrated; EF is standard).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>XAF Application Types</strong></p>
+<ul>
+<li>
+<p>WinForms</p>
+</li>
+<li>
+<p>Blazor (recommended, modern choice)</p>
+</li>
+<li>
+<p>ASP.NET WebForms (legacy, less used today)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>XAF Solution Structure</strong></p>
+<ul>
+<li>
+<p><strong>MySolution.Module</strong> (business logic, entities, controllers)</p>
+</li>
+<li>
+<p><strong>MySolution.Win</strong> (UI for WinForms)</p>
+</li>
+<li>
+<p><strong>MySolution.Blazor</strong> (UI for Blazor)</p>
+</li>
+<li>
+<p><strong>MySolution.Module.Blazor/Win</strong> (platform-specific tweaks)</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>🔹 Phase 2: Data Layer &amp; Business Objects</h2>
+<ul>
+<li>
+<p><strong>Business Objects</strong></p>
+<ul>
+<li>
+<p>Persistent classes (<code inline="">XPObject</code>, <code inline="">BaseObject</code>, <code inline="">XPLiteObject</code>)</p>
+</li>
+<li>
+<p>Attributes (<code inline="">[Key]</code>, <code inline="">[Association]</code>, <code inline="">[Aggregated]</code>, <code inline="">[Persistent]</code>, etc.)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Relationships</strong></p>
+<ul>
+<li>
+<p>One-to-many, many-to-many</p>
+</li>
+<li>
+<p>Aggregation vs Association</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Validation Rules</strong></p>
+<ul>
+<li>
+<p>Attribute-based validation</p>
+</li>
+<li>
+<p>Rule sets in the model</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>🔹 Phase 3: UI &amp; Model Layer</h2>
+<ul>
+<li>
+<p><strong>Application Model</strong></p>
+<ul>
+<li>
+<p>Model Editor (central config for UI, security, navigation, etc.)</p>
+</li>
+<li>
+<p>Difference between <em>Model.Designed</em> and <em>Model.User</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Views</strong></p>
+<ul>
+<li>
+<p>List Views (grids)</p>
+</li>
+<li>
+<p>Detail Views (forms)</p>
+</li>
+<li>
+<p>Dashboards</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Layouts</strong></p>
+<ul>
+<li>
+<p>Customizing UI layouts in Designer</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Controllers &amp; Actions</strong></p>
+<ul>
+<li>
+<p>ViewController vs WindowController</p>
+</li>
+<li>
+<p>SimpleAction, PopupAction, ParametrizedAction</p>
+</li>
+<li>
+<p>Event hooks (<code inline="">OnActivated</code>, <code inline="">OnDeactivated</code>, <code inline="">OnViewControlsCreated</code>)</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>🔹 Phase 4: Security &amp; Authentication</h2>
+<ul>
+<li>
+<p><strong>Security System</strong></p>
+<ul>
+<li>
+<p>Authentication (Username/Password, OAuth, Windows)</p>
+</li>
+<li>
+<p>Permissions</p>
+</li>
+<li>
+<p>Roles &amp; Users</p>
+</li>
+<li>
+<p>Object-level &amp; member-level security</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Multi-Tenancy</strong></p>
+<ul>
+<li>
+<p>If your project needs per-client data separation.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>🔹 Phase 5: Advanced Features</h2>
+<ul>
+<li>
+<p><strong>State Machines</strong></p>
+<ul>
+<li>
+<p>Workflow/state management for entities</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Reports &amp; Dashboards</strong></p>
+<ul>
+<li>
+<p>Built-in report designer</p>
+</li>
+<li>
+<p>DevExpress Dashboards integration</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Localization</strong></p>
+<ul>
+<li>
+<p>Multi-language support via model editor</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Auditing &amp; Logging</strong></p>
+<ul>
+<li>
+<p>Object change history</p>
+</li>
+<li>
+<p>Audit trail module</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>File Attachments</strong></p>
+<ul>
+<li>
+<p>FileData, FileSystemData objects</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>🔹 Phase 6: Deployment &amp; Extensibility</h2>
+<ul>
+<li>
+<p><strong>Hosting</strong></p>
+<ul>
+<li>
+<p>IIS / Kestrel for Blazor</p>
+</li>
+<li>
+<p>Desktop installer for WinForms</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Extending XAF</strong></p>
+<ul>
+<li>
+<p>Custom modules</p>
+</li>
+<li>
+<p>Reusable controllers</p>
+</li>
+<li>
+<p>Integration with external APIs</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance Tuning</strong></p>
+<ul>
+<li>
+<p>Large dataset handling</p>
+</li>
+<li>
+<p>Optimizing XPO/EF queries</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><br /></h2>

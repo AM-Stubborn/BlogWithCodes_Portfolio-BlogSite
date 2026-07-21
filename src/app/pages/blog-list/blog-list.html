@@ -49,7 +49,7 @@
           <a routerLink="/blog" class="btn-secondary mt-6 inline-flex">Back to all posts</a>
         </div>
       } @else {
-        <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <div class="mt-12 grid gap-5 md:grid-cols-2">
           @for (post of posts; track post.slug) {
             <app-post-card [post]="post" />
           }

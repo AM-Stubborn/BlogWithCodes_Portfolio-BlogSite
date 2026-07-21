@@ -4,17 +4,17 @@
   "tagline": "Full-stack delivery powered by agentic coding — Cursor, Copilot, and Claude in the IDE.",
   "role": "Senior Software Developer",
   "location": "India · Remote-friendly",
-  "email": "",
+  "email": "m.mahimanish17@gmail.com",
   "availability": "Open to collaboration, mentoring, and AI-augmented full-stack challenges",
   "about": "Hi, I’m Manish Bhatia — a passionate software developer and the creator of BlogWithCodes. With a strong background in full-stack development, I enjoy working with new technologies and solving complex challenges. Lately my focus is agentic coding: shipping real projects with AI agents inside the IDE while keeping architecture, security, and code quality under human ownership. I also integrate AI into products using Gemini and ChatGPT where it adds clear business value.",
   "bio": "I specialize in .NET Core, Angular, React, SQL Server, and Azure operations — plus AI product integrations with Gemini and ChatGPT, and agentic coding with Cursor, GitHub Copilot, and Claude. Outside the IDE, I’m a trekker and traveller.",
   "journey": "I started as a Junior Developer focused on clean code and fundamentals. Over time I built expertise across .NET, Angular, React, and SQL Server — shipping applications from scratch, maintaining legacy systems, designing architectures, implementing secure APIs, and running applications on Azure. I’ve worked across monolithic and microservices architectures, mentored junior developers, and improved code quality on critical business systems. Today, as a Senior Software Developer, I lead delivery efforts and pair engineering judgment with agentic coding and practical AI integrations to move faster without sacrificing maintainability.",
   "heroCardTitle": "Build it. Deploy it on Azure. Accelerate it with AI.",
   "social": {
-    "github": "https://github.com",
-    "linkedin": "https://linkedin.com",
-    "twitter": "https://x.com",
-    "email": "https://blogwithcodes.blogspot.com/p/contribute-us.html",
+    "github": "https://github.com/AM-Stubborn",
+    "linkedin": "https://www.linkedin.com/in/manish-bhatia-551ba0170/",
+    "instagram": "https://www.instagram.com/_am_stubborn_/",
+    "email": "mailto:m.mahimanish17@gmail.com",
     "blogger": "https://blogwithcodes.blogspot.com/"
   },
   "expertiseHighlights": [
@@ -124,16 +124,15 @@
       "role": "Senior Software Engineer · Team Lead",
       "period": "Most recent",
       "location": "India",
+      "companyUrl": "https://techbitsolutions.com/",
       "summary": "At Techbit, I led multiple projects as a Senior Software Engineer, handling full-stack development with .NET Core, Angular, React, and SQL Server. I owned Azure deployment and operations — Key Vault, storage, databases, Insights, RBAC, CI/CD, and multi-server VM environments — and integrated AI capabilities with Gemini and ChatGPT where needed.",
       "highlights": [
         "Led multiple full-stack projects end-to-end across concurrent deliveries",
         "Guided junior developers, ran code reviews, and upheld high engineering standards",
-                "Owned client communication and multitasking across project priorities",
         "Owned client communication and multitasking across project priorities",
         "Owned Azure ops: Key Vault, storage accounts, databases, Insights, and role-based access",
         "Ran CI/CD pipelines and maintained web + database servers on Azure VMs",
         "Integrated Gemini and ChatGPT into product features with secure API usage"
-        
       ],
       "tech": [
         ".NET Core",
@@ -152,6 +151,7 @@
       "role": "Full-Stack Developer",
       "period": "Product chapter",
       "location": "India",
+      "companyUrl": "https://www.cogniter.com/",
       "summary": "At Cogniter, I worked as a full-stack developer building web applications with .NET Core, Angular, Vue 3, and SQL Server. I developed secure RESTful APIs, integrated frontend components, and optimized database queries for performance.",
       "highlights": [
         "Built secure REST APIs and integrated modern frontend components",
@@ -174,6 +174,7 @@
       "role": "Trainee → Senior Software Engineer",
       "period": "Enterprise chapter",
       "location": "India",
+      "companyUrl": "https://www.capgemini.com/",
       "summary": "At Capgemini, I progressed from Trainee to Senior Software Engineer, working on enterprise applications, system monitoring, and troubleshooting. I handled batch job failures, root cause analysis, and system performance enhancements on large-scale .NET systems.",
       "highlights": [
         "Grew from Trainee to Senior Software Engineer on enterprise applications",

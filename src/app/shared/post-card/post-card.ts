@@ -12,9 +12,15 @@ import { Icon } from '../icon/icon';
   styleUrl: './post-card.scss',
 })
 export class PostCard {
+  private static readonly PLACEHOLDER_COVER = 'assets/blog/placeholder.svg';
+
   private readonly blogService = inject(BlogService);
 
   @Input({ required: true }) post!: BlogPostMeta;
+
+  get coverSrc(): string {
+    return this.post.cover || PostCard.PLACEHOLDER_COVER;
+  }
 
   formatDate(date: string): string {
     return this.blogService.formatDate(date);

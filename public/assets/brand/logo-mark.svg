@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" role="img" aria-label="BlogWithCodes">
+  <!-- Left code bracket -->
+  <path fill="#0b1c2c" d="M34 46 L18 64 L34 82 L42 74 L32 64 L42 54 Z"/>
+  <!-- Right code bracket -->
+  <path fill="#0b1c2c" d="M94 46 L110 64 L94 82 L86 74 L96 64 L86 54 Z"/>
+  <!-- Mountain peaks -->
+  <path fill="#1d6a7a" d="M40 70 L58 34 L68 52 L80 28 L102 70 Z"/>
+  <!-- Center slash peak -->
+  <path fill="#2a9aaa" d="M62 48 L74 70 L66 70 L56 54 Z"/>
+  <!-- Pine tree -->
+  <path fill="#2f6b4f" d="M78 52 L90 72 L96 72 L84 52 Z"/>
+  <path fill="#2f6b4f" d="M80 44 L90 60 L98 60 L88 44 Z"/>
+  <rect x="87" y="70" width="5" height="12" rx="1" fill="#0b1c2c"/>
+</svg>

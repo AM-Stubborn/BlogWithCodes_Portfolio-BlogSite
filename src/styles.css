@@ -94,6 +94,10 @@
     @apply max-w-none text-ink-soft/90;
   }
 
+  .prose-blog h1 {
+    @apply font-display mt-10 mb-4 text-3xl font-semibold text-ink;
+  }
+
   .prose-blog h2 {
     @apply font-display mt-10 mb-4 text-2xl font-semibold text-ink;
   }

@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 /**
  * Resolves content image paths against the deployed base href.
- * Prefer paths like `assets/places/triund-trek.jpg` (no leading slash).
+ * Prefer paths like `assets/places/triund.jpg` (no leading slash).
  */
 @Pipe({ name: 'assetUrl' })
 export class AssetUrlPipe implements PipeTransform {

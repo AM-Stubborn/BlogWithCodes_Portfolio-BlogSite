@@ -256,7 +256,21 @@
               <div>
                 <div class="flex flex-wrap items-start justify-between gap-3">
                   <div>
-                    <h3 class="font-display text-2xl font-semibold tracking-tight text-ink">{{ job.company }}</h3>
+                    @if (job.companyUrl) {
+                      <h3 class="font-display text-2xl font-semibold tracking-tight text-ink">
+                        <a
+                          [href]="job.companyUrl"
+                          target="_blank"
+                          rel="noopener"
+                          class="inline-flex items-center gap-2 transition hover:text-accent"
+                        >
+                          {{ job.company }}
+                          <app-icon name="external" className="h-4 w-4 text-ink-soft/45" />
+                        </a>
+                      </h3>
+                    } @else {
+                      <h3 class="font-display text-2xl font-semibold tracking-tight text-ink">{{ job.company }}</h3>
+                    }
                     <p class="mt-1 text-sm font-semibold text-accent">{{ job.role }}</p>
                   </div>
                   <span class="icon-chip">
@@ -356,22 +370,24 @@
         <h2 class="heading-lg mt-3 max-w-xl">Let’s build — or swap trail notes.</h2>
         <p class="body-lg mt-4 max-w-xl">{{ site.availability }}</p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a [href]="site.social.email" target="_blank" rel="noopener" class="btn-primary">
-            <app-icon name="mail" className="h-4 w-4" />
-            Contact via BlogWithCodes
-          </a>
-          <a [href]="site.social.blogger || site.social.email" target="_blank" rel="noopener" class="btn-secondary">
-            <app-icon name="external" className="h-4 w-4" />
-            Visit Blogger site
-          </a>
-          <a [href]="site.social.linkedin" target="_blank" rel="noopener" class="btn-secondary">
+          <a [href]="site.social.linkedin" target="_blank" rel="noopener" class="btn-primary">
             <app-icon name="linkedin" className="h-4 w-4" />
-            LinkedIn
+            Connect on LinkedIn
+          </a>
+          <a [href]="site.social.email" class="btn-secondary">
+            <app-icon name="mail" className="h-4 w-4" />
+            {{ site.email }}
           </a>
           <a [href]="site.social.github" target="_blank" rel="noopener" class="btn-secondary">
             <app-icon name="github" className="h-4 w-4" />
             GitHub
           </a>
+          @if (site.social.instagram) {
+            <a [href]="site.social.instagram" target="_blank" rel="noopener" class="btn-secondary">
+              <app-icon name="instagram" className="h-4 w-4" />
+              Instagram
+            </a>
+          }
         </div>
       </div>
     </div>
