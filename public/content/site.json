@@ -1,0 +1,196 @@
+{
+  "name": "Manish Bhatia",
+  "brand": "BlogWithCodes",
+  "tagline": "Full-stack delivery powered by agentic coding — Cursor, Copilot, and Claude in the IDE.",
+  "role": "Senior Software Developer",
+  "location": "India · Remote-friendly",
+  "email": "",
+  "availability": "Open to collaboration, mentoring, and AI-augmented full-stack challenges",
+  "about": "Hi, I’m Manish Bhatia — a passionate software developer and the creator of BlogWithCodes. With a strong background in full-stack development, I enjoy working with new technologies and solving complex challenges. Lately my focus is agentic coding: shipping real projects with AI agents inside the IDE while keeping architecture, security, and code quality under human ownership. I also integrate AI into products using Gemini and ChatGPT where it adds clear business value.",
+  "bio": "I specialize in .NET Core, Angular, React, SQL Server, and Azure operations — plus AI product integrations with Gemini and ChatGPT, and agentic coding with Cursor, GitHub Copilot, and Claude. Outside the IDE, I’m a trekker and traveller.",
+  "journey": "I started as a Junior Developer focused on clean code and fundamentals. Over time I built expertise across .NET, Angular, React, and SQL Server — shipping applications from scratch, maintaining legacy systems, designing architectures, implementing secure APIs, and running applications on Azure. I’ve worked across monolithic and microservices architectures, mentored junior developers, and improved code quality on critical business systems. Today, as a Senior Software Developer, I lead delivery efforts and pair engineering judgment with agentic coding and practical AI integrations to move faster without sacrificing maintainability.",
+  "heroCardTitle": "Build it. Deploy it on Azure. Accelerate it with AI.",
+  "social": {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://x.com",
+    "email": "https://blogwithcodes.blogspot.com/p/contribute-us.html",
+    "blogger": "https://blogwithcodes.blogspot.com/"
+  },
+  "expertiseHighlights": [
+    {
+      "title": "Agentic Coding",
+      "description": "Hands-on delivery with AI agents in the IDE — Cursor, GitHub Copilot, and Claude — for planning, implementation, refactors, tests, and documentation while owning the final review.",
+      "icon": "spark"
+    },
+    {
+      "title": "Full-Stack Expertise",
+      "description": "Skilled in .NET Core, Angular, React, and SQL Server — building secure APIs and UIs, with AI features powered by Gemini and ChatGPT where they fit the product.",
+      "icon": "code"
+    },
+    {
+      "title": "Leadership & Collaboration",
+      "description": "Successfully led projects, mentored junior developers, and worked in cross-functional teams to achieve business goals with strong delivery standards.",
+      "icon": "briefcase"
+    },
+    {
+      "title": "Azure Cloud & Ops",
+      "description": "Own deploy and day-to-day  operations on Azure — Key Vault, storage, databases, Application Insights, RBAC, CI/CD, and multi-server VM hosting for web and database tiers.",
+      "icon": "cloud"
+    }
+  ],
+  "workingApproach": [
+    {
+      "title": "Frame the problem",
+      "description": "Start with clear goals, constraints, and acceptance criteria before asking an agent to generate code — so output stays aligned with real product needs.",
+      "icon": "compass"
+    },
+    {
+      "title": "Build with agents in the IDE",
+      "description": "Use Cursor, GitHub Copilot, and Claude inside the IDE for scaffolding, multi-file changes, refactors, migrations, and exploratory fixes across the repo.",
+      "icon": "spark"
+    },
+    {
+      "title": "Own architecture & quality",
+      "description": "Treat AI like a fast junior teammate: I review diffs, validate security, reshape structure, and keep SOLID / DDD principles intact.",
+      "icon": "layers"
+    },
+    {
+      "title": "Ship with confidence",
+      "description": "Close the loop with tests, logging, CI checks, and human judgment before merge — speed without silent regressions.",
+      "icon": "briefcase"
+    }
+  ],
+  "skills": [
+    {
+      "group": "AI & Agentic Coding",
+      "items": [
+        "Cursor (agent workflows)",
+        "GitHub Copilot",
+        "Claude in IDE",
+        "Gemini API integration",
+        "ChatGPT / OpenAI integration",
+        "Human-in-the-loop review"
+      ]
+    },
+    {
+      "group": "Backend",
+      "items": [
+        ".NET Core / .NET Framework",
+        "C#",
+        "EF Core",
+        "REST APIs",
+        "Microservices",
+        "JWT / OAuth / Identity"
+      ]
+    },
+    {
+      "group": "Frontend",
+      "items": [
+        "Angular (RxJS, NgRx)",
+        "React (Hooks, Context)",
+        "Vue 3",
+        "TypeScript",
+        "HTML/CSS/SCSS",
+        "Bootstrap"
+      ]
+    },
+    {
+      "group": "Data & Azure",
+      "items": [
+        "SQL Server / Azure SQL",
+        "Azure Key Vault",
+        "Azure Storage Accounts",
+        "Application Insights",
+        "Azure RBAC & identity",
+        "Azure DevOps CI/CD",
+        "App Service & VM hosting"
+      ]
+    },
+    {
+      "group": "Practices",
+      "items": [
+        "SOLID & Design Patterns",
+        "Code reviews",
+        "Mentoring",
+        "Agile",
+        "AI-augmented delivery"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Techbit Solutions Pvt Ltd",
+      "role": "Senior Software Engineer · Team Lead",
+      "period": "Most recent",
+      "location": "India",
+      "summary": "At Techbit, I led multiple projects as a Senior Software Engineer, handling full-stack development with .NET Core, Angular, React, and SQL Server. I owned Azure deployment and operations — Key Vault, storage, databases, Insights, RBAC, CI/CD, and multi-server VM environments — and integrated AI capabilities with Gemini and ChatGPT where needed.",
+      "highlights": [
+        "Led multiple full-stack projects end-to-end across concurrent deliveries",
+        "Guided junior developers, ran code reviews, and upheld high engineering standards",
+                "Owned client communication and multitasking across project priorities",
+        "Owned client communication and multitasking across project priorities",
+        "Owned Azure ops: Key Vault, storage accounts, databases, Insights, and role-based access",
+        "Ran CI/CD pipelines and maintained web + database servers on Azure VMs",
+        "Integrated Gemini and ChatGPT into product features with secure API usage"
+        
+      ],
+      "tech": [
+        ".NET Core",
+        "Angular",
+        "React",
+        "SQL Server",
+        "Azure",
+        "CI/CD",
+        "Gemini",
+        "ChatGPT"
+      ],
+      "logo": "assets/experience/techbit.png"
+    },
+    {
+      "company": "Cogniter Technologies",
+      "role": "Full-Stack Developer",
+      "period": "Product chapter",
+      "location": "India",
+      "summary": "At Cogniter, I worked as a full-stack developer building web applications with .NET Core, Angular, Vue 3, and SQL Server. I developed secure RESTful APIs, integrated frontend components, and optimized database queries for performance.",
+      "highlights": [
+        "Built secure REST APIs and integrated modern frontend components",
+        "Improved UI/UX and database performance for seamless system interactions",
+        "Collaborated in an agile environment with Git workflows and code reviews",
+        "Focused on scalability, cross-browser compatibility, and high-performance delivery"
+      ],
+      "tech": [
+        ".NET Core",
+        "Angular",
+        "Vue 3",
+        "SQL Server",
+        "Git",
+        "REST APIs"
+      ],
+      "logo": "assets/experience/cogniter.jpg"
+    },
+    {
+      "company": "Capgemini",
+      "role": "Trainee → Senior Software Engineer",
+      "period": "Enterprise chapter",
+      "location": "India",
+      "summary": "At Capgemini, I progressed from Trainee to Senior Software Engineer, working on enterprise applications, system monitoring, and troubleshooting. I handled batch job failures, root cause analysis, and system performance enhancements on large-scale .NET systems.",
+      "highlights": [
+        "Grew from Trainee to Senior Software Engineer on enterprise applications",
+        "Stabilized test environments and resolved production issues",
+        "Performed RCA for batch failures and optimized .NET / C# / SQL Server systems",
+        "Mentored junior developers and managed team activities for smooth execution",
+        "Contributed to architecture improvements and agile delivery practices"
+      ],
+      "tech": [
+        ".NET",
+        "C#",
+        "SQL Server",
+        "Monitoring",
+        "Agile",
+        "RCA"
+      ],
+      "logo": "assets/experience/capgemini.png"
+    }
+  ]
+}

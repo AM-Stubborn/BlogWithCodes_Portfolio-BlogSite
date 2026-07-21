@@ -1,0 +1,43 @@
+<section class="section-y">
+  <div class="container-page">
+    <div class="max-w-2xl animate-fade-up">
+      <p class="eyebrow inline-flex items-center gap-2">
+        <app-icon name="map" className="h-3.5 w-3.5" />
+        Trail journal
+      </p>
+      <h1 class="heading-lg mt-3">Places visited</h1>
+      <p class="body-lg mt-4">
+        A living log of treks and travels — one photo and a short story per place.
+      </p>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-3 animate-fade-up delay-1">
+      @if (places$ | async; as places) {
+        <span class="icon-chip">
+          <app-icon name="compass" className="h-4 w-4 text-accent" />
+          {{ places.length }} places
+        </span>
+      }
+      @if (trekCount$ | async; as treks) {
+        <span class="icon-chip">
+          <app-icon name="mountain" className="h-4 w-4 text-pine" />
+          {{ treks }} treks
+        </span>
+      }
+      @if (travelCount$ | async; as travels) {
+        <span class="icon-chip">
+          <app-icon name="waves" className="h-4 w-4 text-ridge" />
+          {{ travels }} travels
+        </span>
+      }
+    </div>
+
+    @if (places$ | async; as places) {
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        @for (place of places; track place.slug) {
+          <app-place-card [place]="place" />
+        }
+      </div>
+    }
+  </div>
+</section>

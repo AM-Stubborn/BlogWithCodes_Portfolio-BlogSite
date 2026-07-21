@@ -1,0 +1,62 @@
+<section class="section-y">
+  <div class="container-page max-w-3xl">
+    @if (post$ | async; as post) {
+      @if (post) {
+        <article class="animate-fade-up">
+          <a routerLink="/blog" class="inline-flex items-center gap-2 text-sm font-semibold text-ink-soft/60 transition hover:text-ink">
+            <app-icon name="arrow-right" className="h-4 w-4 rotate-180" />
+            Back to blog
+          </a>
+
+          @if (post.cover) {
+            <div class="mt-8 overflow-hidden rounded-[1.5rem] border border-line shadow-lg shadow-ink/10">
+              <img
+                [src]="post.cover | assetUrl"
+                [alt]="post.title"
+                class="aspect-[21/9] w-full object-cover sm:aspect-[2/1]"
+              />
+            </div>
+          }
+
+          <div class="mt-8 flex flex-wrap items-center gap-3 text-xs font-semibold tracking-wide text-ink-soft/55 uppercase">
+            <a
+              [routerLink]="['/blog/category', post.category]"
+              class="inline-flex items-center gap-1 text-accent hover:text-accent-bright"
+            >
+              <app-icon name="tag" className="h-3.5 w-3.5" />
+              {{ formatCategory(post.category) }}
+            </a>
+            <span aria-hidden="true">·</span>
+            <span class="inline-flex items-center gap-1">
+              <app-icon name="calendar" className="h-3.5 w-3.5" />
+              <time [attr.datetime]="post.date">{{ formatDate(post.date) }}</time>
+            </span>
+            <span aria-hidden="true">·</span>
+            <span class="inline-flex items-center gap-1">
+              <app-icon name="clock" className="h-3.5 w-3.5" />
+              {{ post.readingTime }}
+            </span>
+          </div>
+
+          <h1 class="heading-lg mt-4">{{ post.title }}</h1>
+          <p class="body-lg mt-5">{{ post.excerpt }}</p>
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            @for (tag of post.tags; track tag) {
+              <span class="rounded-md bg-mist px-2.5 py-1 text-xs font-medium text-ink-soft/75">#{{ tag }}</span>
+            }
+          </div>
+
+          <div class="prose-blog mt-12 border-t border-line pt-10" [innerHTML]="post.safeHtml"></div>
+        </article>
+      } @else {
+        <div class="surface p-10 text-center animate-fade-up">
+          <app-icon name="book" className="mx-auto h-8 w-8 text-ink-soft/40" />
+          <h1 class="heading-md mt-4">Post not found</h1>
+          <p class="mt-3 text-ink-soft/70">That slug does not match any markdown file in the content folder.</p>
+          <a routerLink="/blog" class="btn-primary mt-6 inline-flex">Browse posts</a>
+        </div>
+      }
+    }
+  </div>
+</section>

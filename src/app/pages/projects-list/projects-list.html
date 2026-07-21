@@ -1,0 +1,23 @@
+<section class="section-y">
+  <div class="container-page">
+    <div class="max-w-2xl animate-fade-up">
+      <p class="eyebrow inline-flex items-center gap-2">
+        <app-icon name="briefcase" className="h-3.5 w-3.5" />
+        Projects
+      </p>
+      <h1 class="heading-lg mt-3">Selected work</h1>
+      <p class="body-lg mt-4">
+        Enterprise deliveries across finance, healthcare, and commerce.
+        Project names are altered under NDA — the architecture and challenges are real.
+      </p>
+    </div>
+
+    @if (projects$ | async; as projects) {
+      <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        @for (project of projects; track project.slug) {
+          <app-project-card [project]="project" />
+        }
+      </div>
+    }
+  </div>
+</section>

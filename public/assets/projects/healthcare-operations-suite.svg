@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Healthcare suite graphic">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2f6b4f"/>
+      <stop offset="100%" stop-color="#0b1c2c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g2)"/>
+  <rect x="140" y="160" width="920" height="360" rx="28" fill="#f4f8fa" opacity="0.1"/>
+  <rect x="220" y="240" width="160" height="160" rx="20" fill="#2a9aaa" opacity="0.55"/>
+  <rect x="420" y="240" width="160" height="160" rx="20" fill="#3d6f8c" opacity="0.55"/>
+  <rect x="620" y="240" width="160" height="160" rx="20" fill="#e8f1f4" opacity="0.35"/>
+  <rect x="820" y="240" width="160" height="160" rx="20" fill="#1d6a7a" opacity="0.55"/>
+</svg>

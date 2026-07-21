@@ -1,0 +1,49 @@
+@if (site$ | async; as site) {
+  <footer class="border-t border-line/80 bg-white/40">
+    <div class="container-page flex flex-col gap-8 py-12 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="font-display inline-flex items-center gap-2 text-lg font-semibold text-ink">
+          <span class="icon-badge !h-8 !w-8 !rounded-lg">
+            <app-icon name="mountain" className="h-4 w-4" />
+          </span>
+          {{ site.brand }}
+        </p>
+        <p class="mt-2 text-sm font-medium text-accent">{{ site.name }}</p>
+        <p class="mt-2 max-w-md text-sm text-ink-soft/70">
+          Full-stack notes, Azure learnings, and a trail journal for places worth remembering.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-5 text-sm font-medium text-ink-soft/70">
+        <a routerLink="/" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+          <app-icon name="user" className="h-3.5 w-3.5" />
+          Home
+        </a>
+        <a routerLink="/projects" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+          <app-icon name="briefcase" className="h-3.5 w-3.5" />
+          Projects
+        </a>
+        <a routerLink="/places" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+          <app-icon name="map" className="h-3.5 w-3.5" />
+          Places
+        </a>
+        <a routerLink="/blog" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+          <app-icon name="book" className="h-3.5 w-3.5" />
+          Blog
+        </a>
+        <a [href]="site.social.blogger || '#'" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+          <app-icon name="external" className="h-3.5 w-3.5" />
+          Blogger
+        </a>
+        <a [href]="site.social.github" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 transition hover:text-ink">
+          <app-icon name="github" className="h-3.5 w-3.5" />
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="container-page border-t border-line/60 py-5 text-xs text-ink-soft/55">
+      © {{ year }} {{ site.name }} · {{ site.brand }}. Built with Angular · Ready for GitHub Pages.
+    </div>
+  </footer>
+}

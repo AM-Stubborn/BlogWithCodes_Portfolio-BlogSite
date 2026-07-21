@@ -1,0 +1,379 @@
+@if (site$ | async; as site) {
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute top-16 right-[-12%] h-80 w-80 rounded-full bg-accent-bright/20 blur-3xl"></div>
+      <div class="absolute bottom-0 left-[-10%] h-72 w-72 rounded-full bg-pine/15 blur-3xl"></div>
+      <svg
+        class="absolute inset-x-0 bottom-0 h-40 w-full text-ridge/20 sm:h-56"
+        viewBox="0 0 1440 220"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path fill="currentColor" d="M0 160L120 140C240 120 480 80 720 90C960 100 1200 160 1320 180L1440 200V220H0Z" />
+        <path fill="currentColor" opacity="0.55" d="M0 180L160 150C320 120 640 70 880 95C1120 120 1280 170 1360 185L1440 195V220H0Z" />
+      </svg>
+    </div>
+
+    <div class="container-page grid min-h-[calc(100dvh-4.5rem)] items-center gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-20">
+      <div>
+        <p class="eyebrow animate-fade-up inline-flex items-center gap-2">
+          <app-icon name="spark" className="h-3.5 w-3.5" />
+          {{ site.role }} · {{ site.location }}
+        </p>
+        <h1 class="heading-xl mt-5 animate-fade-up delay-1">{{ site.name }}</h1>
+        <p class="mt-3 font-display text-lg font-medium text-accent animate-fade-up delay-1">{{ site.brand }}</p>
+        <p class="body-lg mt-6 max-w-xl animate-fade-up delay-2">{{ site.tagline }}</p>
+
+        <div class="mt-9 flex flex-wrap gap-3 animate-fade-up delay-3">
+          <a routerLink="/blog" class="btn-primary">
+            <app-icon name="book" className="h-4 w-4" />
+            Read the blog
+          </a>
+          <a routerLink="/places" class="btn-secondary">
+            <app-icon name="mountain" className="h-4 w-4" />
+            Places visited
+          </a>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3 animate-fade-up delay-3">
+          <span class="icon-chip">
+            <app-icon name="spark" className="h-4 w-4 text-accent" />
+            Agentic coding
+          </span>
+          <span class="icon-chip">
+            <app-icon name="code" className="h-4 w-4 text-accent" />
+            Full-stack
+          </span>
+          <span class="icon-chip">
+            <app-icon name="cloud" className="h-4 w-4 text-ridge" />
+            Azure
+          </span>
+          <span class="icon-chip">
+            <app-icon name="trek" className="h-4 w-4 text-pine" />
+            Trekker
+          </span>
+        </div>
+
+        <p class="mt-6 text-sm font-medium text-pine">
+          {{ site.availability }}
+        </p>
+      </div>
+
+      <div class="relative animate-fade-up delay-2">
+        <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/25 via-transparent to-pine/20 blur-xl"></div>
+        <div class="relative overflow-hidden rounded-[1.75rem] border border-line bg-ink text-paper shadow-2xl shadow-ink/25">
+          <div class="mountain-hero-art relative h-44 sm:h-52">
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
+                <app-icon name="mountain" className="h-5 w-5 text-white" />
+              </span>
+              <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
+                <app-icon name="compass" className="h-5 w-5 text-white" />
+              </span>
+              <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
+                <app-icon name="camera" className="h-5 w-5 text-white" />
+              </span>
+            </div>
+            <svg class="absolute inset-x-0 bottom-0 h-24 w-full text-ink" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
+              <path fill="currentColor" d="M0 80L90 45L170 70L280 20L390 65L480 35L600 75V120H0Z" />
+            </svg>
+          </div>
+          <div class="space-y-4 p-7 sm:p-8">
+            <p class="font-display text-2xl font-semibold tracking-tight">{{ site.heroCardTitle }}</p>
+            <p class="text-sm leading-relaxed text-paper/70">{{ site.bio }}</p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              @for (skill of ['Cursor', '.NET', 'Angular', 'Azure', 'Gemini', 'ChatGPT']; track skill) {
+                <span class="rounded-lg bg-white/10 px-3 py-1 text-xs font-medium text-paper/85">{{ skill }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-y border-y border-line/70 bg-white/35">
+    <div class="container-page grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+      <div>
+        <p class="eyebrow inline-flex items-center gap-2">
+          <app-icon name="user" className="h-3.5 w-3.5" />
+          About
+        </p>
+        <h2 class="heading-lg mt-3">Innovative. Adaptable. Passionate about technology.</h2>
+        <p class="body-lg mt-5">{{ site.about }}</p>
+        <p class="mt-4 text-sm leading-relaxed text-ink-soft/75">{{ site.bio }}</p>
+        <p class="mt-4 text-sm leading-relaxed text-ink-soft/75">{{ site.journey }}</p>
+      </div>
+
+      <div>
+        <h3 class="font-display inline-flex items-center gap-2 text-sm font-semibold tracking-[0.16em] text-ink-soft/50 uppercase">
+          <app-icon name="spark" className="h-4 w-4 text-accent" />
+          What I bring
+        </h3>
+        <div class="mt-5 grid gap-4 sm:grid-cols-2">
+          @for (item of site.expertiseHighlights; track item.title) {
+            <div class="surface p-5">
+              <span class="icon-badge">
+                <app-icon [name]="item.icon" className="h-4 w-4" />
+              </span>
+              <h4 class="font-display mt-3 text-base font-semibold text-ink">{{ item.title }}</h4>
+              <p class="mt-2 text-sm leading-relaxed text-ink-soft/75">{{ item.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="container-page mt-14">
+      <h3 class="font-display inline-flex items-center gap-2 text-sm font-semibold tracking-[0.16em] text-ink-soft/50 uppercase">
+        <app-icon name="layers" className="h-4 w-4 text-accent" />
+        Skills &amp; expertise
+      </h3>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        @for (group of site.skills; track group.group) {
+          <div class="surface p-4">
+            <p class="font-display flex items-center gap-2 text-base font-semibold text-ink">
+              <span class="icon-badge">
+                @switch (group.group) {
+                  @case ('AI & Agentic Coding') { <app-icon name="spark" className="h-4 w-4" /> }
+                  @case ('Backend') { <app-icon name="code" className="h-4 w-4" /> }
+                  @case ('Frontend') { <app-icon name="layers" className="h-4 w-4" /> }
+                  @case ('Data & Azure') { <app-icon name="database" className="h-4 w-4" /> }
+                  @default { <app-icon name="briefcase" className="h-4 w-4" /> }
+                }
+              </span>
+              {{ group.group }}
+            </p>
+            <ul class="mt-3 space-y-2 text-sm text-ink-soft/75">
+              @for (item of group.items; track item) {
+                <li class="flex items-start gap-2">
+                  <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/70"></span>
+                  <span>{{ item }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="section-y">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <p class="eyebrow inline-flex items-center gap-2">
+          <app-icon name="spark" className="h-3.5 w-3.5" />
+          Working approach
+        </p>
+        <h2 class="heading-lg mt-3">How I build with AI agents</h2>
+        <p class="body-lg mt-4">
+          My current practice is agentic coding inside the IDE — using Cursor, GitHub Copilot, and Claude
+          to accelerate delivery while I remain accountable for architecture, security, and final quality.
+          Separately, I integrate Gemini and ChatGPT into applications when AI features create real product value.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 md:grid-cols-2">
+        @for (step of site.workingApproach; track step.title; let i = $index) {
+          <article class="surface relative p-6 sm:p-7">
+            <div class="flex items-start gap-4">
+              <span class="icon-badge shrink-0">
+                <app-icon [name]="step.icon" className="h-4 w-4" />
+              </span>
+              <div>
+                <p class="text-xs font-semibold tracking-wide text-accent uppercase">Step {{ i + 1 }}</p>
+                <h3 class="font-display mt-1 text-xl font-semibold text-ink">{{ step.title }}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-ink-soft/75">{{ step.description }}</p>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+
+      <div class="surface mt-10 flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+        <div>
+          <p class="font-display text-lg font-semibold text-ink">AI tools I use</p>
+          <p class="mt-1 text-sm text-ink-soft/70">Agentic coding in the IDE, plus Gemini and ChatGPT for product features.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="icon-chip"><app-icon name="spark" className="h-4 w-4 text-accent" /> Cursor</span>
+          <span class="icon-chip"><app-icon name="code" className="h-4 w-4 text-ridge" /> GitHub Copilot</span>
+          <span class="icon-chip"><app-icon name="layers" className="h-4 w-4 text-pine" /> Claude in IDE</span>
+          <span class="icon-chip"><app-icon name="spark" className="h-4 w-4 text-accent" /> Gemini</span>
+          <span class="icon-chip"><app-icon name="spark" className="h-4 w-4 text-ridge" /> ChatGPT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section-y border-y border-line/70 bg-white/35">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <p class="eyebrow inline-flex items-center gap-2">
+          <app-icon name="briefcase" className="h-3.5 w-3.5" />
+          Experience
+        </p>
+        <h2 class="heading-lg mt-3">From junior developer to senior software developer</h2>
+        <p class="body-lg mt-4">
+          A career path shaped by enterprise delivery, product engineering, and team leadership —
+          pulled directly from my professional journey on BlogWithCodes.
+        </p>
+      </div>
+
+      <div class="relative mt-12 space-y-6">
+        <div class="pointer-events-none absolute top-4 bottom-4 left-[1.65rem] hidden w-px bg-gradient-to-b from-accent/50 via-pine/30 to-transparent md:block" aria-hidden="true"></div>
+
+        @for (job of site.experience; track job.company; let i = $index) {
+          <article class="surface relative overflow-hidden p-6 sm:p-8 md:ml-0">
+            <div class="grid gap-6 lg:grid-cols-[11rem_1fr] lg:gap-8">
+              <div class="flex flex-col gap-4">
+                <div class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-line bg-white p-2 shadow-sm">
+                  @if (job.logo) {
+                    <img
+                      [src]="job.logo | assetUrl"
+                      [alt]="job.company + ' logo'"
+                      class="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  } @else {
+                    <app-icon name="briefcase" className="h-6 w-6 text-accent" />
+                  }
+                </div>
+                <div>
+                  <p class="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide text-accent uppercase">
+                    <app-icon name="calendar" className="h-3.5 w-3.5" />
+                    {{ job.period }}
+                  </p>
+                  @if (job.location) {
+                    <p class="mt-1 inline-flex items-center gap-1.5 text-xs text-ink-soft/55">
+                      <app-icon name="map" className="h-3.5 w-3.5" />
+                      {{ job.location }}
+                    </p>
+                  }
+                </div>
+              </div>
+
+              <div>
+                <div class="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <h3 class="font-display text-2xl font-semibold tracking-tight text-ink">{{ job.company }}</h3>
+                    <p class="mt-1 text-sm font-semibold text-accent">{{ job.role }}</p>
+                  </div>
+                  <span class="icon-chip">
+                    <app-icon name="spark" className="h-3.5 w-3.5 text-accent" />
+                    Role {{ site.experience.length - i }}
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm leading-relaxed text-ink-soft/80 sm:text-base">{{ job.summary }}</p>
+
+                <ul class="mt-5 space-y-2.5">
+                  @for (point of job.highlights; track point) {
+                    <li class="flex items-start gap-2.5 text-sm leading-relaxed text-ink-soft/80">
+                      <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                        <app-icon name="arrow-right" className="h-3 w-3" />
+                      </span>
+                      <span>{{ point }}</span>
+                    </li>
+                  }
+                </ul>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                  @for (tech of job.tech; track tech) {
+                    <span class="rounded-md bg-mist px-2.5 py-1 text-xs font-medium text-ink-soft/80">{{ tech }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="places" class="section-y border-y border-line/70 bg-white/35">
+    <div class="container-page">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="eyebrow inline-flex items-center gap-2">
+            <app-icon name="map" className="h-3.5 w-3.5" />
+            Trail journal
+          </p>
+          <h2 class="heading-lg mt-3">Places visited</h2>
+          <p class="body-lg mt-3 max-w-xl">Treks, towns, and coasts — one photo to remember each stop.</p>
+        </div>
+        <a routerLink="/places" class="btn-secondary w-fit">
+          <app-icon name="compass" className="h-4 w-4" />
+          Open full map log
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        @if (latestPlaces$ | async; as places) {
+          @for (place of places; track place.slug) {
+            <app-place-card [place]="place" />
+          }
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-y">
+    <div class="container-page">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="eyebrow inline-flex items-center gap-2">
+            <app-icon name="book" className="h-3.5 w-3.5" />
+            From the blog
+          </p>
+          <h2 class="heading-lg mt-3">Latest writing</h2>
+        </div>
+        <a routerLink="/blog" class="btn-secondary w-fit">
+          <app-icon name="arrow-right" className="h-4 w-4" />
+          Browse all posts
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        @if (latestPosts$ | async; as posts) {
+          @for (post of posts; track post.slug) {
+            <app-post-card [post]="post" />
+          }
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-y pb-24">
+    <div class="container-page">
+      <div class="surface relative overflow-hidden px-8 py-12 sm:px-12 sm:py-16">
+        <div class="pointer-events-none absolute -right-10 -bottom-16 h-56 w-56 rounded-full bg-accent/15 blur-3xl"></div>
+        <div class="pointer-events-none absolute -left-8 top-0 h-40 w-40 rounded-full bg-pine/10 blur-3xl"></div>
+        <p class="eyebrow inline-flex items-center gap-2">
+          <app-icon name="mail" className="h-3.5 w-3.5" />
+          Contact
+        </p>
+        <h2 class="heading-lg mt-3 max-w-xl">Let’s build — or swap trail notes.</h2>
+        <p class="body-lg mt-4 max-w-xl">{{ site.availability }}</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a [href]="site.social.email" target="_blank" rel="noopener" class="btn-primary">
+            <app-icon name="mail" className="h-4 w-4" />
+            Contact via BlogWithCodes
+          </a>
+          <a [href]="site.social.blogger || site.social.email" target="_blank" rel="noopener" class="btn-secondary">
+            <app-icon name="external" className="h-4 w-4" />
+            Visit Blogger site
+          </a>
+          <a [href]="site.social.linkedin" target="_blank" rel="noopener" class="btn-secondary">
+            <app-icon name="linkedin" className="h-4 w-4" />
+            LinkedIn
+          </a>
+          <a [href]="site.social.github" target="_blank" rel="noopener" class="btn-secondary">
+            <app-icon name="github" className="h-4 w-4" />
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+}

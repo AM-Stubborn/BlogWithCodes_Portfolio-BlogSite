@@ -1,0 +1,81 @@
+@if (site$ | async; as site) {
+  <header
+    class="sticky top-0 z-50 border-b transition duration-300"
+    [class.border-transparent]="!scrolled()"
+    [class.border-line]="scrolled()"
+    [class.bg-paper/80]="scrolled()"
+    [class.backdrop-blur-md]="scrolled()"
+    [class.shadow-sm]="scrolled()"
+  >
+    <div class="container-page flex h-16 items-center justify-between">
+      <a routerLink="/" class="inline-flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink">
+        <span class="icon-badge !rounded-lg">
+          <app-icon name="mountain" className="h-4 w-4" />
+        </span>
+        {{ site.brand }}
+      </a>
+
+      <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+        @for (link of links; track link.label) {
+          @if (link.fragment) {
+            <a
+              [routerLink]="link.path"
+              [fragment]="link.fragment"
+              class="font-display text-sm font-medium text-ink-soft/70 transition hover:text-ink"
+            >
+              {{ link.label }}
+            </a>
+          } @else {
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="text-accent"
+              class="font-display text-sm font-medium text-ink-soft/70 transition hover:text-ink"
+            >
+              {{ link.label }}
+            </a>
+          }
+        }
+        <a [href]="site.social.email" target="_blank" rel="noopener" class="btn-primary !px-4 !py-2 text-xs">Say hello</a>
+      </nav>
+
+      <button
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-white/70 md:hidden"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-nav"
+        aria-label="Toggle menu"
+      >
+        <span class="sr-only">Menu</span>
+        <span class="flex flex-col gap-1.5">
+          <span class="block h-0.5 w-5 bg-ink transition" [class.rotate-45]="menuOpen()" [class.translate-y-2]="menuOpen()"></span>
+          <span class="block h-0.5 w-5 bg-ink transition" [class.opacity-0]="menuOpen()"></span>
+          <span class="block h-0.5 w-5 bg-ink transition" [class.-rotate-45]="menuOpen()" [class.-translate-y-2]="menuOpen()"></span>
+        </span>
+      </button>
+    </div>
+
+    @if (menuOpen()) {
+      <div id="mobile-nav" class="border-t border-line bg-paper/95 backdrop-blur-md md:hidden animate-fade-in">
+        <nav class="container-page flex flex-col gap-4 py-5" aria-label="Mobile">
+          @for (link of links; track link.label) {
+            @if (link.fragment) {
+              <a
+                [routerLink]="link.path"
+                [fragment]="link.fragment"
+                class="font-display text-base font-medium text-ink"
+              >
+                {{ link.label }}
+              </a>
+            } @else {
+              <a [routerLink]="link.path" class="font-display text-base font-medium text-ink">
+                {{ link.label }}
+              </a>
+            }
+          }
+          <a [href]="site.social.email" target="_blank" rel="noopener" class="btn-primary w-fit">Say hello</a>
+        </nav>
+      </div>
+    }
+  </header>
+}

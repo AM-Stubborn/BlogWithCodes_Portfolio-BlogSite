@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "ai-engineering-basic",
+    "title": "AI Engineering Basic",
+    "excerpt": "LLMs, tokens, context windows, and how AI engineering differs from classic ML work.",
+    "category": "ai",
+    "tags": ["llm", "ai-engineering"],
+    "date": "2026-05-04",
+    "readingTime": "8 min",
+    "cover": "assets/blog/ai-engineering-basic.jpg"
+  },
+  {
+    "slug": "solid-principles-in-csharp",
+    "title": "SOLID Principles in C#",
+    "excerpt": "SRP, OCP, LSP, ISP, and DIP explained with practical C# examples you can apply immediately.",
+    "category": "dotnet",
+    "tags": ["csharp", "solid", "clean-code"],
+    "date": "2025-04-03",
+    "readingTime": "10 min",
+    "cover": "assets/blog/solid-principles-in-csharp.jpg"
+  },
+  {
+    "slug": "understanding-application-insights",
+    "title": "Understanding Azure Application Insights",
+    "excerpt": "Monitor requests, exceptions, dependencies, and performance with Azure Application Insights and KQL.",
+    "category": "azure",
+    "tags": ["azure", "monitoring", "devops"],
+    "date": "2025-02-17",
+    "readingTime": "9 min",
+    "cover": "assets/blog/understanding-application-insights.jpg"
+  },
+  {
+    "slug": "software-architecture",
+    "title": "Software Architecture",
+    "excerpt": "What system architecture means when you need to turn an idea into a well-structured application.",
+    "category": "generalblogs",
+    "tags": ["architecture", "design"],
+    "date": "2025-06-24",
+    "readingTime": "6 min",
+    "cover": "assets/blog/software-architecture.jpg"
+  },
+  {
+    "slug": "ai-vs-ml-vs-deep-learning",
+    "title": "AI vs Machine Learning vs Deep Learning",
+    "excerpt": "A clear breakdown of how AI, ML, and deep learning relate — and when each term actually applies.",
+    "category": "ai",
+    "tags": ["ai", "ml", "fundamentals"],
+    "date": "2025-03-19",
+    "readingTime": "5 min",
+    "cover": "assets/blog/ai-vs-ml-vs-deep-learning.jpg"
+  }
+]

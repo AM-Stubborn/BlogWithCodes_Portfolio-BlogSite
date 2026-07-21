@@ -1,0 +1,193 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #0b1c2c;
+  --color-ink-soft: #1e3a4c;
+  --color-mist: #e8f1f4;
+  --color-paper: #f4f8fa;
+  --color-accent: #1d6a7a;
+  --color-accent-bright: #2a9aaa;
+  --color-pine: #2f6b4f;
+  --color-ridge: #3d6f8c;
+  --color-snow: #f7fbfc;
+  --color-line: #c9d9e0;
+  --color-warm: #c4782c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-body text-ink antialiased;
+    background-image:
+      radial-gradient(ellipse 70% 45% at 0% 0%, rgb(42 154 170 / 0.16), transparent 55%),
+      radial-gradient(ellipse 55% 40% at 100% 5%, rgb(47 107 79 / 0.12), transparent 50%),
+      linear-gradient(180deg, #f4f8fa 0%, #e8f1f4 100%);
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-ink;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .section-y {
+    @apply py-16 sm:py-24;
+  }
+
+  .eyebrow {
+    @apply font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase;
+  }
+
+  .heading-xl {
+    @apply font-display text-4xl leading-[1.05] font-semibold tracking-tight text-ink sm:text-5xl lg:text-6xl;
+  }
+
+  .heading-lg {
+    @apply font-display text-3xl leading-tight font-semibold tracking-tight text-ink sm:text-4xl;
+  }
+
+  .heading-md {
+    @apply font-display text-2xl font-semibold tracking-tight text-ink;
+  }
+
+  .body-lg {
+    @apply text-lg leading-relaxed text-ink-soft/80;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-ink px-5 py-3 font-display text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-ink-soft;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white/70 px-5 py-3 font-display text-sm font-semibold text-ink backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-line/80 bg-white/70 backdrop-blur-sm;
+  }
+
+  .icon-badge {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-xl bg-accent/10 text-accent;
+  }
+
+  .icon-chip {
+    @apply inline-flex items-center gap-2 rounded-xl border border-line bg-white/70 px-3 py-1.5 font-display text-xs font-semibold text-ink-soft/80;
+  }
+
+  .mountain-hero-art {
+    background:
+      linear-gradient(180deg, rgb(61 111 140 / 0.35) 0%, transparent 42%),
+      linear-gradient(135deg, #1d6a7a 0%, #2f6b4f 48%, #3d6f8c 100%);
+  }
+
+  .prose-blog {
+    @apply max-w-none text-ink-soft/90;
+  }
+
+  .prose-blog h2 {
+    @apply font-display mt-10 mb-4 text-2xl font-semibold text-ink;
+  }
+
+  .prose-blog h3 {
+    @apply font-display mt-8 mb-3 text-xl font-semibold text-ink;
+  }
+
+  .prose-blog p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose-blog ul,
+  .prose-blog ol {
+    @apply mb-4 ml-5 list-disc space-y-2;
+  }
+
+  .prose-blog ol {
+    @apply list-decimal;
+  }
+
+  .prose-blog a {
+    @apply text-accent underline decoration-accent/30 underline-offset-4 transition hover:decoration-accent;
+  }
+
+  .prose-blog code {
+    @apply rounded bg-mist px-1.5 py-0.5 font-mono text-sm text-ink;
+  }
+
+  .prose-blog pre {
+    @apply mb-6 overflow-x-auto rounded-xl bg-ink p-4 text-sm text-mist;
+  }
+
+  .prose-blog pre code {
+    @apply bg-transparent p-0 text-mist;
+  }
+
+  .prose-blog blockquote {
+    @apply my-6 border-l-4 border-accent pl-4 text-ink-soft/70 italic;
+  }
+
+  .prose-blog img {
+    @apply my-6 rounded-xl;
+  }
+
+  .prose-blog table {
+    @apply mb-6 w-full overflow-hidden rounded-xl border border-line text-left text-sm;
+  }
+
+  .prose-blog th {
+    @apply bg-mist px-3 py-2 font-semibold text-ink;
+  }
+
+  .prose-blog td {
+    @apply border-t border-line px-3 py-2;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+.delay-1 {
+  animation-delay: 0.12s;
+}
+
+.delay-2 {
+  animation-delay: 0.24s;
+}
+
+.delay-3 {
+  animation-delay: 0.36s;
+}

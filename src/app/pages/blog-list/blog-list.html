@@ -1,0 +1,60 @@
+<section class="section-y">
+  <div class="container-page">
+    <div class="max-w-2xl animate-fade-up">
+      <p class="eyebrow inline-flex items-center gap-2">
+        <app-icon name="book" className="h-3.5 w-3.5" />
+        Blog
+      </p>
+      @if (category$ | async; as category) {
+        <h1 class="heading-lg mt-3">{{ formatCategory(category) }}</h1>
+        <p class="body-lg mt-4">Posts filed under this category.</p>
+      } @else {
+        <h1 class="heading-lg mt-3">Keeping up with tech</h1>
+        <p class="body-lg mt-4">
+          Posts from BlogWithCodes — filter by category or open any article.
+        </p>
+      }
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-2 animate-fade-up delay-1">
+      <a
+        routerLink="/blog"
+        routerLinkActive="bg-ink text-white border-ink"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="inline-flex items-center gap-1.5 rounded-xl border border-line bg-white/70 px-4 py-2 font-display text-sm font-semibold text-ink-soft/80 transition hover:border-accent/40"
+      >
+        <app-icon name="layers" className="h-3.5 w-3.5" />
+        All
+      </a>
+      @if (categories$ | async; as categories) {
+        @for (cat of categories; track cat) {
+          <a
+            [routerLink]="['/blog/category', cat]"
+            routerLinkActive="bg-ink text-white border-ink"
+            class="inline-flex items-center gap-1.5 rounded-xl border border-line bg-white/70 px-4 py-2 font-display text-sm font-semibold text-ink-soft/80 transition hover:border-accent/40"
+          >
+            <app-icon name="tag" className="h-3.5 w-3.5" />
+            {{ formatCategory(cat) }}
+          </a>
+        }
+      }
+    </div>
+
+    @if (posts$ | async; as posts) {
+      @if (posts.length === 0) {
+        <div class="surface mt-12 p-10 text-center animate-fade-up">
+          <app-icon name="book" className="mx-auto h-8 w-8 text-ink-soft/40" />
+          <p class="font-display mt-4 text-lg font-semibold text-ink">No posts in this category yet</p>
+          <p class="mt-2 text-sm text-ink-soft/70">Add a markdown file and index entry, then push to main.</p>
+          <a routerLink="/blog" class="btn-secondary mt-6 inline-flex">Back to all posts</a>
+        </div>
+      } @else {
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+          @for (post of posts; track post.slug) {
+            <app-post-card [post]="post" />
+          }
+        </div>
+      }
+    }
+  </div>
+</section>

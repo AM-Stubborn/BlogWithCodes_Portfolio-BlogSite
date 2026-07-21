@@ -1,0 +1,83 @@
+[
+  {
+    "slug": "enterprise-finance-platform",
+    "title": "Enterprise Finance Platform",
+    "excerpt": "Full-stack delivery across APIs, UI, and cloud monitoring for a finance-domain system — names withheld under NDA.",
+    "domain": "Finance",
+    "year": "Recent",
+    "role": "Senior Full-Stack Engineer",
+    "cover": "assets/projects/enterprise-finance-platform.svg",
+    "tags": [".NET", "Angular", "Azure"],
+    "overview": "An enterprise finance platform supporting operational workflows, reporting views, and secure API access for internal teams. Project names and client identifiers are altered under NDA, while the architecture and delivery challenges remain real.",
+    "challenges": [
+      "Integrate frontend workflows with reliable backend APIs under strict data-access rules",
+      "Keep release quality high while coordinating across concurrent workstreams",
+      "Add observability so production issues could be diagnosed quickly"
+    ],
+    "approach": [
+      "Designed and delivered Angular UI flows backed by .NET APIs",
+      "Used Azure hosting with Application Insights for health and performance signals",
+      "Collaborated with stakeholders on prioritization, reviews, and incremental releases"
+    ],
+    "outcomes": [
+      "Stable delivery of core finance workflows with clearer ownership boundaries",
+      "Improved monitoring coverage for requests, failures, and dependency health",
+      "Reusable patterns for API contracts and UI module structure"
+    ],
+    "tech": [".NET Core", "Angular", "SQL Server", "Azure App Services", "Application Insights", "CI/CD"]
+  },
+  {
+    "slug": "healthcare-operations-suite",
+    "title": "Healthcare Operations Suite",
+    "excerpt": "Secure web workflows with SQL-backed services, performance tuning, and reliable deployments for healthcare operations.",
+    "domain": "Healthcare",
+    "year": "Recent",
+    "role": "Full-Stack Developer",
+    "cover": "assets/projects/healthcare-operations-suite.svg",
+    "tags": ["SQL Server", "APIs", "DevOps"],
+    "overview": "A healthcare operations suite focused on secure web workflows, data integrity, and dependable deployments. Confidential client details are omitted; the technical story focuses on APIs, SQL optimization, and delivery discipline.",
+    "challenges": [
+      "Protect sensitive operational data while keeping day-to-day workflows usable",
+      "Reduce slow queries and brittle integrations that blocked operators",
+      "Ship safely with predictable environments and deployment checks"
+    ],
+    "approach": [
+      "Built and hardened REST APIs with clear validation and authorization boundaries",
+      "Tuned SQL Server queries and indexes for high-traffic operational screens",
+      "Improved DevOps practices around builds, releases, and environment stability"
+    ],
+    "outcomes": [
+      "Faster, more reliable operational screens for core workflows",
+      "Cleaner API/database contracts that were easier to extend",
+      "More predictable release process with fewer environment surprises"
+    ],
+    "tech": [".NET", "SQL Server", "REST APIs", "Azure DevOps", "Authentication", "Performance tuning"]
+  },
+  {
+    "slug": "cloud-commerce-toolkit",
+    "title": "Cloud Commerce Toolkit",
+    "excerpt": "E-commerce style modules with frontend–backend integration, Azure hosting, and Application Insights observability.",
+    "domain": "E-commerce",
+    "year": "Recent",
+    "role": "Senior Software Engineer",
+    "cover": "assets/projects/cloud-commerce-toolkit.svg",
+    "tags": ["React", "Azure", "Monitoring"],
+    "overview": "A cloud commerce toolkit combining storefront-style UI modules with backend services hosted on Azure. Names are anonymized under NDA. The emphasis is on frontend–backend integration, cloud deployment, and production observability.",
+    "challenges": [
+      "Keep UI and API contracts aligned across frequent feature iterations",
+      "Host and scale services on Azure without losing visibility into failures",
+      "Balance speed of delivery with security and maintainability"
+    ],
+    "approach": [
+      "Implemented React modules integrated with backend services and shared contracts",
+      "Deployed to Azure with monitoring via Application Insights",
+      "Used iterative delivery with code reviews and performance-conscious UI changes"
+    ],
+    "outcomes": [
+      "Reusable commerce-facing UI/API building blocks",
+      "Better production diagnostics through telemetry and alerts",
+      "Clearer separation between presentation, APIs, and cloud concerns"
+    ],
+    "tech": ["React", "TypeScript", "Azure", "Application Insights", "REST", "CI/CD"]
+  }
+]

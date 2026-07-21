@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "triund-trek",
+    "name": "Triund Trek",
+    "region": "Himachal Pradesh",
+    "country": "India",
+    "visitedOn": "2024-10-12",
+    "type": "trek",
+    "summary": "A classic Dharamshala ridge walk with pine forests below and snowline views above McLeod Ganj.",
+    "notes": "Started early from Gallu Devi. Weather turned misty near the top — perfect for photos. Replace this demo note with your trail diary.",
+    "photo": "assets/places/triund-trek.jpg",
+    "photoCredit": "Local asset — replace with your trail photo"
+  },
+  {
+    "slug": "kedarkantha",
+    "name": "Kedarkantha",
+    "region": "Uttarakhand",
+    "country": "India",
+    "visitedOn": "2023-12-28",
+    "type": "trek",
+    "summary": "Winter summit trek — snow camps, sharp blue sky, and that final push to the peak.",
+    "notes": "Demo entry for your winter trek log. Add altitude, companions, and one favorite frame from the summit.",
+    "photo": "assets/places/kedarkantha.svg",
+    "photoCredit": "Local asset graphic — replace with your summit photo"
+  },
+  {
+    "slug": "valley-of-flowers",
+    "name": "Valley of Flowers",
+    "region": "Uttarakhand",
+    "country": "India",
+    "visitedOn": "2022-08-18",
+    "type": "trek",
+    "summary": "Monsoon meadows, alpine blooms, and quiet trails after the climb from Govindghat.",
+    "notes": "Placeholder visit — update date and story when you drop in your real photo.",
+    "photo": "assets/places/valley-of-flowers.jpg",
+    "photoCredit": "Local asset — replace with your trail photo"
+  },
+  {
+    "slug": "manali-rohtang",
+    "name": "Manali & Rohtang",
+    "region": "Himachal Pradesh",
+    "country": "India",
+    "visitedOn": "2021-06-05",
+    "type": "travel",
+    "summary": "Mountain town mornings, high-pass wind, and long drives through the Beas valley.",
+    "notes": "Travel memory stub. Keep one hero photo per place for a clean trail journal.",
+    "photo": "assets/places/manali-rohtang.jpg",
+    "photoCredit": "Local asset — replace with your travel photo"
+  },
+  {
+    "slug": "rishikesh",
+    "name": "Rishikesh",
+    "region": "Uttarakhand",
+    "country": "India",
+    "visitedOn": "2020-11-02",
+    "type": "travel",
+    "summary": "Ganga ghats, suspension bridges, and foothill trails that reset the week.",
+    "notes": "Demo travel card — replace photo with your riverside or trek day shot.",
+    "photo": "assets/places/rishikesh.svg",
+    "photoCredit": "Local asset graphic — replace with your photo"
+  },
+  {
+    "slug": "goa-coast",
+    "name": "Goa Coast",
+    "region": "Goa",
+    "country": "India",
+    "visitedOn": "2019-12-20",
+    "type": "travel",
+    "summary": "Not every trip is alpine — sometimes the trail ends at the Arabian Sea.",
+    "notes": "Travel contrast entry so the journal can mix treks and coastal escapes.",
+    "photo": "assets/places/goa-coast.jpg",
+    "photoCredit": "Local asset — replace with your coastal photo"
+  }
+]

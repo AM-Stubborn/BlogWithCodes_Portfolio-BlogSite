@@ -1,0 +1,18 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Kedarkantha snow peak">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7eb8d4"/>
+      <stop offset="100%" stop-color="#dceef5"/>
+    </linearGradient>
+    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7fbfd"/>
+      <stop offset="45%" stop-color="#9bb8c8"/>
+      <stop offset="100%" stop-color="#3d6f8c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#sky)"/>
+  <circle cx="980" cy="140" r="48" fill="#fff6d6" opacity="0.9"/>
+  <path d="M0 520 L220 300 L360 430 L560 180 L780 420 L960 260 L1200 500 V750 H0 Z" fill="url(#peak)"/>
+  <path d="M560 180 L620 280 L540 270 Z" fill="#ffffff" opacity="0.85"/>
+  <path d="M0 620 L300 560 L620 610 L900 550 L1200 620 V750 H0 Z" fill="#2f6b4f" opacity="0.55"/>
+</svg>

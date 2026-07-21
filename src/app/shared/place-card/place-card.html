@@ -1,0 +1,35 @@
+<article class="group surface overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-lg hover:shadow-accent/10">
+  <a [routerLink]="['/places', place.slug]" class="block">
+    <div class="relative aspect-[16/10] overflow-hidden bg-mist">
+      <img
+        [src]="place.photo | assetUrl"
+        [alt]="place.name"
+        class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent"></div>
+      <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-lg bg-white/90 px-2.5 py-1 font-display text-xs font-semibold text-ink backdrop-blur">
+        @if (place.type === 'trek') {
+          <app-icon name="mountain" className="h-3.5 w-3.5 text-pine" />
+        } @else {
+          <app-icon name="waves" className="h-3.5 w-3.5 text-ridge" />
+        }
+        {{ formatType(place.type) }}
+      </span>
+      <span class="absolute top-3 right-3 rounded-lg bg-ink/45 p-2 text-white backdrop-blur-sm">
+        <app-icon name="camera" className="h-4 w-4" />
+      </span>
+    </div>
+
+    <div class="p-5 sm:p-6">
+      <p class="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide text-ink-soft/55 uppercase">
+        <app-icon name="map" className="h-3.5 w-3.5" />
+        {{ place.region }} · {{ formatDate(place.visitedOn) }}
+      </p>
+      <h3 class="font-display mt-2 text-xl font-semibold tracking-tight text-ink transition group-hover:text-accent">
+        {{ place.name }}
+      </h3>
+      <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-soft/75">{{ place.summary }}</p>
+    </div>
+  </a>
+</article>
