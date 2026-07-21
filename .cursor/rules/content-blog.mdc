@@ -1,0 +1,27 @@
+---
+description: Blog content workflow — HTML posts, drafts, covers, migrator
+globs: public/content/posts/**/*,src/app/core/services/blog.service.ts,src/app/pages/blog-*/**/*,src/app/shared/post-card/**/*
+alwaysApply: false
+---
+
+# Blog content rules
+
+## Format
+- Posts are **HTML** (`public/content/posts/<slug>.html`), not Markdown.
+- Index: `public/content/posts/index.json` (`draft?`, `cover`, `tags`, `readingTime`, etc.).
+- Images live in `public/assets/blog/<slug>/`; HTML `src` uses `assets/blog/...`.
+- Listing cards without covers use `assets/blog/placeholder.svg` so card height stays consistent.
+
+## Draft visibility
+- `draft: true` → hidden from lists/home/categories.
+- Direct `/blog/:slug` must still resolve drafts.
+- To publish: remove `draft` or set `false`, then redeploy.
+
+## BlogService / detail page
+- Load `.html` (no `marked`).
+- Filter drafts in `getPosts` / categories; `getPost(slug)` includes drafts.
+- Cover shows in post header; strip matching duplicate cover image from body HTML before render.
+
+## Migration
+- Reusable script: `node scripts/migrate-blogger-posts.js`
+- Skip empty stubs / junk; ignore old Blogger labels; assign sensible site categories.
