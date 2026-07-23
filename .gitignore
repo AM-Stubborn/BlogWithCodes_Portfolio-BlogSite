@@ -51,8 +51,10 @@ parse-feed.js
 # GitHub Actions workflows (managed manually)
 .github/workflows/
 
-# Cursor / local tooling
-.cursor/
+# Cursor / local tooling (track shared project rules only)
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
 agent-tools/
 
 # Blogger Takeout source (local only)

@@ -1,0 +1,14 @@
+---
+description: Angular UI conventions for BlogWithCodes (standalone, Tailwind theme)
+globs: src/**/*.{ts,html,css,scss}
+alwaysApply: false
+---
+
+# UI / Angular conventions
+
+- Standalone components + lazy routes; reuse `app-icon`, `assetUrl`, existing card/page patterns.
+- Theme tokens live in `src/styles.css` (`ink`, `accent`, `pine`, `mist`, `paper`, etc.). Keep alpine/pine look; avoid purple-default AI aesthetics.
+- Blog body styling: `.prose-blog` in `src/styles.css` — improve carefully for messy Blogger HTML.
+- Post cards: keep compact sizing; always show media area (cover or placeholder).
+- Experience company names link via `companyUrl` when present.
+- Contact CTAs come from `site.social` / `site.email` (LinkedIn primary, plus email/GitHub/Instagram).

@@ -1,0 +1,37 @@
+---
+description: BlogWithCodes portfolio+blog — product context, architecture, and hard constraints
+alwaysApply: true
+---
+
+# BlogWithCodes — project context
+
+## Product
+- Brand: **BlogWithCodes** (no spaces). Owner: Manish Bhatia (Senior Software Developer, India; trekker/traveller).
+- Path: Angular portfolio + blog for GitHub Pages.
+- Stack: Angular 22 standalone + lazy routes, Tailwind CSS v4.
+- Host: GitHub Pages (`npm run build:ghpages`, base href `/BlogWithCodes_Portfolio-BlogSite/`).
+- Theme: alpine blue + pine green; fonts Outfit + Source Sans 3; shared `app-icon`; brand logo in header/favicon under `public/assets/brand/`.
+
+## Routes (do not invent new ones unless asked)
+`/`, `/projects`, `/projects/:slug`, `/blog`, `/blog/category/:category`, `/blog/:slug`, `/places`, `/places/:slug`
+
+## Landing shape (unchanged unless asked)
+Hero → About → Working approach → Experience → Places preview → Blog preview → Contact  
+Do **not** put projects back on the landing page.
+
+## Content-driven architecture
+- Site/profile: `public/content/site.json`
+- Posts index + HTML: `public/content/posts/`
+- Places: `public/content/places.json`
+- Projects: `public/content/projects/index.json`
+- Media: local only under `public/assets/…`; use `assetUrl` pipe for base-href-safe paths.
+- Prefer extending existing services/components over new abstractions.
+
+## Hard do-nots
+- Do not invent brand name variants.
+- Do not show end-user “edit JSON” copy on Places.
+- Do not commit `Blogger/` Takeout (local source only; gitignored).
+- Read existing files before changing; only change what the user asks.
+
+## Contact / social source of truth
+Update links in `public/content/site.json` (`social.*`, `email`, experience `companyUrl`). Do not hardcode URLs in templates when content already provides them.

@@ -1,0 +1,321 @@
+<div class="separator" style="clear: both; text-align: center;">
+  <img border="0" src="assets/blog/top-90-dotnet-interview-questions/01.png" width="650" alt="Top 90 .NET interview questions — C#, ASP.NET, OOP" />
+</div>
+
+<p>
+  This is my personal cheat sheet of <strong>90 interview questions</strong> I expect
+  for <strong>Senior Software Engineer</strong> roles on the stack I ship day to day:
+  <strong>C#</strong>, <strong>OOP</strong>, and <strong>ASP.NET Core</strong>.
+  Answers are short — enough to speak for 60–90 seconds, then deepen with a real project example.
+</p>
+
+<p>
+  How I use this list: pick 10 questions a day, answer out loud, then map one answer
+  to something I actually built (.NET API, EF Core, JWT, Azure-hosted service).
+</p>
+
+<h2>Table of contents</h2>
+<ol>
+  <li><a href="#oops">OOP (Q1–Q20)</a></li>
+  <li><a href="#csharp">C# language &amp; runtime (Q21–Q55)</a></li>
+  <li><a href="#aspnet">ASP.NET Core &amp; Web APIs (Q56–Q90)</a></li>
+</ol>
+
+<hr />
+
+<h2 id="oops">1. OOP (Q1–Q20)</h2>
+
+<p><strong>Q1. What are the four pillars of OOP?</strong><br />
+Encapsulation, Abstraction, Inheritance, Polymorphism. Be ready with a one-line definition and one code/story example for each.</p>
+
+<p><strong>Q2. What is encapsulation?</strong><br />
+Bundling data and behavior, hiding internal state behind well-defined APIs (properties, methods). Prevents invalid state and reduces coupling.</p>
+
+<p><strong>Q3. What is abstraction?</strong><br />
+Exposing only what callers need. In C#: abstract classes, interfaces, and high-level services that hide EF/HTTP details.</p>
+
+<p><strong>Q4. What is inheritance?</strong><br />
+A derived type reuses and extends a base type. Prefer composition when inheritance creates fragile hierarchies.</p>
+
+<p><strong>Q5. What is polymorphism?</strong><br />
+Same interface, different behavior — method overriding, interface implementations, and sometimes operator overloading.</p>
+
+<p><strong>Q6. Abstract class vs interface?</strong><br />
+Abstract class: shared state + implementation, single inheritance. Interface: contract (can have default interface methods), multiple implementation. Prefer interfaces for boundaries; abstract classes for shared base behavior.</p>
+
+<p><strong>Q7. Method overloading vs overriding?</strong><br />
+Overloading: same name, different signatures (compile-time). Overriding: replace base virtual/abstract method in derived type (runtime).</p>
+
+<p><strong>Q8. What is composition over inheritance?</strong><br />
+Build behavior by combining objects (DI services) instead of deep class trees. Easier to test and change.</p>
+
+<p><strong>Q9. What is cohesion and coupling?</strong><br />
+High cohesion: a type does one job well. Low coupling: types depend on abstractions. Senior interviews love this framing.</p>
+
+<p><strong>Q10. What is SOLID? Name each letter.</strong><br />
+Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.</p>
+
+<p><strong>Q11. Explain Single Responsibility with an API example.</strong><br />
+A controller should not also send emails, write SQL, and format PDF. Split into services with clear ownership.</p>
+
+<p><strong>Q12. Explain Open/Closed.</strong><br />
+Open for extension, closed for modification — add new strategies/handlers without rewriting core paths.</p>
+
+<p><strong>Q13. Explain Liskov Substitution.</strong><br />
+Derived types must honor base contracts. If a subclass breaks expectations (throws unexpectedly, weakens invariants), LSP is violated.</p>
+
+<p><strong>Q14. Explain Interface Segregation.</strong><br />
+Prefer small focused interfaces over one fat interface that forces unused methods.</p>
+
+<p><strong>Q15. Explain Dependency Inversion.</strong><br />
+High-level modules depend on abstractions; concrete implementations are injected (ASP.NET Core DI).</p>
+
+<p><strong>Q16. Association vs aggregation vs composition?</strong><br />
+Association: uses. Aggregation: has-a, parts can live independently. Composition: strong ownership; parts die with the whole.</p>
+
+<p><strong>Q17. What is a design pattern? Name 5 you use.</strong><br />
+Reusable solution to a recurring design problem. Examples: Repository, Factory, Strategy, Decorator, Mediator/CQRS-style handlers, Singleton (carefully).</p>
+
+<p><strong>Q18. When is Singleton a bad idea?</strong><br />
+Hidden global state, hard testing, concurrency bugs. Prefer DI with a carefully chosen lifetime.</p>
+
+<p><strong>Q19. What is the Strategy pattern?</strong><br />
+Swap algorithms behind a common interface (payment providers, discount rules, auth schemes).</p>
+
+<p><strong>Q20. What is the Decorator pattern in .NET?</strong><br />
+Wrap an implementation to add behavior (logging, caching, retries) without changing the core class — also how middleware layers work conceptually.</p>
+
+<hr />
+
+<h2 id="csharp">2. C# language &amp; runtime (Q21–Q55)</h2>
+
+<p><strong>Q21. Value types vs reference types?</strong><br />
+Value types store data (structs, primitives); reference types store a reference to heap data (classes, arrays, delegates). Affects copy semantics and GC pressure.</p>
+
+<p><strong>Q22. Stack vs heap (practical view)?</strong><br />
+Locals/value storage vs managed objects. Don’t over-simplify — focus on allocation cost and lifetime.</p>
+
+<p><strong>Q23. Boxing and unboxing?</strong><br />
+Boxing: value type → object/interface (heap allocation). Unboxing: reverse with cast. Avoid in hot paths.</p>
+
+<p><strong>Q24. const vs readonly?</strong><br />
+<code>const</code>: compile-time constant. <code>readonly</code>: set in declaration or constructor (runtime). Static readonly for shared immutable config.</p>
+
+<p><strong>Q25. ref vs out vs in?</strong><br />
+<code>ref</code>: pass by reference, must be assigned before. <code>out</code>: must be assigned inside method. <code>in</code>: readonly by-ref to avoid copies of large structs.</p>
+
+<p><strong>Q26. == vs Equals vs ReferenceEquals?</strong><br />
+<code>==</code> can be overloaded; <code>Equals</code> is virtual/overridable; <code>ReferenceEquals</code> checks same instance. For strings, value equality is common.</p>
+
+<p><strong>Q27. String vs StringBuilder?</strong><br />
+Strings are immutable; repeated concatenation allocates. <code>StringBuilder</code> for many mutations in loops.</p>
+
+<p><strong>Q28. string.IsNullOrEmpty vs IsNullOrWhiteSpace?</strong><br />
+Empty checks null/""; WhiteSpace also treats spaces/tabs/newlines as empty for user input.</p>
+
+<p><strong>Q29. What are nullable reference types?</strong><br />
+Compiler annotations (<code>?</code>) to reduce NullReferenceException. Enable nullable context and treat warnings seriously.</p>
+
+<p><strong>Q30. What is a record / record struct?</strong><br />
+Immutable-friendly types with value-based equality (for records). Great for DTOs and messages.</p>
+
+<p><strong>Q31. class vs struct?</strong><br />
+Class: reference type, inheritance. Struct: value type, no inheritance from other structs/classes (except interfaces), prefer small immutable data.</p>
+
+<p><strong>Q32. What is a sealed class?</strong><br />
+Cannot be inherited. Signals intentional final type; can help JIT/devirtualization in some cases.</p>
+
+<p><strong>Q33. What is a static class?</strong><br />
+Cannot be instantiated; only static members. Useful for helpers — avoid hiding dependencies that should be injected.</p>
+
+<p><strong>Q34. Access modifiers in C#?</strong><br />
+<code>public</code>, <code>private</code>, <code>protected</code>, <code>internal</code>, <code>protected internal</code>, <code>private protected</code>. Know assembly boundaries for <code>internal</code>.</p>
+
+<p><strong>Q35. What is an extension method?</strong><br />
+Static method on a static class with <code>this</code> first parameter. Looks like instance method. Don’t overuse for core domain logic.</p>
+
+<p><strong>Q36. Delegates, Action, Func, Predicate?</strong><br />
+Delegates are type-safe method references. <code>Action</code> returns void; <code>Func</code> returns a value; <code>Predicate&lt;T&gt;</code> returns bool.</p>
+
+<p><strong>Q37. Events vs delegates?</strong><br />
+Events wrap delegates with restricted subscribe/unsubscribe from outside — safer pub/sub on a type.</p>
+
+<p><strong>Q38. What is LINQ?</strong><br />
+Language-integrated query over collections and providers (EF). Prefer clear queries; watch deferred execution.</p>
+
+<p><strong>Q39. Deferred execution in LINQ?</strong><br />
+Many operators run only when enumerated. Multiple enumerations can re-run work or hit the DB again.</p>
+
+<p><strong>Q40. IEnumerable vs IQueryable?</strong><br />
+<code>IEnumerable</code>: in-memory iteration. <code>IQueryable</code>: expression tree — provider (EF) can translate to SQL. Don’t switch to IEnumerable too early (client evaluation).</p>
+
+<p><strong>Q41. List vs array vs Dictionary?</strong><br />
+Array: fixed size. List: dynamic array. Dictionary: O(1) average lookup by key. Choose by access pattern.</p>
+
+<p><strong>Q42. What is yield return?</strong><br />
+Builds an iterator without allocating a full collection up front. Streaming style enumeration.</p>
+
+<p><strong>Q43. Exception handling best practices?</strong><br />
+Catch specific exceptions, don’t swallow, use <code>throw;</code> to preserve stack, fail fast on unexpected bugs, map to problem details in APIs.</p>
+
+<p><strong>Q44. throw vs throw ex?</strong><br />
+<code>throw;</code> keeps original stack trace. <code>throw ex;</code> resets it — usually wrong for rethrow.</p>
+
+<p><strong>Q45. What is async/await?</strong><br />
+Non-blocking asynchronous programming model. Methods return Task/ValueTask; await yields until completion without blocking a thread (I/O bound).</p>
+
+<p><strong>Q46. Why avoid async void?</strong><br />
+Exceptions are hard to observe; mainly for event handlers. Prefer <code>async Task</code>.</p>
+
+<p><strong>Q47. ConfigureAwait(false) — when?</strong><br />
+In library code to avoid capturing SynchronizationContext. In ASP.NET Core apps it’s often less critical than in UI apps — know the reason.</p>
+
+<p><strong>Q48. Task.Run — when is it wrong?</strong><br />
+Don’t wrap already-async I/O in Task.Run just to “make it async.” Use it for CPU-bound work off the request thread carefully.</p>
+
+<p><strong>Q49. Deadlocks with async?</strong><br />
+Classic: blocking on <code>.Result</code>/<code>.Wait()</code> while a context waits for the same thread. Prefer async all the way.</p>
+
+<p><strong>Q50. What is the Garbage Collector?</strong><br />
+Manages heap memory in generations (0/1/2 + LOH). Minimize allocations in hot paths; dispose unmanaged/native resources.</p>
+
+<p><strong>Q51. IDisposable and using / await using?</strong><br />
+Deterministic cleanup for resources (streams, DB connections, HttpClient factories aside). Prefer <code>using</code> scopes.</p>
+
+<p><strong>Q52. What is reflection? Pros/cons?</strong><br />
+Inspect/invoke types at runtime. Powerful for frameworks; slower and can break trimming/AOT — use sparingly in app code.</p>
+
+<p><strong>Q53. Generics — why?</strong><br />
+Type-safe reusable code without boxing (for value types in many cases) and clearer APIs (<code>List&lt;T&gt;</code>, repositories).</p>
+
+<p><strong>Q54. Covariance and contravariance (simple)?</strong><br />
+<code>IEnumerable&lt;out T&gt;</code> is covariant; <code>Action&lt;in T&gt;</code> is contravariant. Explains why assignment between generic interfaces works in some directions.</p>
+
+<p><strong>Q55. What are attributes in C#?</strong><br />
+Metadata markers (<code>[Authorize]</code>, <code>[Required]</code>, <code>[HttpGet]</code>). Read by runtime/frameworks via reflection.</p>
+
+<hr />
+
+<h2 id="aspnet">3. ASP.NET Core &amp; Web APIs (Q56–Q90)</h2>
+
+<p><strong>Q56. ASP.NET Core vs classic ASP.NET?</strong><br />
+Core is cross-platform, high-performance, modular middleware pipeline, built-in DI, side-by-side versions — preferred for modern APIs.</p>
+
+<p><strong>Q57. What is the middleware pipeline?</strong><br />
+Ordered components that handle requests/responses (exception handling, auth, routing, endpoints). Order matters.</p>
+
+<p><strong>Q58. How do you write custom middleware?</strong><br />
+Class with <code>InvokeAsync(HttpContext, RequestDelegate)</code> or inline <code>app.Use</code>. Register in the correct position in Program.cs.</p>
+
+<p><strong>Q59. Controllers vs Minimal APIs?</strong><br />
+Controllers: familiar MVC style, filters, conventions. Minimal APIs: lighter endpoints, great for small services. Both are valid — justify choice.</p>
+
+<p><strong>Q60. What is dependency injection in ASP.NET Core?</strong><br />
+Built-in IoC container registers services and injects them into constructors. Enables testability and DIP.</p>
+
+<p><strong>Q61. Singleton vs Scoped vs Transient?</strong><br />
+Singleton: one per app. Scoped: one per request. Transient: new every time. Never inject scoped into singleton (captive dependency).</p>
+
+<p><strong>Q62. What is a captive dependency?</strong><br />
+Longer-lived service holds a shorter-lived dependency (e.g., singleton holding scoped DbContext) — causes bugs. Fix lifetimes or use factories.</p>
+
+<p><strong>Q63. How does routing work?</strong><br />
+Endpoint routing matches URL/method to an action/endpoint. Attribute routing (<code>[Route]</code>, <code>[HttpGet]</code>) is common in APIs.</p>
+
+<p><strong>Q64. Model binding and validation?</strong><br />
+Framework maps query/route/body to parameters. DataAnnotations / FluentValidation + <code>ModelState</code> / automatic 400 responses.</p>
+
+<p><strong>Q65. What are filters / endpoint filters?</strong><br />
+Cross-cutting logic around actions (authorization, caching, logging). Prefer middleware for pipeline-wide concerns; filters for MVC/endpoint specifics.</p>
+
+<p><strong>Q66. Configuration in ASP.NET Core?</strong><br />
+<code>appsettings.json</code>, environment variables, user secrets, Azure Key Vault providers. Options pattern (<code>IOptions&lt;T&gt;</code>) for typed config.</p>
+
+<p><strong>Q67. Environments (Development/Staging/Production)?</strong><br />
+<code>ASPNETCORE_ENVIRONMENT</code> switches config and middleware (Swagger only in Dev, stricter errors in Prod).</p>
+
+<p><strong>Q68. What is Kestrel?</strong><br />
+Cross-platform web server for ASP.NET Core. Often behind IIS/Nginx/Azure reverse proxy in production.</p>
+
+<p><strong>Q69. REST principles you follow?</strong><br />
+Resource-oriented URLs, correct HTTP verbs/status codes, stateless requests, consistent error shape (Problem Details).</p>
+
+<p><strong>Q70. Common HTTP status codes you use?</strong><br />
+200/201/204, 400 validation, 401 unauthenticated, 403 forbidden, 404, 409 conflict, 429, 500. Don’t return 200 for failures.</p>
+
+<p><strong>Q71. Idempotency — why does PUT/DELETE matter?</strong><br />
+Safe retries. PUT/DELETE should be idempotent; POST often is not — design carefully for payments/orders.</p>
+
+<p><strong>Q72. Authentication vs authorization?</strong><br />
+Authentication: who are you? Authorization: what can you do? JWT/OIDC for identity; policies/roles/claims for access.</p>
+
+<p><strong>Q73. How does JWT auth work in ASP.NET Core?</strong><br />
+Client sends Bearer token; middleware validates signature/expiry/issuer/audience; claims populate <code>HttpContext.User</code>; <code>[Authorize]</code> enforces.</p>
+
+<p><strong>Q74. Where do you store JWT on the client? Risks?</strong><br />
+Memory preferred for SPAs when possible; localStorage XSS risk; HTTP-only cookies need CSRF strategy. Discuss trade-offs honestly.</p>
+
+<p><strong>Q75. What is CORS and when do you need it?</strong><br />
+Browser security for cross-origin API calls from SPAs. Configure allowed origins/methods/headers — never <code>*</code> with credentials in prod.</p>
+
+<p><strong>Q76. How do you secure Web APIs?</strong><br />
+HTTPS, authn/authz, input validation, output encoding where needed, secrets in Key Vault, rate limiting, least privilege DB accounts, security headers.</p>
+
+<p><strong>Q77. What is Entity Framework Core?</strong><br />
+Microsoft ORM for .NET — map classes to tables, LINQ to SQL, migrations, change tracking.</p>
+
+<p><strong>Q78. Code-First vs Database-First?</strong><br />
+Code-First: model + migrations drive schema (common for new apps). Database-First: scaffold from existing DB. Know both conversations.</p>
+
+<p><strong>Q79. What is change tracking? When AsNoTracking?</strong><br />
+EF tracks entity instances for updates. Use <code>AsNoTracking()</code> for read-only queries — faster, less memory.</p>
+
+<p><strong>Q80. How do you avoid N+1 queries?</strong><br />
+Eager load with <code>Include</code>/<code>ThenInclude</code>, projection to DTOs, or explicit joins. Profile SQL in logs/Insights.</p>
+
+<p><strong>Q81. SaveChanges vs transactions?</strong><br />
+<code>SaveChanges</code> uses a transaction by default. Multi-SaveChanges or multi-resource work needs explicit transactions / Unit of Work discipline.</p>
+
+<p><strong>Q82. DbContext lifetime?</strong><br />
+Typically scoped per request. Don’t keep one DbContext as singleton. Dispose via DI scope.</p>
+
+<p><strong>Q83. Repository pattern with EF Core — yes/no?</strong><br />
+Useful as an app boundary; avoid empty wrappers that just hide DbSet. Prefer clear application services + EF where team agrees.</p>
+
+<p><strong>Q84. How do you version APIs?</strong><br />
+URL versioning (<code>/v1</code>), header, or query. Pick one strategy; document breaking changes for product clients.</p>
+
+<p><strong>Q85. Logging vs Application Insights?</strong><br />
+<code>ILogger</code> for structured logs; App Insights/OpenTelemetry for traces, metrics, dependency tracking across Azure.</p>
+
+<p><strong>Q86. How do you handle global errors in APIs?</strong><br />
+Exception middleware / filters producing ProblemDetails; don’t leak stack traces in production; correlate with request IDs.</p>
+
+<p><strong>Q87. What is Health Checks middleware?</strong><br />
+Endpoints for readiness/liveness (DB, dependencies) used by orchestrators and load balancers.</p>
+
+<p><strong>Q88. How do you call external HTTP APIs correctly?</strong><br />
+<code>IHttpClientFactory</code>, typed clients, timeouts, retries (Polly) with care, never <code>new HttpClient</code> per call without understanding socket exhaustion.</p>
+
+<p><strong>Q89. Background work in ASP.NET Core?</strong><br />
+<code>IHostedService</code> / <code>BackgroundService</code> for queues and scheduled jobs. Don’t run long CPU work directly on request threads.</p>
+
+<p><strong>Q90. How do you prepare a .NET API for production on Azure?</strong><br />
+Config via app settings + Key Vault, CI/CD, HTTPS, insights/logging, health checks, scaling (App Service/VMs), secrets/RBAC, zero-downtime deploy mindset, and clear ownership of failures.</p>
+
+<hr />
+
+<h2>How I practice these 90</h2>
+<ul>
+  <li><strong>Week rhythm:</strong> OOP + C# early week, ASP.NET Core mid/late week.</li>
+  <li><strong>Speak answers:</strong> 60–90 seconds, then one real example from my projects.</li>
+  <li><strong>Mark weak ones:</strong> anything I pause on gets a code spike the same day.</li>
+  <li><strong>Tie to portfolio claims:</strong> DI lifetimes, JWT, EF performance, middleware, Azure ops.</li>
+</ul>
+
+<p>
+  This list is for my Senior .NET interview prep. I’ll extend it with company-specific
+  notes after each mock interview.
+</p>
+
+<p><em>— Manish Bhatia, BlogWithCodes</em></p>
