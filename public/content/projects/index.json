@@ -1,83 +1,47 @@
 [
   {
-    "slug": "enterprise-finance-platform",
-    "title": "Enterprise Finance Platform",
-    "excerpt": "Full-stack delivery across APIs, UI, and cloud monitoring for a finance-domain system — names withheld under NDA.",
-    "domain": "Finance",
-    "year": "Recent",
-    "role": "Senior Full-Stack Engineer",
-    "cover": "assets/projects/enterprise-finance-platform.svg",
-    "tags": [".NET", "Angular", "Azure"],
-    "overview": "An enterprise finance platform supporting operational workflows, reporting views, and secure API access for internal teams. Project names and client identifiers are altered under NDA, while the architecture and delivery challenges remain real.",
+    "slug": "helpdesk-ticket-portal",
+    "title": "TechDesk — SaaS Ticket Management Portal",
+    "excerpt": "End-to-end SaaS helpdesk portal: tickets, users, real-time SignalR chat, embeddable chatbot, and Gemini-powered ticket summaries — led as Technical Lead on a three-person team.",
+    "domain": "Customer Support / SaaS",
+    "year": "2024",
+    "role": "Senior Software Engineer · Technical Lead",
+    "cover": "assets/projects/helpdesk-ticket-portal/01.png",
+    "tags": [".NET 8", "Angular", "SignalR", "Azure"],
+    "liveUrl": "https://helpdesk.techbitsolution.com/",
+    "overview": "TechDesk is a SaaS ticket-management portal built for companies that need one place to track user and customer issues, assign ownership, and resolve them without bouncing between tools. Over roughly six months in 2024 I led the project end to end as Technical Lead on a three-person team — owning architecture, technical decisions, UI direction, and mentoring a junior engineer through delivery. The product covers ticket and user management, real-time conversation on issues, an embeddable chatbot for client sites, and AI assistance to summarize ticket threads. The goal was simple: let support teams close the loop on problems faster, including from the customer’s own website without forcing a clunky login experience.",
     "challenges": [
-      "Integrate frontend workflows with reliable backend APIs under strict data-access rules",
-      "Keep release quality high while coordinating across concurrent workstreams",
-      "Add observability so production issues could be diagnosed quickly"
+      "Shipping an embeddable chatbot as a script that other sites could drop in — without weakening auth or leaking trust boundaries between TechDesk and the host application",
+      "Making ticket conversations feel real-time (not refresh-and-hope) across portal chat and the embedded widget, using SignalR reliably under multi-user load",
+      "Adding AI summary for ticket threads in a way that was useful for agents, without turning the product into an unfocused AI demo",
+      "Keeping a clean three-layer architecture and delivery discipline while the product grew from a small start into a full SaaS admin experience (tickets, users, branding, settings, dashboard)"
     ],
     "approach": [
-      "Designed and delivered Angular UI flows backed by .NET APIs",
-      "Used Azure hosting with Application Insights for health and performance signals",
-      "Collaborated with stakeholders on prioritization, reviews, and incremental releases"
+      "Owned end-to-end technical architecture and day-to-day engineering decisions: API shape, Angular module structure, auth model, Azure hosting, and how new features fit the existing three-layer design",
+      "Built real-time ticket chat with SignalR so agents and users could continue conversations live inside the portal",
+      "Delivered the embeddable chatbot as a standalone Angular component compiled to a single JS file clients can include on their own sites",
+      "Designed a TechDesk-owned SSO/OAuth path for the embed: validate credentials in TechDesk when the user already exists; for first-time users, call the integrating app’s verification API, then create the TechDesk user and continue the chat — so customers are not interrupted by a separate username/password wall when identity is already trusted",
+      "Secured regular portal APIs with JWT, and treated the embed surface as its own trust boundary with dedicated endpoints the widget is allowed to call",
+      "Integrated Gemini to summarize ticket/chat context for agents, and used Chart.js on the dashboard for operational visibility",
+      "Deployed and maintained the app on Azure App Service with Azure DevOps pipelines for consistent builds and releases; guided the junior engineer through reviews and implementation patterns"
     ],
     "outcomes": [
-      "Stable delivery of core finance workflows with clearer ownership boundaries",
-      "Improved monitoring coverage for requests, failures, and dependency health",
-      "Reusable patterns for API contracts and UI module structure"
+      "Clients can embed the chatbot on their own sites and start support conversations with auth that respects the integrating app — without breaking the user’s flow",
+      "Agents get a unified portal for tickets, users, live chat, and AI summaries instead of stitching tools together manually",
+      "A maintainable SaaS foundation (branding, settings, role-based admin views, Azure hosting) that a small team could extend without rewriting the core",
+      "Clear technical ownership and mentoring practices that kept architecture decisions consistent as features landed"
     ],
-    "tech": [".NET Core", "Angular", "SQL Server", "Azure App Services", "Application Insights", "CI/CD"]
-  },
-  {
-    "slug": "healthcare-operations-suite",
-    "title": "Healthcare Operations Suite",
-    "excerpt": "Secure web workflows with SQL-backed services, performance tuning, and reliable deployments for healthcare operations.",
-    "domain": "Healthcare",
-    "year": "Recent",
-    "role": "Full-Stack Developer",
-    "cover": "assets/projects/healthcare-operations-suite.svg",
-    "tags": ["SQL Server", "APIs", "DevOps"],
-    "overview": "A healthcare operations suite focused on secure web workflows, data integrity, and dependable deployments. Confidential client details are omitted; the technical story focuses on APIs, SQL optimization, and delivery discipline.",
-    "challenges": [
-      "Protect sensitive operational data while keeping day-to-day workflows usable",
-      "Reduce slow queries and brittle integrations that blocked operators",
-      "Ship safely with predictable environments and deployment checks"
-    ],
-    "approach": [
-      "Built and hardened REST APIs with clear validation and authorization boundaries",
-      "Tuned SQL Server queries and indexes for high-traffic operational screens",
-      "Improved DevOps practices around builds, releases, and environment stability"
-    ],
-    "outcomes": [
-      "Faster, more reliable operational screens for core workflows",
-      "Cleaner API/database contracts that were easier to extend",
-      "More predictable release process with fewer environment surprises"
-    ],
-    "tech": [".NET", "SQL Server", "REST APIs", "Azure DevOps", "Authentication", "Performance tuning"]
-  },
-  {
-    "slug": "cloud-commerce-toolkit",
-    "title": "Cloud Commerce Toolkit",
-    "excerpt": "E-commerce style modules with frontend–backend integration, Azure hosting, and Application Insights observability.",
-    "domain": "E-commerce",
-    "year": "Recent",
-    "role": "Senior Software Engineer",
-    "cover": "assets/projects/cloud-commerce-toolkit.svg",
-    "tags": ["React", "Azure", "Monitoring"],
-    "overview": "A cloud commerce toolkit combining storefront-style UI modules with backend services hosted on Azure. Names are anonymized under NDA. The emphasis is on frontend–backend integration, cloud deployment, and production observability.",
-    "challenges": [
-      "Keep UI and API contracts aligned across frequent feature iterations",
-      "Host and scale services on Azure without losing visibility into failures",
-      "Balance speed of delivery with security and maintainability"
-    ],
-    "approach": [
-      "Implemented React modules integrated with backend services and shared contracts",
-      "Deployed to Azure with monitoring via Application Insights",
-      "Used iterative delivery with code reviews and performance-conscious UI changes"
-    ],
-    "outcomes": [
-      "Reusable commerce-facing UI/API building blocks",
-      "Better production diagnostics through telemetry and alerts",
-      "Clearer separation between presentation, APIs, and cloud concerns"
-    ],
-    "tech": ["React", "TypeScript", "Azure", "Application Insights", "REST", "CI/CD"]
+    "tech": [
+      ".NET 8",
+      "SignalR",
+      "Angular",
+      "SQL Server",
+      "JWT",
+      "SSO / OAuth (embed)",
+      "Gemini",
+      "Chart.js",
+      "Azure App Service",
+      "Azure DevOps CI/CD"
+    ]
   }
 ]

@@ -27,6 +27,8 @@ export interface Project {
   approach: string[];
   outcomes: string[];
   tech: string[];
+  /** Optional public demo or product URL. */
+  liveUrl?: string;
 }
 
 export interface Experience {

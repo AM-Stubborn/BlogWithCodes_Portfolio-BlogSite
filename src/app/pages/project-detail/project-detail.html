@@ -29,6 +29,18 @@
           <h1 class="heading-lg mt-4">{{ project.title }}</h1>
           <p class="body-lg mt-5">{{ project.excerpt }}</p>
 
+          @if (project.liveUrl) {
+            <a
+              [href]="project.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary mt-6 inline-flex items-center gap-2"
+            >
+              <app-icon name="external" className="h-4 w-4" />
+              Live demo
+            </a>
+          }
+
           <div class="mt-6 flex flex-wrap gap-2">
             @for (tag of project.tags; track tag) {
               <span class="rounded-md bg-mist px-2.5 py-1 text-xs font-medium text-ink-soft/75">{{ tag }}</span>
