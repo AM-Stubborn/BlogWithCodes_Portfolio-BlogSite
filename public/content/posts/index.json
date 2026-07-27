@@ -1,5 +1,38 @@
 [
   {
+    "slug": "top-90-dotnet-interview-questions",
+    "title": "Top 90 .NET Interview Questions — C#, OOP & ASP.NET Core",
+    "excerpt": "My personal cheat sheet of 90 Senior Software Engineer interview questions across OOP, C#, and ASP.NET Core — short answers you can speak in 60–90 seconds, tied to real .NET delivery.",
+    "category": "interview",
+    "tags": [
+      "interview",
+      "dotnet",
+      "csharp",
+      "aspnet-core",
+      "oops"
+    ],
+    "date": "2026-07-23",
+    "readingTime": "18 min",
+    "cover": "assets/blog/top-90-dotnet-interview-questions/01.png"
+  },
+  {
+    "slug": "my-30-day-senior-interview-roadmap",
+    "title": "My 30-Day Interview Prep Roadmap for Senior Full-Stack Roles",
+    "excerpt": "My personal 30-day plan to prepare for Senior Software Engineer interviews at product-based, remote-friendly companies — defending .NET, Angular, SQL Server, Azure, and AI-augmented delivery in 2 focused hours a day.",
+    "category": "interview",
+    "tags": [
+      "interview",
+      "roadmap",
+      "career",
+      "dotnet",
+      "angular",
+      "azure"
+    ],
+    "date": "2026-07-21",
+    "readingTime": "12 min",
+    "cover": "assets/blog/my-30-day-senior-interview-roadmap/01.jpg"
+  },
+  {
     "slug": "ai-engineering-basic",
     "title": "AI Engineering Basic",
     "excerpt": "What is LLM At its core, a Large Language Model (LLM) is a type of artificial intelligence trained to understand, generate, and manipulate human language. Think of it as a highl…",

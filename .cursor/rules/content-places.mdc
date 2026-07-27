@@ -1,0 +1,14 @@
+---
+description: Places visited journal — real treks, one photo + notes per place
+globs: public/content/places.json,public/assets/places/**/*,src/app/pages/place*/**/*,src/app/shared/place-card/**/*,src/app/core/services/places.service.ts
+alwaysApply: false
+---
+
+# Places journal rules
+
+- One object per place in `public/content/places.json`; one photo under `public/assets/places/`.
+- Fields: slug, name, region, country, visitedOn, type (`trek`|`travel`), summary, notes, photo, photoCredit.
+- Notes should cover how you reach the place and how the trek/day went (user may edit later).
+- Prefer the user’s real visits; do not reintroduce dummy demo places.
+- No end-user “edit this JSON” instructional copy in the UI.
+- Photo credits may note placeholders until personal trail photos replace them.

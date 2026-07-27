@@ -1,0 +1,205 @@
+<div class="separator" style="clear: both; text-align: center;">
+  <img border="0" src="assets/blog/my-30-day-senior-interview-roadmap/01.jpg" width="650" alt="Planner and checklist — 30-day interview preparation roadmap" />
+</div>
+
+<p>
+  This is my personal 30-day interview preparation plan. I am targeting
+  <strong>Senior Software Engineer</strong> roles at
+  <strong>product-based companies</strong>, preferably
+  <strong>remote</strong>, with about <strong>6.5 years</strong> of experience.
+  The stack I will defend is the same one on this site: .NET Core, C#, Angular,
+  SQL Server, Azure, plus practical AI integrations and agentic coding in the IDE.
+</p>
+
+<p>
+  Constraint I am designing around: <strong>2 focused hours per day</strong>.
+  Resume, LinkedIn, applications, and mock interviews sit
+  <em>outside</em> those 2 hours so technical depth does not get crowded out.
+</p>
+
+<h2>What I am justifying in interviews</h2>
+<p>
+  Interviewers will probe what my portfolio already claims. I need crisp stories
+  and depth for each of these:
+</p>
+<ul>
+  <li><strong>Backend:</strong> .NET Core / C#, EF Core, REST APIs, JWT / OAuth / Identity, microservices vs monolith trade-offs</li>
+  <li><strong>Frontend (primary):</strong> Angular (RxJS, NgRx), TypeScript, HTML/CSS</li>
+  <li><strong>Data &amp; Azure:</strong> SQL Server / Azure SQL, Key Vault, Storage, Application Insights, RBAC, Azure DevOps CI/CD, App Service &amp; VM hosting</li>
+  <li><strong>Practices:</strong> SOLID, design patterns, code reviews, mentoring, Agile delivery</li>
+  <li><strong>AI:</strong> Gemini / ChatGPT product integrations, and agentic coding with Cursor, GitHub Copilot, and Claude — with human ownership of architecture, security, and review</li>
+  <li><strong>Leadership:</strong> leading concurrent deliveries, client communication, mentoring juniors (Techbit / Capgemini chapters)</li>
+</ul>
+
+<h2>Honest gaps I will not oversell</h2>
+<ul>
+  <li><strong>Angular</strong> — strongest frontend exposure; this is what I lead with.</li>
+  <li><strong>React</strong> — limited hands-on; I will revise Hooks / Context enough to converse, not claim deep production ownership.</li>
+  <li><strong>Vue 3</strong> — last used ~3 years ago; I will treat it as past experience, not a current selling point.</li>
+  <li><strong>C#</strong> — I am already confident; Days 1–2 sharpen interview framing, then time shifts to weaker areas.</li>
+</ul>
+
+<h2>How I will prepare (method)</h2>
+<p>Every 2-hour block follows the same loop:</p>
+<ol>
+  <li><strong>Recall (20 min)</strong> — write from memory: definitions, diagrams, trade-offs.</li>
+  <li><strong>Deepen (50 min)</strong> — docs, notes, or one focused article / official doc section.</li>
+  <li><strong>Apply (40 min)</strong> — small code spike, SQL script, Azure checklist, or whiteboard design.</li>
+  <li><strong>Interview drill (10 min)</strong> — answer 2–3 questions out loud as if in a call.</li>
+</ol>
+<p>
+  I keep a running <strong>STAR story bank</strong> (Situation, Task, Action, Result)
+  tied to real work: Azure ops, AI feature integration, mentoring, RCA, concurrent project leadership.
+  Product interviews reward clear trade-offs more than buzzwords.
+</p>
+
+<h2>Market extras for my level (2026)</h2>
+<p>
+  Beyond the stack on this site, product/remote senior interviews commonly expect:
+</p>
+<ul>
+  <li><strong>System design for mid-size features</strong> — APIs, data model, caching, auth, observability, failure modes</li>
+  <li><strong>Clean architecture &amp; ownership</strong> — boundaries, testing strategy, how you review AI-generated code</li>
+  <li><strong>Security basics</strong> — secrets, least privilege, OWASP-minded API design</li>
+  <li><strong>Light DSA</strong> — enough for coding rounds (arrays, maps, complexity); not a competitive-programming track</li>
+  <li><strong>Remote-ready communication</strong> — structured answers, screen-share coding, async written clarity</li>
+</ul>
+
+<hr />
+
+<h2>30-day roadmap (2 hours / day)</h2>
+
+<h3>Week 1 — Backend strength &amp; story foundation</h3>
+
+<p><strong>Day 1 — Portfolio → interview map</strong><br />
+List every skill on this site. For each, write 1 proof point from real work (project, incident, or decision). Flag weak claims. Draft 5 STAR stories (leadership, Azure outage/ops, performance, mentoring, AI feature).</p>
+
+<p><strong>Day 2 — C# interview polish (light)</strong><br />
+Async/await pitfalls, IEnumerable vs IQueryable, generics, memory/GC basics, records vs classes, nullable reference types. Record 5 answers I would give live.</p>
+
+<p><strong>Day 3 — ASP.NET Core deep dive</strong><br />
+Middleware pipeline, DI lifetimes, configuration, filters, minimal APIs vs controllers, exception handling, logging. Sketch how I structure a production API.</p>
+
+<p><strong>Day 4 — EF Core for interviews</strong><br />
+Change tracking, AsNoTracking, N+1, migrations, transactions, raw SQL when needed, performance habits I actually use.</p>
+
+<p><strong>Day 5 — Auth &amp; APIs</strong><br />
+REST design, status codes, versioning mindset, JWT vs cookie sessions, OAuth/OIDC at a senior conversational level, Identity patterns I have shipped.</p>
+
+<p><strong>Day 6 — SOLID &amp; design patterns</strong><br />
+Revisit my own notes/posts. Map each principle to a real refactor. Common patterns: Repository/Unit of Work (honest trade-offs), Factory, Strategy, Decorator, Mediator-style handlers.</p>
+
+<p><strong>Day 7 — Architecture trade-offs</strong><br />
+Monolith vs microservices from my experience. When I would not split services. Sync vs async integration. Idempotency and basic resilience (retries, timeouts).</p>
+
+<h3>Week 2 — Angular-first frontend</h3>
+
+<p><strong>Day 8 — Angular core</strong><br />
+Standalone components, DI, lifecycle, change detection (Default vs OnPush), signals vs older patterns if asked, module legacy awareness.</p>
+
+<p><strong>Day 9 — RxJS (must-defend)</strong><br />
+Observables, Subjects, switchMap / mergeMap / concatMap / exhaustMap, shareReplay, error handling, unsubscription strategies.</p>
+
+<p><strong>Day 10 — Routing, HTTP, forms</strong><br />
+Guards, interceptors, resolvers, reactive forms, validation UX, error surfaces for product UIs.</p>
+
+<p><strong>Day 11 — State management</strong><br />
+NgRx concepts I claim: store, actions, effects, selectors. When NgRx is overkill vs services + signals/RxJS.</p>
+
+<p><strong>Day 12 — TypeScript for seniors</strong><br />
+Narrowing, generics, utility types, strictness, typing API contracts cleanly between Angular and .NET.</p>
+
+<p><strong>Day 13 — Angular performance &amp; quality</strong><br />
+trackBy, lazy routes, bundle awareness, pure pipes, testing approach (what I unit-test vs e2e).</p>
+
+<p><strong>Day 14 — React (honest, light)</strong><br />
+Hooks (useState, useEffect, useMemo awareness), Context, component composition. Practice one short comparison: “When I pick Angular vs React.” Do not claim deep React ownership.</p>
+
+<h3>Week 3 — Data, Azure, system design</h3>
+
+<p><strong>Day 15 — SQL Server fundamentals</strong><br />
+Indexes, clustered vs nonclustered, execution plans at a practical level, joins, JSON in SQL (I have written about this — be ready to explain).</p>
+
+<p><strong>Day 16 — SQL performance &amp; correctness</strong><br />
+Transactions, isolation levels (practical), deadlocks, parameterization, when to denormalize, query optimization stories.</p>
+
+<p><strong>Day 17 — Azure I operate</strong><br />
+Key Vault, Storage Accounts, RBAC &amp; identity, App Service vs VM hosting trade-offs I have lived with. Draw a simple deploy topology from memory.</p>
+
+<p><strong>Day 18 — Observability &amp; CI/CD</strong><br />
+Application Insights (logs, traces, metrics), Azure DevOps pipelines, what I gate before merge, how I debug production issues.</p>
+
+<p><strong>Day 19 — System design (product-sized)</strong><br />
+Practice designing: multi-tenant notes app or order/workflow feature — requirements, API, data model, auth, scaling levers, failure modes. 45 min design + 15 min critique.</p>
+
+<p><strong>Day 20 — End-to-end design drill</strong><br />
+Same problem, deepen: Angular UX flow, .NET services, SQL schema, Azure pieces, monitoring. Write a 1-page architecture note.</p>
+
+<p><strong>Day 21 — Security checklist</strong><br />
+Secrets (never in source), HTTPS, CORS, input validation, authz vs authn, XSS/CSRF awareness for SPA + API, secure AI API key usage.</p>
+
+<h3>Week 4 — Coding rounds, AI narrative, interview readiness</h3>
+
+<p><strong>Day 22 — DSA lite (1)</strong><br />
+Arrays, hash maps, two pointers, sliding window. 2–3 problems timed. Emphasize complexity explanation.</p>
+
+<p><strong>Day 23 — DSA lite (2)</strong><br />
+Stacks/queues, binary search, simple tree traversal. 2–3 problems. Practice talking while coding (remote screen-share style).</p>
+
+<p><strong>Day 24 — AI product integrations</strong><br />
+How I integrated Gemini / ChatGPT: use cases, prompt/API boundaries, latency, cost, failure fallbacks, data privacy. Prepare one demo story and one “when not to use AI” answer.</p>
+
+<p><strong>Day 25 — Agentic coding interview narrative</strong><br />
+Explain Cursor / Copilot / Claude as accelerators. Stress: framing the problem, reviewing diffs, security, SOLID/DDD ownership, tests before merge. Interviewers want judgment, not “AI wrote it.”</p>
+
+<p><strong>Day 26 — Behavioral &amp; leadership</strong><br />
+Conflict, mentoring, missed deadline, technical disagreement, multitasking across projects. Refine STAR stories; keep answers under ~2 minutes.</p>
+
+<p><strong>Day 27 — Product-company interview style</strong><br />
+Practice trade-off questions: build vs buy, tech debt vs speed, feature flags, rollout, measuring success. Tie answers to shipping on Azure with real users.</p>
+
+<p><strong>Day 28 — Full mock (technical)</strong><br />
+90 min: one coding problem + one API/Angular design question. 30 min: write gaps into a fix list for Day 29.</p>
+
+<p><strong>Day 29 — Gap fill + second mock</strong><br />
+Patch the weakest areas from Day 28. Second mock: system design + behavioral. Record myself if no peer available.</p>
+
+<p><strong>Day 30 — Final assembly</strong><br />
+One-page cheat sheet: stack bullets, 8 STAR titles, Azure topology, AI ownership pitch, questions to ask product teams (roadmap, on-call, remote culture, engineering quality bar). Rest voice and sleep plan for interview week.</p>
+
+<hr />
+
+<h2>Outside the 2-hour block</h2>
+<p>These matter for remote product hiring but do not replace technical prep:</p>
+<ul>
+  <li><strong>Resume (once in Week 1, polish Week 4):</strong> impact bullets with metrics where honest; mirror language from job descriptions without inventing skills.</li>
+  <li><strong>LinkedIn:</strong> headline as Senior Software Engineer · .NET / Angular / Azure · AI-augmented delivery; pin this site and strong posts.</li>
+  <li><strong>Applications:</strong> small daily batch of remote/product roles that match Angular + .NET, not spray-and-pray.</li>
+  <li><strong>Mocks:</strong> at least two live mocks in Week 4 (peer, mentor, or community). Prefer video + shared editor.</li>
+  <li><strong>Vue 3:</strong> no dedicated study day — if asked, state timeline honestly and redirect to Angular depth.</li>
+</ul>
+
+<h2>Weekly checkpoints</h2>
+<ul>
+  <li><strong>End of Week 1:</strong> Can I explain my backend decisions without notes?</li>
+  <li><strong>End of Week 2:</strong> Can I teach RxJS and Angular change detection in 10 minutes?</li>
+  <li><strong>End of Week 3:</strong> Can I draw Azure + SQL + API + Angular for a feature on a whiteboard?</li>
+  <li><strong>End of Week 4:</strong> Can I complete a mock without collapsing on gaps I already flagged?</li>
+</ul>
+
+<h2>Success criteria after 30 days</h2>
+<ul>
+  <li>I can defend every major claim on BlogWithCodes with a real example.</li>
+  <li>Angular + .NET + SQL + Azure answers feel automatic; React/Vue are framed honestly.</li>
+  <li>I have a clear AI/agentic-coding story that shows speed <em>and</em> engineering ownership.</li>
+  <li>Resume/LinkedIn are consistent with this site; mocks have exposed and closed the worst gaps.</li>
+</ul>
+
+<p>
+  I will treat this as a living plan. If a mock shows a hole (for example Insights queries or NgRx effects),
+  I will steal time from areas I already own — especially raw C# drills — and reinvest in the gap.
+</p>
+
+<p>
+  <em>— Manish Bhatia, BlogWithCodes</em>
+</p>
