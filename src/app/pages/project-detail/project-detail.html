@@ -8,13 +8,17 @@
             All projects
           </a>
 
-          <div class="mt-8 overflow-hidden rounded-[1.5rem] border border-line shadow-lg shadow-ink/10">
-            <img
-              [src]="project.cover | assetUrl"
-              [alt]="project.title"
-              class="aspect-[21/9] w-full object-cover sm:aspect-[2/1]"
-            />
-          </div>
+          @if (project.youtubeUrl) {
+            <app-youtube-embed [youtubeUrl]="project.youtubeUrl" />
+          } @else {
+            <div class="mt-8 overflow-hidden rounded-[1.5rem] border border-line shadow-lg shadow-ink/10">
+              <img
+                [src]="project.cover | assetUrl"
+                [alt]="project.title"
+                class="aspect-[21/9] w-full object-cover sm:aspect-[2/1]"
+              />
+            </div>
+          }
 
           <div class="mt-8 flex flex-wrap items-center gap-3 text-xs font-semibold tracking-wide text-ink-soft/55 uppercase">
             <span class="inline-flex items-center gap-1.5 rounded-lg bg-accent/10 px-2.5 py-1 text-accent">
@@ -29,16 +33,31 @@
           <h1 class="heading-lg mt-4">{{ project.title }}</h1>
           <p class="body-lg mt-5">{{ project.excerpt }}</p>
 
-          @if (project.liveUrl) {
-            <a
-              [href]="project.liveUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-secondary mt-6 inline-flex items-center gap-2"
-            >
-              <app-icon name="external" className="h-4 w-4" />
-              Live demo
-            </a>
+          @if (project.liveUrl || project.repoUrl) {
+            <div class="mt-6 flex flex-wrap gap-3">
+              @if (project.liveUrl) {
+                <a
+                  [href]="project.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-secondary inline-flex items-center gap-2"
+                >
+                  <app-icon name="external" className="h-4 w-4" />
+                  Live demo
+                </a>
+              }
+              @if (project.repoUrl) {
+                <a
+                  [href]="project.repoUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-secondary inline-flex items-center gap-2"
+                >
+                  <app-icon name="code" className="h-4 w-4" />
+                  View on GitHub
+                </a>
+              }
+            </div>
           }
 
           <div class="mt-6 flex flex-wrap gap-2">

@@ -1,33 +1,84 @@
 [
   {
-    "slug": "helpdesk-ticket-portal",
-    "title": "TechDesk — SaaS Ticket Management Portal",
-    "excerpt": "End-to-end SaaS helpdesk portal: tickets, users, real-time SignalR chat, embeddable chatbot, and Gemini-powered ticket summaries — led as Technical Lead on a three-person team.",
-    "domain": "Customer Support / SaaS",
-    "year": "2024",
-    "role": "Senior Software Engineer · Technical Lead",
-    "cover": "assets/projects/helpdesk-ticket-portal/01.png",
-    "tags": [".NET 8", "Angular", "SignalR", "Azure"],
-    "liveUrl": "https://helpdesk.techbitsolution.com/",
-    "overview": "TechDesk is a SaaS ticket-management portal built for companies that need one place to track user and customer issues, assign ownership, and resolve them without bouncing between tools. Over roughly six months in 2024 I led the project end to end as Technical Lead on a three-person team — owning architecture, technical decisions, UI direction, and mentoring a junior engineer through delivery. The product covers ticket and user management, real-time conversation on issues, an embeddable chatbot for client sites, and AI assistance to summarize ticket threads. The goal was simple: let support teams close the loop on problems faster, including from the customer’s own website without forcing a clunky login experience.",
+    "slug": "blogwithcodes-portfolio",
+    "title": "BlogWithCodes — Portfolio & Blog (Agentic Delivery)",
+    "excerpt": "My live personal portfolio and technical blog — an Angular-only static site with no backend, shipped end-to-end with Cursor agentic coding while I owned architecture, UX, content, and final quality.",
+    "domain": "Portfolio / Personal Brand",
+    "year": "2026",
+    "role": "Owner · Full-Stack Developer",
+    "cover": "assets/projects/blogwithcodes-portfolio/01-hero.png",
+    "tags": ["Angular 22", "Tailwind CSS", "Cursor", "GitHub Pages"],
+    "liveUrl": "https://am-stubborn.github.io/BlogWithCodes_Portfolio-BlogSite/",
+    "repoUrl": "https://github.com/AM-Stubborn/BlogWithCodes_Portfolio-BlogSite",
+    "youtubeUrl": "https://youtu.be/UeHpE2lkz0M",
+    "overview": "BlogWithCodes is my production personal site for recruiters and clients: portfolio landing, HTML technical blog, places journal, and project case studies in one place. To keep the codebase intentionally small and easy to host, I built it as a pure Angular frontend with no custom backend — content lives as JSON and HTML under public/content/, and the app deploys as a static SPA on GitHub Pages. I delivered most of the implementation with Cursor agentic coding (AI agents in the IDE), while I retained full ownership of product direction, architecture, UX, content curation, review, and what actually shipped. The public repo is part of the proof: clients can open the live site and inspect the code. Separately, my professional stack includes .NET Core, React, SQL Server, Azure, and Gemini/ChatGPT integrations — those power other products I build; this site deliberately stays Angular-only to minimize moving parts.",
     "challenges": [
-      "Shipping an embeddable chatbot as a script that other sites could drop in — without weakening auth or leaking trust boundaries between TechDesk and the host application",
+      "Showing real senior delivery and AI-augmented workflow without overbuilding — no CMS, no API server, no database to maintain for a personal site",
+      "Hosting a multi-route Angular SPA under a GitHub Pages subdirectory (base href) so assets, deep links, and refreshes all work reliably",
+      "Migrating and presenting a large HTML blog corpus (categories, drafts, covers) without a Markdown pipeline or backend",
+      "Using Cursor agents for speed while keeping architecture, branding, security judgment, and final quality under human ownership — not “AI slop” shipped unchecked",
+      "Designing a content-driven structure (site, posts, places, projects) that I can update by editing files and redeploying, without inventing a custom admin UI"
+    ],
+    "approach": [
+      "Chose Angular 22 standalone components + lazy routes and Tailwind CSS v4 for a single, modern frontend stack — deliberately no .NET/API/SQL layer for this product so the surface area stays minimal",
+      "Modeled content as static JSON/HTML (site profile, blog index + HTML posts, places, projects) loaded via HttpClient; images stay local under public/assets with an assetUrl pipe for base-href-safe paths",
+      "Used Cursor agents with project rules (.cursor/rules) for scaffolding, multi-file edits, content wiring, and refactors — then I reviewed diffs, fixed UX/architecture decisions, and owned merge-ready quality",
+      "Shipped portfolio sections clients care about: hero, about, skills, agentic working approach, experience timeline, places preview, blog preview, and contact/social CTAs",
+      "Built blog list/category/detail with draft handling (hidden from lists, still reachable by direct URL), places trek/travel journal, and structured project case studies",
+      "Automated GitHub Pages deploy with GitHub Actions (production build, Pages artifact, SPA 404.html fallback for client-side routes); optional CLI deploy via angular-cli-ghpages",
+      "Kept motion and branding intentional but light — alpine blue / pine theme, Outfit + Source Sans 3, responsive sticky header and mobile nav — so the first impression matches a real product, not a template dump"
+    ],
+    "outcomes": [
+      "A live, public portfolio + blog clients can evaluate immediately: https://am-stubborn.github.io/BlogWithCodes_Portfolio-BlogSite/",
+      "A small, maintainable Angular-only codebase with no backend to operate — content updates are file edits plus redeploy",
+      "Concrete evidence of agentic coding in practice: Cursor-accelerated delivery with human-owned architecture, UX, content, and review",
+      "Open GitHub repository for technical due diligence: https://github.com/AM-Stubborn/BlogWithCodes_Portfolio-BlogSite",
+      "A reusable pattern for SMBs and startups that need a polished marketing/portfolio site without standing up a CMS or API"
+    ],
+    "tech": [
+      "Angular 22 (standalone + lazy routes)",
+      "TypeScript",
+      "RxJS",
+      "Tailwind CSS v4",
+      "HTML content + JSON config",
+      "GitHub Pages",
+      "GitHub Actions CI/CD",
+      "Cursor (agentic coding)",
+      "Vitest"
+    ]
+  },
+  {
+    "slug": "helpdesk-ticket-portal",
+    "title": "UserDesk — SaaS Ticket Management Portal",
+    "excerpt": "SaaS support workspace for tickets, ownership, and live conversation — revamped from TechDesk with a new UserDesk brand and UI while keeping the same core product: portal, SignalR chat, embeddable widget, and Gemini summaries.",
+    "domain": "Customer Support / SaaS",
+    "year": "2024–2026",
+    "role": "Senior Software Engineer · Technical Lead",
+    "cover": "assets/projects/helpdesk-ticket-portal/01-hero.png",
+    "tags": [".NET 8", "Angular", "SignalR", "Azure", "UserDesk"],
+    "liveUrl": "https://helpdesk.techbitsolution.com/",
+    "overview": "UserDesk is the current brand for the SaaS ticket-management product originally shipped as TechDesk. Functionality stays the same — one calm workspace to track user and customer issues, assign ownership, and resolve them without bouncing between tools — while the public marketing site, sign-in experience, and in-app UI were refreshed under the UserDesk name. Over roughly six months in 2024 I led the product end to end as Technical Lead on a three-person team — owning architecture, technical decisions, UI direction, and mentoring a junior engineer through delivery. The product covers ticket and user management, real-time conversation on issues, an embeddable support chatbot for client sites, and AI assistance to summarize ticket threads. The positioning is simple: close every loop — from your desk or your customer’s site.",
+    "challenges": [
+      "Shipping an embeddable chatbot as a script that other sites could drop in — without weakening auth or leaking trust boundaries between UserDesk and the host application",
       "Making ticket conversations feel real-time (not refresh-and-hope) across portal chat and the embedded widget, using SignalR reliably under multi-user load",
       "Adding AI summary for ticket threads in a way that was useful for agents, without turning the product into an unfocused AI demo",
+      "Refreshing the product brand and UI to UserDesk (marketing, login, and admin shell) without rewriting the underlying ticket, chat, and embed architecture",
       "Keeping a clean three-layer architecture and delivery discipline while the product grew from a small start into a full SaaS admin experience (tickets, users, branding, settings, dashboard)"
     ],
     "approach": [
       "Owned end-to-end technical architecture and day-to-day engineering decisions: API shape, Angular module structure, auth model, Azure hosting, and how new features fit the existing three-layer design",
       "Built real-time ticket chat with SignalR so agents and users could continue conversations live inside the portal",
       "Delivered the embeddable chatbot as a standalone Angular component compiled to a single JS file clients can include on their own sites",
-      "Designed a TechDesk-owned SSO/OAuth path for the embed: validate credentials in TechDesk when the user already exists; for first-time users, call the integrating app’s verification API, then create the TechDesk user and continue the chat — so customers are not interrupted by a separate username/password wall when identity is already trusted",
+      "Designed a UserDesk-owned SSO/OAuth path for the embed: validate credentials in UserDesk when the user already exists; for first-time users, call the integrating app’s verification API, then create the UserDesk user and continue the chat — so customers are not interrupted by a separate username/password wall when identity is already trusted",
       "Secured regular portal APIs with JWT, and treated the embed surface as its own trust boundary with dedicated endpoints the widget is allowed to call",
       "Integrated Gemini to summarize ticket/chat context for agents, and used Chart.js on the dashboard for operational visibility",
+      "Led the UserDesk rebrand UX pass: marketing hero (“Close every loop”), split-screen sign-in, and a cleaner admin for ticket lists and threaded ticket detail with Send Message / AI Summary actions",
       "Deployed and maintained the app on Azure App Service with Azure DevOps pipelines for consistent builds and releases; guided the junior engineer through reviews and implementation patterns"
     ],
     "outcomes": [
       "Clients can embed the chatbot on their own sites and start support conversations with auth that respects the integrating app — without breaking the user’s flow",
       "Agents get a unified portal for tickets, users, live chat, and AI summaries instead of stitching tools together manually",
+      "A visible product rebrand to UserDesk with a calmer marketing and admin UI, while the SaaS ticket/chat/embed platform underneath stayed the same",
       "A maintainable SaaS foundation (branding, settings, role-based admin views, Azure hosting) that a small team could extend without rewriting the core",
       "Clear technical ownership and mentoring practices that kept architecture decisions consistent as features landed"
     ],

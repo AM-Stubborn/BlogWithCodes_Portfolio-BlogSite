@@ -1,0 +1,22 @@
+@if (embedUrl) {
+  <div
+    class="relative aspect-video w-full bg-ink"
+    [class.mt-8]="framed"
+    [class.overflow-hidden]="framed"
+    [class.rounded-[1.5rem]]="framed"
+    [class.border]="framed"
+    [class.border-line]="framed"
+    [class.shadow-lg]="framed"
+    [class.shadow-ink/10]="framed"
+  >
+    <iframe
+      [src]="embedUrl"
+      title="YouTube video"
+      class="absolute inset-0 h-full w-full border-0"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+}

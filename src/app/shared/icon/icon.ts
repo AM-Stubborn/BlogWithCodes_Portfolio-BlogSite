@@ -23,7 +23,8 @@ export type IconName =
   | 'compass'
   | 'camera'
   | 'trek'
-  | 'waves';
+  | 'waves'
+  | 'chevron-down';
 
 @Component({
   selector: 'app-icon',
