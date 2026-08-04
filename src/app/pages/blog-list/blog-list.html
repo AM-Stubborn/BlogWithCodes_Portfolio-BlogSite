@@ -16,27 +16,64 @@
       }
     </div>
 
-    <div class="mt-10 flex flex-wrap gap-2 animate-fade-up delay-1">
-      <a
-        routerLink="/blog"
-        routerLinkActive="bg-ink text-white border-ink"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="inline-flex items-center gap-1.5 rounded-xl border border-line bg-white/70 px-4 py-2 font-display text-sm font-semibold text-ink-soft/80 transition hover:border-accent/40"
+    <div class="relative z-30 mt-10 inline-block animate-fade-up delay-1" (click)="$event.stopPropagation()">
+      <button
+        type="button"
+        class="btn-secondary !px-4 !py-2.5"
+        (click)="toggleMenu($event)"
+        [attr.aria-expanded]="menuOpen()"
+        aria-haspopup="listbox"
+        aria-controls="blog-category-menu"
       >
-        <app-icon name="layers" className="h-3.5 w-3.5" />
-        All
-      </a>
-      @if (categories$ | async; as categories) {
-        @for (cat of categories; track cat) {
+        <app-icon name="tag" className="h-3.5 w-3.5" />
+        <span>
+          Category:
+          <span class="text-ink">
+            @if (category$ | async; as category) {
+              {{ formatCategory(category) }}
+            } @else {
+              All
+            }
+          </span>
+        </span>
+        <span class="inline-flex transition" [class.rotate-180]="menuOpen()">
+          <app-icon name="chevron-down" className="h-4 w-4" />
+        </span>
+      </button>
+
+      @if (menuOpen()) {
+        <div
+          id="blog-category-menu"
+          role="listbox"
+          aria-label="Filter by category"
+          class="absolute left-0 z-40 mt-2 min-w-[14rem] max-h-72 overflow-y-auto rounded-2xl border border-line bg-white/95 py-2 shadow-lg shadow-ink/10 backdrop-blur-md animate-fade-in"
+        >
           <a
-            [routerLink]="['/blog/category', cat]"
-            routerLinkActive="bg-ink text-white border-ink"
-            class="inline-flex items-center gap-1.5 rounded-xl border border-line bg-white/70 px-4 py-2 font-display text-sm font-semibold text-ink-soft/80 transition hover:border-accent/40"
+            routerLink="/blog"
+            routerLinkActive="bg-ink text-white hover:bg-ink"
+            [routerLinkActiveOptions]="{ exact: true }"
+            role="option"
+            class="flex items-center gap-2 px-4 py-2.5 font-display text-sm font-semibold text-ink-soft/80 transition hover:bg-mist"
+            (click)="closeMenu()"
           >
-            <app-icon name="tag" className="h-3.5 w-3.5" />
-            {{ formatCategory(cat) }}
+            <app-icon name="layers" className="h-3.5 w-3.5" />
+            All
           </a>
-        }
+          @if (categories$ | async; as categories) {
+            @for (cat of categories; track cat) {
+              <a
+                [routerLink]="['/blog/category', cat]"
+                routerLinkActive="bg-ink text-white hover:bg-ink"
+                role="option"
+                class="flex items-center gap-2 px-4 py-2.5 font-display text-sm font-semibold text-ink-soft/80 transition hover:bg-mist"
+                (click)="closeMenu()"
+              >
+                <app-icon name="tag" className="h-3.5 w-3.5" />
+                {{ formatCategory(cat) }}
+              </a>
+            }
+          }
+        </div>
       }
     </div>
 

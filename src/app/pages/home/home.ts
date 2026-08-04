@@ -8,11 +8,12 @@ import { PostCard } from '../../shared/post-card/post-card';
 import { PlaceCard } from '../../shared/place-card/place-card';
 import { Icon } from '../../shared/icon/icon';
 import { AssetUrlPipe } from '../../shared/pipes/asset-url.pipe';
+import { YoutubeEmbed } from '../../shared/youtube-embed/youtube-embed';
 import { map } from 'rxjs';
 
 @Component({
   selector: 'app-home',
-  imports: [AsyncPipe, RouterLink, PostCard, PlaceCard, Icon, AssetUrlPipe],
+  imports: [AsyncPipe, RouterLink, PostCard, PlaceCard, Icon, AssetUrlPipe, YoutubeEmbed],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

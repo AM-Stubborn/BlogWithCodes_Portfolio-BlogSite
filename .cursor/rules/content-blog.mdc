@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Format
 - Posts are **HTML** (`public/content/posts/<slug>.html`), not Markdown.
-- Index: `public/content/posts/index.json` (`draft?`, `cover`, `tags`, `readingTime`, etc.).
+- Index: `public/content/posts/index.json` (`draft?`, `cover`, `tags`, `readingTime`, optional `youtubeUrl`, etc.).
 - Images live in `public/assets/blog/<slug>/`; HTML `src` uses `assets/blog/...`.
 - Listing cards without covers use `assets/blog/placeholder.svg` so card height stays consistent.
 
@@ -21,6 +21,7 @@ alwaysApply: false
 - Load `.html` (no `marked`).
 - Filter drafts in `getPosts` / categories; `getPost(slug)` includes drafts.
 - Cover shows in post header; strip matching duplicate cover image from body HTML before render.
+- Optional `youtubeUrl` (watch/share link) replaces the cover on the detail page when present (embed only — no image + video stack).
 
 ## Migration
 - Reusable script: `node scripts/migrate-blogger-posts.js`

@@ -5,10 +5,11 @@ import { map, switchMap } from 'rxjs';
 import { ProjectsService } from '../../core/services/projects.service';
 import { AssetUrlPipe } from '../../shared/pipes/asset-url.pipe';
 import { Icon } from '../../shared/icon/icon';
+import { YoutubeEmbed } from '../../shared/youtube-embed/youtube-embed';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [AsyncPipe, RouterLink, AssetUrlPipe, Icon],
+  imports: [AsyncPipe, RouterLink, AssetUrlPipe, Icon, YoutubeEmbed],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
 })

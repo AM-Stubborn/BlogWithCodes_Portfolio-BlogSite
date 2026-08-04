@@ -62,22 +62,26 @@
       <div class="relative animate-fade-up delay-2">
         <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/25 via-transparent to-pine/20 blur-xl"></div>
         <div class="relative overflow-hidden rounded-[1.75rem] border border-line bg-ink text-paper shadow-2xl shadow-ink/25">
-          <div class="mountain-hero-art relative h-44 sm:h-52">
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
-                <app-icon name="mountain" className="h-5 w-5 text-white" />
-              </span>
-              <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
-                <app-icon name="compass" className="h-5 w-5 text-white" />
-              </span>
-              <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
-                <app-icon name="camera" className="h-5 w-5 text-white" />
-              </span>
+          @if (site.heroYoutubeUrl) {
+            <app-youtube-embed [youtubeUrl]="site.heroYoutubeUrl" [framed]="false" />
+          } @else {
+            <div class="mountain-hero-art relative h-44 sm:h-52">
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
+                  <app-icon name="mountain" className="h-5 w-5 text-white" />
+                </span>
+                <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
+                  <app-icon name="compass" className="h-5 w-5 text-white" />
+                </span>
+                <span class="rounded-lg bg-white/15 p-2 backdrop-blur-sm">
+                  <app-icon name="camera" className="h-5 w-5 text-white" />
+                </span>
+              </div>
+              <svg class="absolute inset-x-0 bottom-0 h-24 w-full text-ink" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
+                <path fill="currentColor" d="M0 80L90 45L170 70L280 20L390 65L480 35L600 75V120H0Z" />
+              </svg>
             </div>
-            <svg class="absolute inset-x-0 bottom-0 h-24 w-full text-ink" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
-              <path fill="currentColor" d="M0 80L90 45L170 70L280 20L390 65L480 35L600 75V120H0Z" />
-            </svg>
-          </div>
+          }
           <div class="space-y-4 p-7 sm:p-8">
             <p class="font-display text-2xl font-semibold tracking-tight">{{ site.heroCardTitle }}</p>
             <p class="text-sm leading-relaxed text-paper/70">{{ site.bio }}</p>

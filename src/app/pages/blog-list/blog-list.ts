@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { map, switchMap } from 'rxjs';
@@ -17,6 +17,7 @@ export class BlogList {
   private readonly route = inject(ActivatedRoute);
 
   readonly categories$ = this.blogService.getCategories();
+  readonly menuOpen = signal(false);
 
   readonly category$ = this.route.paramMap.pipe(
     map((params) => params.get('category')),
@@ -32,5 +33,24 @@ export class BlogList {
 
   formatCategory(category: string): string {
     return this.blogService.formatCategory(category);
+  }
+
+  toggleMenu(event: Event): void {
+    event.stopPropagation();
+    this.menuOpen.update((open) => !open);
+  }
+
+  closeMenu(): void {
+    this.menuOpen.set(false);
+  }
+
+  @HostListener('document:click')
+  onDocumentClick(): void {
+    this.closeMenu();
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    this.closeMenu();
   }
 }

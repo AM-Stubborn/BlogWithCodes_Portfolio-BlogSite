@@ -8,7 +8,9 @@
             Back to blog
           </a>
 
-          @if (post.cover) {
+          @if (post.youtubeUrl) {
+            <app-youtube-embed [youtubeUrl]="post.youtubeUrl" />
+          } @else if (post.cover) {
             <div class="mt-8 overflow-hidden rounded-[1.5rem] border border-line shadow-lg shadow-ink/10">
               <img
                 [src]="post.cover | assetUrl"

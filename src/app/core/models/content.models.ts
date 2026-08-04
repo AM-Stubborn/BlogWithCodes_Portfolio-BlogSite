@@ -31,6 +31,8 @@ export interface Project {
   liveUrl?: string;
   /** Optional public source repository. */
   repoUrl?: string;
+  /** Optional YouTube watch/share URL; shown as an embed when present. */
+  youtubeUrl?: string;
 }
 
 export interface Experience {
@@ -70,6 +72,8 @@ export interface SiteContent {
   bio: string;
   journey: string;
   heroCardTitle: string;
+  /** Optional YouTube URL shown in the landing hero card media panel. */
+  heroYoutubeUrl?: string;
   social: SocialLinks;
   expertiseHighlights: ExpertiseHighlight[];
   workingApproach: WorkingApproachStep[];
@@ -89,6 +93,8 @@ export interface BlogPostMeta {
   cover: string;
   /** When true, hidden from lists/previews but still reachable by slug URL. */
   draft?: boolean;
+  /** Optional YouTube watch/share URL; shown as an embed when present. */
+  youtubeUrl?: string;
 }
 
 export interface BlogPost extends BlogPostMeta {

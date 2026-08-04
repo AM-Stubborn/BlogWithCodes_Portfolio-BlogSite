@@ -6,10 +6,11 @@ import { BlogService } from '../../core/services/blog.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AssetUrlPipe } from '../../shared/pipes/asset-url.pipe';
 import { Icon } from '../../shared/icon/icon';
+import { YoutubeEmbed } from '../../shared/youtube-embed/youtube-embed';
 
 @Component({
   selector: 'app-blog-post',
-  imports: [AsyncPipe, RouterLink, AssetUrlPipe, Icon],
+  imports: [AsyncPipe, RouterLink, AssetUrlPipe, Icon, YoutubeEmbed],
   templateUrl: './blog-post.html',
   styleUrl: './blog-post.scss',
 })
