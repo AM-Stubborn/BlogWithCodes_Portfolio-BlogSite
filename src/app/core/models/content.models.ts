@@ -29,6 +29,8 @@ export interface Project {
   tech: string[];
   /** Optional public demo or product URL. */
   liveUrl?: string;
+  /** Optional public source repository. */
+  repoUrl?: string;
 }
 
 export interface Experience {
