@@ -8,17 +8,25 @@
             All places
           </a>
 
-          <div class="mt-8 overflow-hidden rounded-[1.5rem] border border-line shadow-lg shadow-ink/10">
-            <img
-              [src]="place.photo | assetUrl"
+          @if (place.instagramUrl) {
+            <app-instagram-embed
+              [instagramUrl]="place.instagramUrl"
+              [poster]="place.photo"
               [alt]="place.name"
-              class="aspect-[21/9] w-full object-cover sm:aspect-[2/1]"
             />
-          </div>
-          <p class="mt-3 inline-flex items-center gap-1.5 text-xs text-ink-soft/50">
-            <app-icon name="camera" className="h-3.5 w-3.5" />
-            {{ place.photoCredit }}
-          </p>
+          } @else {
+            <div class="mt-8 overflow-hidden rounded-[1.5rem] border border-line shadow-lg shadow-ink/10">
+              <img
+                [src]="place.photo | assetUrl"
+                [alt]="place.name"
+                class="aspect-[21/9] w-full object-cover sm:aspect-[2/1]"
+              />
+            </div>
+            <p class="mt-3 inline-flex items-center gap-1.5 text-xs text-ink-soft/50">
+              <app-icon name="camera" className="h-3.5 w-3.5" />
+              {{ place.photoCredit }}
+            </p>
+          }
 
           <div class="mt-8 flex flex-wrap items-center gap-3 text-xs font-semibold tracking-wide text-ink-soft/55 uppercase">
             <span class="inline-flex items-center gap-1.5 rounded-lg bg-accent/10 px-2.5 py-1 text-accent">

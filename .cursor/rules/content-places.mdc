@@ -7,7 +7,8 @@ alwaysApply: false
 # Places journal rules
 
 - One object per place in `public/content/places.json`; one photo under `public/assets/places/`.
-- Fields: slug, name, region, country, visitedOn, type (`trek`|`travel`), summary, notes, photo, photoCredit.
+- Fields: slug, name, region, country, visitedOn, type (`trek`|`travel`), summary, notes, photo, photoCredit, optional `instagramUrl`.
+- Optional `instagramUrl` (post/reel share link) replaces the photo on the detail page with a compact Instagram Reel thumbnail card (opens Instagram in a new tab on click).
 - Notes should cover how you reach the place and how the trek/day went (user may edit later).
 - Prefer the user’s real visits; do not reintroduce dummy demo places.
 - No end-user “edit this JSON” instructional copy in the UI.

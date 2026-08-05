@@ -114,4 +114,6 @@ export interface Place {
   notes: string;
   photo: string;
   photoCredit: string;
+  /** Optional Instagram post/reel URL; shown as an embed on the detail page when present. */
+  instagramUrl?: string;
 }
