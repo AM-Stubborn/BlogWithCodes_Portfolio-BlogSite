@@ -103,7 +103,8 @@ export interface BlogPost extends BlogPostMeta {
 
 export type PlaceType = 'trek' | 'travel';
 
-export interface Place {
+/** Card and list fields. The long story lives in `public/content/places/<slug>.txt`. */
+export interface PlaceMeta {
   slug: string;
   name: string;
   region: string;
@@ -111,9 +112,12 @@ export interface Place {
   visitedOn: string;
   type: PlaceType;
   summary: string;
-  notes: string;
   photo: string;
   photoCredit: string;
   /** Optional Instagram post/reel URL; shown as an embed on the detail page when present. */
   instagramUrl?: string;
+}
+
+export interface Place extends PlaceMeta {
+  notes: string;
 }

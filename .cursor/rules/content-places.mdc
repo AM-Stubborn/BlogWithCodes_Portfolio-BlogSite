@@ -1,13 +1,14 @@
 ---
 description: Places visited journal — real treks, one photo + notes per place
-globs: public/content/places.json,public/assets/places/**/*,src/app/pages/place*/**/*,src/app/shared/place-card/**/*,src/app/core/services/places.service.ts
+globs: public/content/places/**/*,public/assets/places/**/*,src/app/pages/place*/**/*,src/app/shared/place-card/**/*,src/app/core/services/places.service.ts
 alwaysApply: false
 ---
 
 # Places journal rules
 
-- One object per place in `public/content/places.json`; one photo under `public/assets/places/`.
-- Fields: slug, name, region, country, visitedOn, type (`trek`|`travel`), summary, notes, photo, photoCredit, optional `instagramUrl`.
+- Index: `public/content/places/index.json` (listing fields only). One story file per visit: `public/content/places/<slug>.txt`. One photo under `public/assets/places/`.
+- Index fields: slug, name, region, country, visitedOn, type (`trek`|`travel`), summary, photo, photoCredit, optional `instagramUrl`.
+- The `.txt` file is the trail story. Separate paragraphs with a blank line. Do not put the long story back into the index.
 - Optional `instagramUrl` (post/reel share link) replaces the photo on the detail page with a compact Instagram Reel thumbnail card (opens Instagram in a new tab on click).
 - Notes should cover how you reach the place and how the trek/day went (user may edit later).
 - Prefer the user’s real visits; do not reintroduce dummy demo places.

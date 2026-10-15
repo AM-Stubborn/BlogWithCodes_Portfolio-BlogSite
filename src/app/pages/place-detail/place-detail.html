@@ -56,14 +56,18 @@
               <app-icon name="compass" className="h-5 w-5 text-accent" />
               Trail notes
             </h2>
-            <p class="mt-3 leading-relaxed text-ink-soft/80">{{ place.notes }}</p>
+            <div class="mt-3 space-y-4 leading-relaxed text-ink-soft/80">
+              @for (paragraph of noteParagraphs(place.notes); track $index) {
+                <p>{{ paragraph }}</p>
+              }
+            </div>
           </div>
         </article>
       } @else {
         <div class="surface p-10 text-center animate-fade-up">
           <app-icon name="map" className="mx-auto h-8 w-8 text-ink-soft/40" />
           <h1 class="heading-md mt-4">Place not found</h1>
-          <p class="mt-3 text-ink-soft/70">That slug is missing from places.json.</p>
+          <p class="mt-3 text-ink-soft/70">That place is not in the journal.</p>
           <a routerLink="/places" class="btn-primary mt-6 inline-flex">Browse places</a>
         </div>
       }
