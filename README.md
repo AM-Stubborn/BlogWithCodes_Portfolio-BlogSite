@@ -57,7 +57,7 @@ Optional: set `"draft": true` to keep the post out of lists/home while still all
 
 ## Places visited (trek journal)
 
-Each place is one object in `public/content/places.json` with **one photo** under `public/assets/places/`.
+Places follow the same split as blog posts. Short listing fields live in `public/content/places/index.json`. The long story for each visit is `public/content/places/<slug>.txt` (blank line between paragraphs). Each place still has **one photo** under `public/assets/places/`.
 
 ```json
 {
@@ -68,7 +68,6 @@ Each place is one object in `public/content/places.json` with **one photo** unde
   "visitedOn": "2025-05-17",
   "type": "trek",
   "summary": "Short summary",
-  "notes": "Your trail notes — how you reached it and how the trek went",
   "photo": "assets/places/triund.jpg",
   "photoCredit": "Your photo"
 }

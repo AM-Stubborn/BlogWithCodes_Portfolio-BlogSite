@@ -22,7 +22,7 @@ Do **not** put projects back on the landing page.
 ## Content-driven architecture
 - Site/profile: `public/content/site.json`
 - Posts index + HTML: `public/content/posts/`
-- Places: `public/content/places.json`
+- Places index + story text: `public/content/places/`
 - Projects: `public/content/projects/index.json`
 - Media: local only under `public/assets/…`; use `assetUrl` pipe for base-href-safe paths.
 - Prefer extending existing services/components over new abstractions.

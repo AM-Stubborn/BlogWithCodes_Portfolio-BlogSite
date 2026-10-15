@@ -29,4 +29,11 @@ export class PlaceDetail {
   formatType(type: string): string {
     return this.placesService.formatType(type);
   }
+
+  noteParagraphs(notes: string): string[] {
+    return notes
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph.trim())
+      .filter((paragraph) => paragraph.length > 0);
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Place } from '../../core/models/content.models';
+import { PlaceMeta } from '../../core/models/content.models';
 import { PlacesService } from '../../core/services/places.service';
 import { AssetUrlPipe } from '../pipes/asset-url.pipe';
 import { Icon } from '../icon/icon';
@@ -14,7 +14,7 @@ import { Icon } from '../icon/icon';
 export class PlaceCard {
   private readonly placesService = inject(PlacesService);
 
-  @Input({ required: true }) place!: Place;
+  @Input({ required: true }) place!: PlaceMeta;
 
   formatDate(date: string): string {
     return this.placesService.formatDate(date);
